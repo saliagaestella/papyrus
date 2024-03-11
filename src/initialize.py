@@ -13,7 +13,6 @@ class Initializer:
         self.logger = self.initialize_logging()
         self.config = self._init_config()
         self.openai_client = self._init_openai_client()
-        sys.path.append("/Users/santiago/Documents/papyrus")
 
     def initialize_logging(self):
         """Initializes and configures logging."""

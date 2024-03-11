@@ -1,3 +1,10 @@
+import os
+import sys
+from dotenv import load_dotenv
+
+load_dotenv()
+
+sys.path.append(os.getenv("PROJECT_PATH"))
 from src.docs_processor.processor import DocumentProcessor
 from src.etls.boe.load import today
 from src.initialize import Initializer
@@ -5,10 +12,8 @@ from src.initialize import Initializer
 
 def main():
     initializer = Initializer()
-
-    processor = DocumentProcessor(initializer=initializer)
-
     documents = today()
+    processor = DocumentProcessor(initializer=initializer)
 
     try:
         results = processor.process_document(next(iter(documents.values())).page_content)
