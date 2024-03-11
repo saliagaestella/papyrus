@@ -1,7 +1,3 @@
-import sys
-
-
-sys.path.append("/Users/santiago/Documents/papyrus")
 from src.docs_processor.processor import DocumentProcessor
 from src.etls.boe.load import today
 from src.initialize import Initializer
