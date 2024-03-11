@@ -8,7 +8,7 @@ from src.etls.common.utils import TextLoader
 
 def today():
     boe_scrapper = BOEScrapper()
-    day = date.today()
+    day = date.today() - timedelta(days=2)
     docs = boe_scrapper.download_day(day)
     documents = {}
     for doc in docs:

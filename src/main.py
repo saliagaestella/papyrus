@@ -14,7 +14,12 @@ def main():
 
     documents = today()
 
-    results = processor.process_document(next(iter(documents.values())).page_content)
+    try:
+        results = processor.process_document(next(iter(documents.values())).page_content)
+    except StopIteration:
+        print("No documents found.")
+        results = None
+
 
     print(results)
 
