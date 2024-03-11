@@ -15,14 +15,21 @@ def main():
     documents = today()
     processor = DocumentProcessor(initializer=initializer)
 
-    try:
-        results = processor.process_document(next(iter(documents.values())).page_content)
-    except StopIteration:
+    results = {}
+
+    if not documents:
         print("No documents found.")
-        results = None
+    else:
+        for doc_id, document in documents.items():
+            try:
+                ai_result = processor.process_document(document.page_content)
+                results[doc_id] = [document, ai_result]
+            except Exception as e:
+                print(f"Failed to process document {doc_id}: {e}")
 
+    for result in results:
+        print(result)
 
-    print(results)
 
 
 if __name__ == "__main__":
