@@ -8,6 +8,7 @@ sys.path.append(os.getenv("PROJECT_PATH"))
 from src.docs_processor.processor import DocumentProcessor
 from src.etls.boe.load import today
 from src.initialize import Initializer
+from src.email.email_sender import send_email
 
 
 def main():
@@ -27,9 +28,10 @@ def main():
             except Exception as e:
                 print(f"Failed to process document {doc_id}: {e}")
 
+    send_email(results)
+
     for result in results:
         print(result)
-
 
 
 if __name__ == "__main__":
