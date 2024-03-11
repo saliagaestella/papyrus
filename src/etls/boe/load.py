@@ -8,15 +8,13 @@ from src.etls.common.utils import TextLoader
 
 def today():
     boe_scrapper = BOEScrapper()
-    day = date.today() - timedelta(days=2)
+    day = date.today()
     docs = boe_scrapper.download_day(day)
     documents = {}
     for doc in docs:
         loader = TextLoader(file_path=doc.filepath, metadata=doc.dict())
         document = loader.load()
         documents[document.metadata["identificador"]] = document
-        """text = document.page_content
-        metadata = document.metadata"""
         os.remove(doc.filepath)
 
     return documents

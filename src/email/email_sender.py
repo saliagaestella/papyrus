@@ -7,7 +7,7 @@ def send_email(documents):
     smtp_server = "smtp.gmail.com"
     port = 587
     sender_email = "6inimartin6@gmail.com"
-    receiver_email = "saliagaestella@gmail.com"
+    receiver_email = "saliagaestella@gmail.com, inigo.martin.llorente@gmail.com"
     password = "bvyo vmpg crfc hihl"
 
     message = MIMEMultipart("alternative")

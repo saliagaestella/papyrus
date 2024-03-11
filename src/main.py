@@ -19,7 +19,7 @@ def main():
     results = {}
 
     if not documents:
-        print("No documents found.")
+        raise ValueError("No documents found to process.")
     else:
         for doc_id, document in documents.items():
             try:
