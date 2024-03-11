@@ -2,7 +2,7 @@ name: Daily Run of papyrus
 
 on:
   schedule:
-    - cron: '0 10 * * *'
+    - cron: '32 20 * * *'
 
 jobs:
   run-main:
