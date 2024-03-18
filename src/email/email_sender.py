@@ -7,13 +7,13 @@ def send_email(documents):
     smtp_server = "smtp.gmail.com"
     port = 587
     sender_email = "6inimartin6@gmail.com"
-    receiver_email = "saliagaestella@gmail.com, inigo.martin.llorente@gmail.com"
+    receiver_email = ["saliagaestella@gmail.com", "inigo.martin.llorente@gmail.com"]
     password = "bvyo vmpg crfc hihl"
 
     message = MIMEMultipart("alternative")
     message["Subject"] = "Newsletter"
     message["From"] = sender_email
-    message["To"] = receiver_email
+    message["To"] = ", ".join(receiver_email)
 
     html_content = write_html(documents)
 
@@ -47,11 +47,10 @@ def write_html(documents):
         output_final = document[1]
         html_content += f"""
             <h2>ID: {key}</h2>
-            <p><strong>Categoría legal:</strong> {output_final['legal_categories']}</p>
-            <p><strong>Etiquetas:</strong> {', '.join(output_final['labels'])}</p>
+            <p><strong>Etiquetas:</strong> {', '.join(output_final['etiquetas'])}</p>
             <p><strong>Stakeholders:</strong> {', '.join(output_final['stakeholders'])}</p>
-            <p><strong>Resumen:</strong> {output_final['summaries']}</p>
-            <p><strong>Impacto:</strong> {' '.join(output_final['impacts'])}</p>
+            <p><strong>Resumen:</strong> {output_final['resumenes']}</p>
+            <p><strong>Impacto:</strong> {' '.join(output_final['impactos'])}</p>
             <p></p>
         """
     html_content += """

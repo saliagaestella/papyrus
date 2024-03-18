@@ -64,14 +64,14 @@ def create_chunks(text, n, tokenizer):
 
 # Hacer el prompt por cada chunk
 def extract_chunk(document, config, client):
-    prompt = config["prompt"].replace("<document>", document)
+    system_prompt = config["prompt"]
 
     messages = [
         {
             "role": "system",
-            "content": "Ayudas a extraer información de documentos legales con la siguiente estructura JSON: 'resumen': '<apartado_1_resumen', 'etiquetas': ['<apartado_2_etiqueta_1>', '<apartado_2_etiqueta_2>', <...>], 'categoria_legal': '<_apartado_3_categoria_legal>', 'stakeholders': [ '<apartado_4_stakeholders_1>',<apartado_4_stakeholders_2>, <...>], 'impacto': '<apartado_5_impacto>', ",
+            "content": system_prompt,
         },
-        {"role": "user", "content": prompt},
+        {"role": "user", "content": document},
     ]
 
     response = client.chat.completions.create(

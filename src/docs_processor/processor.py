@@ -31,12 +31,12 @@ class DocumentProcessor:
 
         chunks = create_chunks(clean_text, chunk_tokens, self.tokenizer)
         text_chunks = [self.tokenizer.decode(chunk) for chunk in chunks]
-        print(f"Number of API calls/document divisions: {len(text_chunks)}")
+        print(f"Number of API calls/chunks: {len(text_chunks)}")
 
         self.results = [self._process_chunk(chunk) for chunk in text_chunks]
         self._postprocess_results()
         self._clean_aggregated_results()
-        self._unify_legal_category()
+        #self._unify_legal_category()
         self._unify_summary()
         self._generate_final_summary()
 
@@ -46,27 +46,25 @@ class DocumentProcessor:
         result, input_token, output_token = extract_chunk(
             chunk, self.config, self.initializer.openai_client
         )
-        print(f"Result /n {result}")
+        print(f"Result: \n {result}")
         print(f"Number of input tokens: {input_token}")
         print(f"Number of output tokens: {output_token}")
         return result
 
     def _postprocess_results(self):
         aggregated = {
-            "summaries": [],
-            "labels": set(),
-            "legal_categories": [],
-            "impacts": set(),
+            "resumenes": [],
+            "etiquetas": set(),
+            "impactos": set(),
             "stakeholders": set(),
         }
 
         for result in self.results:
             data = json.loads(result)
-            aggregated["summaries"].append(data["resumen"])
-            aggregated["legal_categories"].append(data["categoria_legal"])
-            aggregated["impacts"].add(data["impacto"])
+            aggregated["resumenes"].append(data["resumen"])
+            aggregated["impactos"].add(data["impacto"])
             self._aggregate_data(aggregated, "stakeholders", data["stakeholders"])
-            self._aggregate_data(aggregated, "labels", data["etiquetas"])
+            self._aggregate_data(aggregated, "etiquetas", data["etiquetas"])
 
         for key in aggregated.keys():
             if isinstance(aggregated[key], set):
@@ -84,18 +82,19 @@ class DocumentProcessor:
         results = self.results
         for key in results:
             if isinstance(results[key], list):
-                results[key] = [
-                    element for element in results[key] if element != "No identificado"
-                ]
+                if any(element != "No identificado" for element in results[key]):
+                    results[key] = [
+                        element for element in results[key] if element != "No identificado"
+                    ]
         self.results = results
 
-    def _unify_legal_category(self):
+    """def _unify_legal_category(self):
         aggregated = self.results
         category_weights = self._weighted_counts(aggregated["legal_categories"])
         aggregated["legal_categories"] = max(category_weights, key=category_weights.get)
-        self.results = aggregated
+        self.results = aggregated"""
 
-    def _weighted_counts(self, items):
+    """def _weighted_counts(self, items):
         weighting = {}
         additional_weight = len(items) / 2
         for i, item in enumerate(items):
@@ -104,16 +103,16 @@ class DocumentProcessor:
             weighting[item] = weighting.get(item, 0) + (
                 1 + additional_weight if i == 0 else 1
             )
-        return weighting
+        return weighting"""
 
     def _unify_summary(self):
         aggregated = self.results
-        unified_summary = " ".join(aggregated["summaries"])
-        aggregated["summaries"] = unified_summary
+        unified_summary = " ".join(aggregated["resumenes"])
+        aggregated["resumenes"] = unified_summary
         self.results = aggregated
 
     def _generate_final_summary(self):
-        summary = self.results["summaries"]
+        summary = self.results["resumenes"]
         messages = [
             {
                 "role": "system",
@@ -134,7 +133,7 @@ class DocumentProcessor:
         )
 
         final_summary = response.choices[0].message.content
-        self.results["summaries"] = final_summary
+        self.results["resumenes"] = final_summary
         return (
             final_summary,
             response.usage.prompt_tokens,
