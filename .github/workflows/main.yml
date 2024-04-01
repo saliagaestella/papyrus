@@ -26,6 +26,7 @@ jobs:
     - name: Run main.py
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        MONGODB_URI: ${{ secrets.MONGODB_URI }}
         PYTHONPATH: ${{ github.workspace }}
         CONFIG_PATH: "src/config/config.yaml"
         PROJECT_PATH: ""

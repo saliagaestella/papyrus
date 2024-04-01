@@ -61,5 +61,4 @@ def dates(date_start: str, date_end: str, init_objects=None):
 
 
 if __name__ == "__main__":
-    # app()
     today()
