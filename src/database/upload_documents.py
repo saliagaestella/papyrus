@@ -27,8 +27,15 @@ def upload_documents(docs: dict, initializer: Initializer):
         for key, value in metadata.items():
             if key == "identificador":
                 key = "_id"
-            elif key in ["fecha_publicacion", "fecha_disposicion", "datetime_insert"]:
-                value = datetime.fromisoformat(value)
+            elif (
+                key in ["fecha_publicacion", "fecha_disposicion", "datetime_insert"]
+                and value
+            ):
+                try:
+                    element[key] = datetime.fromisoformat(value)
+                except ValueError:
+                    print(f"Invalid isoformat string for {key}: {value}")
+
             elif key == "ref_anteriores":
                 value = [json.loads(ref) for ref in value]
             elif isinstance(value, str) and value.isdigit():
