@@ -9,7 +9,7 @@ from src.etls.common.utils import TextLoader
 def today():
     boe_scrapper = BOEScrapper()
     # TODO: Quitar
-    day = date.today() - timedelta(days=4)
+    day = date.today() - timedelta(days=5)
     docs = boe_scrapper.download_day(day)
     documents = {}
     for doc in docs:
