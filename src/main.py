@@ -15,7 +15,7 @@ from src.database.upload_documents import upload_documents
 def main():
     initializer = Initializer()
     documents = today()
-    documents = dates(date_start="2024/03/01", date_end="2024/03/31")
+    # documents = dates(date_start="2024/03/01", date_end="2024/03/31")
     processor = DocumentProcessor(initializer=initializer)
 
     results = {}
