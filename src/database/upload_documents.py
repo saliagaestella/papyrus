@@ -50,7 +50,8 @@ def upload_documents(docs: dict, initializer: Initializer):
 
         try:
             collection.insert_one(element)
+            print("Document uploaded to database successfully")
         except DuplicateKeyError:
-            print(f"Document with _id {doc_id} already exists. Skipping.")
+            print(f"Document with _id {doc_id} already exists. Skipping")
 
     return 0
