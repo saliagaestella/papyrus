@@ -47,10 +47,10 @@ def write_html(documents):
         output_final = document[1]
         html_content += f"""
             <h2>ID: {key}</h2>
-            <p><strong>Etiquetas:</strong> {', '.join(output_final['etiquetas'])}</p>
+            <p><strong>Etiquetas:</strong> {'; '.join(output_final['etiquetas'])}</p>
             <p><strong>Stakeholders:</strong> {', '.join(output_final['stakeholders'])}</p>
             <p><strong>Resumen:</strong> {output_final['resumenes']}</p>
-            <p><strong>Impacto:</strong> {' '.join(output_final['impactos'])}</p>
+            <p><strong>Impacto:</strong> {'; '.join(output_final['impactos'])}</p>
             <p></p>
         """
     html_content += """

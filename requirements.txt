@@ -8,6 +8,7 @@ certifi==2024.2.2
 charset-normalizer==3.3.2
 dataclasses-json==0.6.4
 distro==1.9.0
+dnspython==1.16.0
 frozenlist==1.4.1
 h11==0.14.0
 httpcore==1.0.4
@@ -30,6 +31,7 @@ orjson==3.9.15
 packaging==23.2
 pydantic==2.6.3
 pydantic_core==2.16.3
+pymongo==3.11.0
 python-dotenv==1.0.1
 PyYAML==6.0.1
 regex==2023.12.25

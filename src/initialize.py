@@ -2,6 +2,7 @@ import logging as lg
 import os
 import yaml
 from openai import AsyncOpenAI, OpenAI
+from pymongo.mongo_client import MongoClient
 import sys
 from dotenv import load_dotenv
 
@@ -13,6 +14,7 @@ class Initializer:
         self.logger = self.initialize_logging()
         self.config = self._init_config()
         self.openai_client = self._init_openai_client()
+        self.mongodb_client = self._init_mongodb_client()
 
     def initialize_logging(self):
         """Initializes and configures logging."""
@@ -44,4 +46,16 @@ class Initializer:
         # client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
         client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
         self.logger.info("Initialized OpenAI client")
+        return client
+
+    def _init_mongodb_client(self):
+        """Initializes the MongoDB client."""
+        self.logger.info("Initializing MongoDB client")
+        URI = os.getenv("MONGODB_URI")
+        client = MongoClient(URI)
+        try:
+            client.admin.command("ping")
+            self.logger.info("Initialized MongoDB client")
+        except Exception as e:
+            self.logger.info(f"Error initializing MongoDB client: {e}")
         return client

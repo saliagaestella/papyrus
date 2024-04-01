@@ -123,7 +123,7 @@ class DocumentProcessor:
 
         client = self.initializer.openai_client
         response = client.chat.completions.create(
-            model="gpt-4",
+            model=self.config["model"],
             messages=messages,
             temperature=0,
             max_tokens=500,
