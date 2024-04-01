@@ -1,6 +1,7 @@
 from src.initialize import Initializer
 from datetime import datetime
 import json
+from pymongo.errors import DuplicateKeyError
 
 
 def convert_to_numeric(value):
@@ -47,6 +48,9 @@ def upload_documents(docs: dict, initializer: Initializer):
                 key = "resumen"
             element[key] = value
 
-        collection.insert_one(element)
+        try:
+            collection.insert_one(element)
+        except DuplicateKeyError:
+            print(f"Document with _id {doc_id} already exists. Skipping.")
 
     return 0
