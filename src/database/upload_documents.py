@@ -33,9 +33,8 @@ def upload_documents(docs: dict, initializer: Initializer):
                 and value
             ):
                 try:
-                    element[key] = datetime.strptime(
-                        value.split("T")[0], "%Y-%m-%d"
-                    ).date()
+                    date = datetime.strptime(value.split("T")[0], "%Y-%m-%d").date()
+                    value = datetime.combine(date, datetime.min.time())
                 except ValueError:
                     print(
                         f"Could not convert date to datetime format for {key}: {value}"
@@ -45,17 +44,19 @@ def upload_documents(docs: dict, initializer: Initializer):
                 value = [json.loads(ref) for ref in value]
             elif isinstance(value, str) and value.isdigit():
                 value = convert_to_numeric(value)
+
             element[key] = value
 
         for key, value in results.items():
             if key == "resumenes":
                 key = "resumen"
+
             element[key] = value
 
         try:
             collection.insert_one(element)
-            print("Document uploaded to database successfully")
+            print(f"Document with id {doc_id} uploaded to database successfully")
         except DuplicateKeyError:
-            print(f"Document with _id {doc_id} already exists. Skipping")
+            print(f"Document with id {doc_id} already exists - skipping")
 
     return 0
