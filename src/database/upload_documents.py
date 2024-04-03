@@ -33,7 +33,9 @@ def upload_documents(docs: dict, initializer: Initializer):
                 and value
             ):
                 try:
-                    element[key] = datetime.fromisoformat(value)
+                    element[key] = datetime.strptime(
+                        value.split("T")[0], "%Y-%m-%d"
+                    ).date()
                 except ValueError:
                     print(f"Invalid isoformat string for {key}: {value}")
 
