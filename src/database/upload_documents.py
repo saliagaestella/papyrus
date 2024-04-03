@@ -37,7 +37,9 @@ def upload_documents(docs: dict, initializer: Initializer):
                         value.split("T")[0], "%Y-%m-%d"
                     ).date()
                 except ValueError:
-                    print(f"Invalid isoformat string for {key}: {value}")
+                    print(
+                        f"Could not convert date to datetime format for {key}: {value}"
+                    )
 
             elif key == "ref_anteriores":
                 value = [json.loads(ref) for ref in value]
