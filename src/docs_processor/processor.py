@@ -36,7 +36,6 @@ class DocumentProcessor:
         self.results = [self._process_chunk(chunk) for chunk in text_chunks]
         self._postprocess_results()
         self._clean_aggregated_results()
-        #self._unify_legal_category()
         self._unify_summary()
         self._generate_final_summary()
 
@@ -84,26 +83,11 @@ class DocumentProcessor:
             if isinstance(results[key], list):
                 if any(element != "No identificado" for element in results[key]):
                     results[key] = [
-                        element for element in results[key] if element != "No identificado"
+                        element
+                        for element in results[key]
+                        if element != "No identificado"
                     ]
         self.results = results
-
-    """def _unify_legal_category(self):
-        aggregated = self.results
-        category_weights = self._weighted_counts(aggregated["legal_categories"])
-        aggregated["legal_categories"] = max(category_weights, key=category_weights.get)
-        self.results = aggregated"""
-
-    """def _weighted_counts(self, items):
-        weighting = {}
-        additional_weight = len(items) / 2
-        for i, item in enumerate(items):
-            if item == "No identificado":
-                continue
-            weighting[item] = weighting.get(item, 0) + (
-                1 + additional_weight if i == 0 else 1
-            )
-        return weighting"""
 
     def _unify_summary(self):
         aggregated = self.results

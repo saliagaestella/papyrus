@@ -1,9 +1,8 @@
 import logging as lg
 import os
 import yaml
-from openai import AsyncOpenAI, OpenAI
+from openai import OpenAI
 from pymongo.mongo_client import MongoClient
-import sys
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -43,7 +42,6 @@ class Initializer:
     def _init_openai_client(self):
         """Initializes the OpenAI client."""
         self.logger.info("Initializing OpenAI client")
-        # client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
         client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
         self.logger.info("Initialized OpenAI client")
         return client
