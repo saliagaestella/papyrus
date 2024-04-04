@@ -1,6 +1,7 @@
 import json
 import os
 import tiktoken
+import Levenshtein as lev
 from src.initialize import Initializer
 from src.docs_processor.utils import (
     create_chunks,
@@ -78,16 +79,84 @@ class DocumentProcessor:
             aggregated[key].add(data)
 
     def _clean_aggregated_results(self):
+        etiquetas_posibles = [
+            "Administración, defensa y servicios de seguridad social",
+            "Maquinaria agrícola",
+            "Productos agrícolas, ganaderos, pesqueros, forestales y relacionados",
+            "Servicios agrícolas, forestales, hortícolas, acuícolas y apícolas",
+            "Servicios de arquitectura, construcción, ingeniería e inspección",
+            "Servicios empresariales: derecho, marketing, consultoría, reclutamiento, impresión y seguridad",
+            "Productos químicos",
+            "Ropa, calzado, artículos de equipaje y accesorios",
+            "Agua recogida y purificada",
+            "Estructuras de construcción y materiales; productos auxiliares para la construcción (excepto aparatos eléctricos)",
+            "Trabajos de construcción",
+            "Servicios de educación y formación",
+            "Maquinaria eléctrica, aparatos, equipos y consumibles; iluminación",
+            "Servicios financieros y de seguros",
+            "Alimentos, bebidas, tabaco y productos relacionados",
+            "Muebles (incl. mobiliario de oficina), artículos de decoración, electrodomésticos (excl. iluminación) y productos de limpieza",
+            "Servicios de salud y trabajo social",
+            "Servicios de hotel, restaurante y comercio minorista",
+            "Servicios de TI: consultoría, desarrollo de software, Internet y soporte",
+            "Maquinaria industrial",
+            "Servicios de instalación (excepto software)",
+            "Equipos de laboratorio, ópticos y de precisión (excl. gafas)",
+            "Tejidos de cuero y textil, materiales plásticos y de caucho",
+            "Maquinaria para minería, canteras, equipos de construcción",
+            "Equipos médicos, farmacéuticos y productos de cuidado personal",
+            "Minería, metales básicos y productos relacionados",
+            "Instrumentos musicales, bienes deportivos, juegos, juguetes, artesanías, materiales de arte y accesorios",
+            "Maquinaria de oficina y equipos de computación, suministros excepto muebles y paquetes de software",
+            "Otros servicios comunitarios, sociales y personales",
+            "Productos petrolíferos, combustible, electricidad y otras fuentes de energía",
+            "Servicios postales y de telecomunicaciones",
+            "Productos impresos y relacionados",
+            "Servicios públicos",
+            "Radio, televisión, comunicación, telecomunicación y equipos relacionados",
+            "Servicios inmobiliarios",
+            "Servicios recreativos, culturales y deportivos",
+            "Servicios de reparación y mantenimiento",
+            "Servicios de investigación y desarrollo y consultoría relacionada",
+            "Equipamiento de seguridad, lucha contra incendios, policía y defensa",
+            "Servicios relacionados con la industria del petróleo y gas",
+            "Servicios de aguas residuales, eliminación de desechos, limpieza y medio ambiente",
+            "Paquetes de software y sistemas de información",
+            "Servicios de apoyo y auxiliares de transporte; servicios de agencias de viajes",
+            "Equipos de transporte y productos auxiliares para el transporte",
+            "Servicios de transporte (excl. transporte de residuos)",
+        ]
         results = self.results
-        for key in results:
-            if isinstance(results[key], list):
-                if any(element != "No identificado" for element in results[key]):
-                    results[key] = [
-                        element
-                        for element in results[key]
-                        if element != "No identificado"
+        for key, value in results.items():
+            if isinstance(value, list):
+                if any(element != "No identificado" for element in value):
+                    output = [
+                        element for element in value if element != "No identificado"
                     ]
+                """if key == "etiquetas":
+                    output = self._etiquetas_similares(
+                        etiquetas_posibles, value, 0.5
+                    )"""
+                results[key] = output
+
         self.results = results
+
+    """# Función para encontrar categorías de la lista1 que tienen una coincidencia aproximada en lista2
+    def _etiquetas_similares(self, lista1, lista2, umbral):
+        etiquetas_similares = []
+        for etiqueta1 in lista1:
+            etiqueta1_encontrada = False
+            for etiqueta2 in lista2:
+                # Calcular la distancia de Levenshtein y la similitud
+                distancia = lev.distance(etiqueta1.lower(), etiqueta2.lower())
+                longitud_maxima = max(len(etiqueta1), len(etiqueta2))
+                similitud = (longitud_maxima - distancia) / longitud_maxima
+                # Si la similitud supera el umbral y la etiqueta aún no se ha agregado, agregarla a la lista de resultados
+                if similitud >= umbral and not etiqueta1_encontrada:
+                    etiquetas_similares.append(etiqueta1)
+                    etiqueta1_encontrada = True
+                    break  # No es necesario seguir buscando más coincidencias para esta etiqueta
+        return etiquetas_similares"""
 
     def _unify_summary(self):
         aggregated = self.results
