@@ -1,7 +1,6 @@
 import json
 import os
 import tiktoken
-import Levenshtein as lev
 from src.initialize import Initializer
 from src.docs_processor.utils import (
     create_chunks,
