@@ -3,7 +3,7 @@ const express = require('express');
 const { MongoClient } = require('mongodb');
 
 const app = express();
-const port = process.env.PORT || 3001
+const port = process.env.PORT
 const cors = require('cors');
 app.use(cors());
 // MongoDB connection string
