@@ -32,3 +32,22 @@ jobs:
         PROJECT_PATH: ""
       run: |
         python src/main.py
+
+  deploy-to-vercel:
+    needs: run-main
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Install Vercel CLI
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+          registry-url: https://registry.npmjs.org/
+      
+      - name: Deploy to Vercel
+        run: npx vercel --token ${{ secrets.VERCEL_TOKEN }} --prod
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}

@@ -9,10 +9,6 @@ app.use(cors());
 // MongoDB connection string
 const uri = process.env.MONGODB_URI;
 
-/*Pending: 
-    1. que se ejecute todos los días después del otro backend
-*/
-
 //Query para traer los documentos de ese día y si no los del último
 app.get('/', async (req, res) => {
     const client = new MongoClient(uri);
