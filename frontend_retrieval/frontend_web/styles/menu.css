@@ -1,0 +1,58 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Change to your preferred font */
+  }
+
+
+/*menu section*/
+
+.hamburger {
+    display: none; /* Hidden by default */
+    font-size: 24px; /* Icon size */
+    background: none;
+    border: none;
+    color: white; /* Hamburger color */
+    cursor: pointer;
+  }
+  
+ 
+  .navbar {
+    background-color: #092534; /* Dark background color */
+    color: #fbf7ef;
+    font-size: small;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 100px; /* Adjust the height as needed */
+    border-bottom: 1px solid rgb(131, 163, 0,0.2)  /* rgba(251, 247, 239, 0.2);*/
+}
+
+.logo img {
+    max-height: 80px; /* Adjust the max-height as needed for your logo */
+    margin-left: 10%;
+    width: auto; /* Maintain aspect ratio */
+  }
+  
+  .menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu li {
+    padding: 0 16px; /* Adjust spacing between menu items */
+  }
+  
+  .menu li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .menu li a:hover {
+    color: #83a300; /* Lighter color on hover */
+  }
+  

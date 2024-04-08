@@ -1,0 +1,128 @@
+/*Global Section*/
+
+/*fonts*/
+@font-face {
+    font-family: 'Azonix';
+    src: url('../assets/fonts/Azonix.woff2') format('woff2'),
+         url('../assets/fonts/Azonix.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    /*font-family: Arial, sans-serif; */
+    font-family: 'Candara', sans-serif; 
+    margin: 10vw;
+    background-color: #092534;
+    color: #fbf7ef;
+    overflow-x:hidden;
+}
+
+h1 {
+    color: #fbf7ef;
+    font-family: 'Azonix', sans-serif;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20px;
+}
+
+
+/*loading icon*/
+.loader {
+    margin-left: 45%;
+    margin-top: 15%;
+    margin-bottom: 30%;
+    border: 4px solid #fbf7ef; /* Light grey */
+    border-top: 4px solid #83a300; /* Blue */
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+/*container section*/
+
+#data-container {
+    /*margin-top: 20px; */
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    
+    /*background-color: #f0f0f0; */
+   /* border: 1px solid #83a300; */
+    border-radius: 8px;
+}
+
+.data-item {
+    margin-bottom: 15px;
+    padding: 2vw;
+   /* background-color: #ffffff; */
+    border: 1px solid #fbf7ef;
+    border-radius: 4px;
+}
+
+
+/*Id section*/
+
+.id-values {
+    font-size: 30px;
+    font-weight: 600;
+    /*text-align: center; */
+    margin-bottom: 2%;
+    font-family: Arial, sans-serif;
+}
+
+/*Etiquetas Section*/
+
+.etiquetas-label {
+    margin-right: 10px; /* Add some space between the label and the values */
+    font-size: 20px;
+    margin-bottom: 1%;
+   font-weight:800;
+}
+
+
+.etiquetas-values {
+    display: flex;
+    flex-wrap: wrap; /*Wrap values if they don't fit in a single row */
+}
+
+.etiquetas-values span {
+    /* Space between etiquetas */
+    margin-left: 5px; 
+    margin-right: 5px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    margin-bottom: 10px;
+
+     /* Etiqueta container settings */
+    padding: 7px;
+    background-color: #83a300;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #fbf7ef;
+}
+
+
+
+/*Resumen Section*/
+.resumen-content {
+    text-align: justify;
+    /*margin-left: 2%;
+    margin-right: 2%;
+    */
+}
+
+.resumen-label {
+    font-size: 20px;
+    margin-bottom: 1%;
+    font-weight: 800;
+}
