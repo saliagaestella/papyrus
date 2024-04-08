@@ -6,7 +6,6 @@ const app = express();
 const port = process.env.PORT
 const cors = require('cors');
 app.use(cors());
-// MongoDB connection string
 const uri = process.env.MONGODB_URI;
 
 //Query para traer los documentos de ese día y si no los del último
@@ -17,13 +16,11 @@ app.get('/', async (req, res) => {
         const database = client.db("papyrus");
         const collection = database.collection("BOE");
 
-        // Get today's date components
         const today = new Date();
         const year = today.getFullYear();
         const month = today.getMonth() + 1; // getMonth() is zero-based, add 1 for 1-12 scale
         const day = today.getDate();
 
-        // Try to find documents for today's date
         let data = await collection.find({ anio: year, mes: month, dia: day }).toArray();
 
         if (data.length === 0) {
@@ -55,52 +52,3 @@ app.get('/', async (req, res) => {
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
-
-
-/*
-app.get('/', async (req, res) => {
-    const client = new MongoClient(uri);
-    try {
-        await client.connect();
-        const database = client.db("papyrus");
-        const collection = database.collection("BOE");
-
-        // Get today's date components
-        const today = new Date();
-        const year = today.getFullYear();
-        const month = today.getMonth() + 1; // getMonth() is zero-based, add 1 for 1-12 scale
-        const day = today.getDate() - 1;
-
-        // Create a query to match documents with the same year, month, and day
-        const query = { anio: year, mes: month, dia: day };
-
-        // Find documents that match the query
-        const data = await collection.find(query).toArray();
-
-        res.json(data);
-        res.year;
-    } catch (error) {
-        console.error("Failed to retrieve data:", error);
-        res.status(500).send("Error retrieving data from database.");
-    } finally {
-        await client.close();
-    }
-});
-*/
-
-
-
-/* Code to retrieve the whole collection
-app.get('/', async (req, res) => {
-    const client = new MongoClient(uri);
-    try {
-        await client.connect();
-        const database = client.db("papyrus");
-        const collection = database.collection("BOE");
-        const data = await collection.find({}).toArray(); // Adjust query as needed
-        res.json(data);
-    } finally {
-        await client.close();
-    }
-});
-*/
