@@ -2,6 +2,6 @@ deprecated/
 venv/
 .env
 node_modules/
-src/__pycache__/
+**/__pycache__/
 .DS_Store
-.vscode
+.vscode/
