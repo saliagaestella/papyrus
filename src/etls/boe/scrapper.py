@@ -81,26 +81,34 @@ def _extract_metadata(soup) -> tp.Dict:
     metadata_dict["notas"] = [
         nota.get_text() for nota in soup.select("documento > analisis > notas > nota")
     ]
-    metadata_dict["ref_posteriores"] = [
-        BOEMetadataReferencia(
-            id=ref["referencia"],
-            palabra=ref.palabra.get_text(),
-            texto=ref.texto.get_text(),
-        )
-        for ref in soup.select(
-            "documento > analisis > referencias > posteriores > posterior"
-        )
-    ]
-    metadata_dict["ref_anteriores"] = [
-        BOEMetadataReferencia(
-            id=ref["referencia"],
-            palabra=ref.palabra.get_text(),
-            texto=ref.texto.get_text(),
-        )
-        for ref in soup.select(
-            "documento > analisis > referencias > anteriores > anterior"
-        )
-    ]
+    posteriores_refs = soup.select(
+        "documento > analisis > referencias > posteriores > posterior"
+    )
+    if posteriores_refs:
+        metadata_dict["ref_posteriores"] = [
+            BOEMetadataReferencia(
+                id=ref["referencia"],
+                palabra=ref.palabra.get_text(),
+                texto=ref.texto.get_text(),
+            )
+            for ref in posteriores_refs
+        ]
+    else:
+        metadata_dict["ref_posteriores"] = []
+    anteriores_refs = soup.select(
+        "documento > analisis > referencias > anteriores > anterior"
+    )
+    if anteriores_refs:
+        metadata_dict["ref_anteriores"] = [
+            BOEMetadataReferencia(
+                id=ref["referencia"],
+                palabra=ref.palabra.get_text(),
+                texto=ref.texto.get_text(),
+            )
+            for ref in anteriores_refs
+        ]
+    else:
+        metadata_dict["ref_anteriores"] = []
     return metadata_dict
 
 
