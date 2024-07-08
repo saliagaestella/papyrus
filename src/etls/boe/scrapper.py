@@ -120,7 +120,7 @@ def _list_links_day(url: str) -> tp.List[str]:
     """
     logger = lg.getLogger(_list_links_day.__name__)
     logger.info("Scrapping day: %s", url)
-    response = requests.get(url, timeout=10)
+    response = requests.get(url, timeout=100)
     response.raise_for_status()
     soup = BeautifulSoup(response.text, "lxml")
     id_links = [

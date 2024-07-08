@@ -11,10 +11,6 @@ from requests.exceptions import HTTPError
 from src.etls.bocm.metadata import BOCMMetadataDocument
 from src.etls.bocm.utils import *
 from src.etls.common.scrapper import BaseScrapper
-from src.initialize import initialize_logging
-
-
-initialize_logging()
 
 
 # transformation from url retrieve from redirection to one pointing to complete summary
@@ -67,11 +63,15 @@ def _extract_metadata(soup) -> tp.Dict:
     fecha_publicacion, cve, html_link = metadata_from_head_tags(soup)
 
     # Desc doc header
-    numero_oficial, seccion_normalizada, paginas, pdf_link = metadata_from_doc_header(soup)
+    numero_oficial, seccion_normalizada, paginas, pdf_link = metadata_from_doc_header(
+        soup
+    )
 
     # Metadata from document
     seccion = seccion_normalizada.split(".")[0]
-    subseccion, apartado, tipo, organo, anunciante, rango = metadata_from_doc(soup, seccion, cve)
+    subseccion, apartado, tipo, organo, anunciante, rango = metadata_from_doc(
+        soup, seccion, cve
+    )
 
     metadata_dict["rango"] = rango
     metadata_dict["identificador"] = cve
@@ -94,11 +94,17 @@ def _extract_metadata(soup) -> tp.Dict:
     metadata_dict["fecha_publicacion"] = fecha_publicacion
     metadata_dict["fecha_disposicion"] = fecha_publicacion
 
-    metadata_dict["anio"] = datetime.strptime(fecha_publicacion, "%Y-%m-%d").strftime("%Y")
+    metadata_dict["anio"] = datetime.strptime(fecha_publicacion, "%Y-%m-%d").strftime(
+        "%Y"
+    )
 
-    metadata_dict["mes"] = datetime.strptime(fecha_publicacion, "%Y-%m-%d").strftime("%m")
+    metadata_dict["mes"] = datetime.strptime(fecha_publicacion, "%Y-%m-%d").strftime(
+        "%m"
+    )
 
-    metadata_dict["dia"] = datetime.strptime(fecha_publicacion, "%Y-%m-%d").strftime("%d")
+    metadata_dict["dia"] = datetime.strptime(fecha_publicacion, "%Y-%m-%d").strftime(
+        "%d"
+    )
 
     return metadata_dict
 
@@ -119,7 +125,9 @@ def _list_links_day(url: str) -> tp.List[str]:
     # filter by sections
     sections_to_filter = ["1-A", "3-", "4-"]
     filtered_links = filter_links_by_section(soup, sections_to_filter)
-    logger.info("Scrapped day successfully %s (%s BOCM documents)", url, len(filtered_links))
+    logger.info(
+        "Scrapped day successfully %s (%s BOCM documents)", url, len(filtered_links)
+    )
 
     return filtered_links
 
@@ -151,7 +159,7 @@ class BOCMScrapper(BaseScrapper):
                     except AttributeError:
                         logger.error("Not scrapped document %s on day %s", url, day)
             except HTTPError:
-                logger.error("Not scrapped document on day %s", day_url)
+                logger.error("Not scrapped document %s on day %s", url, day)
             logger.info("Downloaded all BOCM docs for day %s", day)
         return metadata_documents
 

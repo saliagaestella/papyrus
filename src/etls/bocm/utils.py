@@ -1,12 +1,8 @@
 import typing as tp
 import logging as lg
 import re
-from src.initialize import initialize_logging
 
 BOCM_PREFIX = "https://www.bocm.es"
-
-
-initialize_logging()
 
 
 def _get_url_from_cve(cve: str) -> str:
@@ -18,7 +14,7 @@ def metadata_from_head_tags(soup) -> tp.List[str]:
     # extract cve from meta[name="TituloGSA"]
     cve = soup.select_one('meta[name="TituloGSA"]')["content"]
     fecha = cve.split("-")[1:2][0]
-    fecha_publicacion = f'{fecha[:4]}-{fecha[4:6]}-{fecha[6:8]}'
+    fecha_publicacion = f"{fecha[:4]}-{fecha[4:6]}-{fecha[6:8]}"
 
     html_link = soup.select_one('meta[property="og:url"]')["content"]
 
@@ -37,10 +33,10 @@ def metadata_from_doc(soup, seccion: str, cve: str) -> tp.List[str]:
 
     # Metadata from article description
     desc_attempt = soup.select_one('meta[name="description"]')
-    if (desc_attempt is not None):
+    if desc_attempt is not None:
         desc = desc_attempt["content"]
     else:
-        desc = ''
+        desc = ""
     num_art = re.sub(r"BOCM-\d{8}-(\d{1,3})", r"\1", cve)
 
     try:
@@ -50,7 +46,9 @@ def metadata_from_doc(soup, seccion: str, cve: str) -> tp.List[str]:
             organo = paras[2]
             # Some articles don't have filled description needed for rango field extraction
             if len(desc) > 10:
-                rango = re.sub(r"^(\b[^\s]+\b)(.*)", r"\1", desc.split(num_art)[1], flags=re.ASCII).upper()
+                rango = re.sub(
+                    r"^(\b[^\s]+\b)(.*)", r"\1", desc.split(num_art)[1], flags=re.ASCII
+                ).upper()
         if seccion == "2":
             subseccion_name = "DISPOSICIONES Y ANUNCIOS DEL ESTADO"
             organo = paras[0]
@@ -81,8 +79,17 @@ def metadata_from_doc(soup, seccion: str, cve: str) -> tp.List[str]:
 def metadata_from_doc_header(soup) -> tp.List[str]:
     logger = lg.getLogger(metadata_from_doc_header.__name__)
 
-    numero_oficial = soup.select_one(".cabecera_popup h1 strong").get_text().split("-")[1].strip().split(" ")[1].strip()
-    s_field_a, cve_a, pags_a, *permalink = [str.get_text().split(":") for str in soup.select("#titulo_cabecera h2")]
+    numero_oficial = (
+        soup.select_one(".cabecera_popup h1 strong")
+        .get_text()
+        .split("-")[1]
+        .strip()
+        .split(" ")[1]
+        .strip()
+    )
+    s_field_a, cve_a, pags_a, *permalink = [
+        str.get_text().split(":") for str in soup.select("#titulo_cabecera h2")
+    ]
     seccion_normalizada = s_field_a[0].strip().split(" ")[1]
     paginas = pags_a[1].strip()  # Should I convert to int??
     pdf_link = soup.select_one("#titulo_cabecera a")["href"]
@@ -109,10 +116,16 @@ def select_section_from_id(soup, filtered_section: str) -> tp.List[str]:
                 title = group.select_one(header_selector).text
                 subsection_fix = f"{subsection}\)"
                 if re.search(subsection_fix, title):
-                    links = [f'{BOCM_PREFIX}{a["href"]}' for a in group.select(f'{content_selector} a[href*="bocm-"]')]
+                    links = [
+                        f'{BOCM_PREFIX}{a["href"]}'
+                        for a in group.select(f'{content_selector} a[href*="bocm-"]')
+                    ]
                     section_links += links
         else:
-            links = [f'{BOCM_PREFIX}{a["href"]}' for a in section_container.select('a[href*="bocm-"]')]
+            links = [
+                f'{BOCM_PREFIX}{a["href"]}'
+                for a in section_container.select('a[href*="bocm-"]')
+            ]
             section_links += links
     logger.info(f"Captured {len(section_links)} docs from section [{section}]")
     return section_links

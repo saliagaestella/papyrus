@@ -18,12 +18,12 @@ def upload_documents(docs: dict, initializer: Initializer):
     client = initializer.mongodb_client
 
     db = client["papyrus"]
-    collection = db["BOE"]
 
     for doc_id, values in docs.items():
         element = {}
         metadata = values[0].metadata
         results = values[1]
+        collection = db[metadata["source_name"]]
 
         for key, value in metadata.items():
             if key == "identificador":
