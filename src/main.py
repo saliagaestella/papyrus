@@ -21,7 +21,7 @@ def main():
     processor = DocumentProcessor(initializer=initializer)
 
     process_documents(documents=today(), processor=processor, initializer=initializer)
-    # process_documents(documents=today_bocm(), processor=processor, initializer=initializer)
+    process_documents(documents=today_bocm(), processor=processor, initializer=initializer)
 
 
 def process_documents(documents, processor, initializer):
