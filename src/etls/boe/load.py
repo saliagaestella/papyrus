@@ -6,7 +6,7 @@ from src.etls.boe.scrapper import BOEScrapper
 from src.etls.common.utils import TextLoader
 
 
-def today():
+def today_boe():
     boe_scrapper = BOEScrapper()
     day = date.today()
     docs = boe_scrapper.download_day(day)
