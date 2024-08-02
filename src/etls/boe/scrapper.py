@@ -114,7 +114,7 @@ def _list_links_day(url: str) -> tp.List[str]:
     """
     logger = lg.getLogger(_list_links_day.__name__)
     logger.info("Scrapping day: %s", url)
-    session = create_retry_session(retries=5)
+    session = create_retry_session(retries=10)
     response = session.get(url, timeout=10)
     response.raise_for_status()
     soup = BeautifulSoup(response.text, "lxml")
@@ -172,7 +172,7 @@ class BOEScrapper(BaseScrapper):
         """
         logger = lg.getLogger(self.download_document.__name__)
         logger.info("Scrapping document: %s", url)
-        session = create_retry_session(retries=5)
+        session = create_retry_session(retries=10)
         response = session.get(url, timeout=10)
         response.raise_for_status()
         soup = BeautifulSoup(response.text, "lxml")
