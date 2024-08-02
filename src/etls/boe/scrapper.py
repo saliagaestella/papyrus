@@ -2,6 +2,8 @@ import logging as lg
 import tempfile
 import typing as tp
 from datetime import date, datetime
+import time
+import random
 
 import requests
 from bs4 import BeautifulSoup
@@ -11,6 +13,16 @@ from urllib3.util.retry import Retry
 
 from src.etls.boe.metadata import BOEMetadataDocument, BOEMetadataReferencia
 from src.etls.common.scrapper import BaseScrapper
+
+USER_AGENTS = [
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3",
+    "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1.2 Safari/605.1.15",
+]
+
+
+def get_random_user_agent():
+    return random.choice(USER_AGENTS)
 
 
 def requests_retry_session(
@@ -142,8 +154,9 @@ def _list_links_day(url: str) -> tp.List[str]:
     """
     logger = lg.getLogger(_list_links_day.__name__)
     logger.info("Scrapping day: %s", url)
+    headers = {"User-Agent": get_random_user_agent()}
     try:
-        response = requests_retry_session().get(url, timeout=20)
+        response = requests_retry_session().get(url, headers=headers, timeout=20)
         response.raise_for_status()
         soup = BeautifulSoup(response.text, "lxml")
         id_links = [
@@ -178,6 +191,7 @@ class BOEScrapper(BaseScrapper):
             id_links = _list_links_day(day_url)
             for id_link in id_links:
                 url_document = f"https://www.boe.es/diario_boe/xml.php?id={id_link}"
+                time.sleep(random.uniform(1, 5))
                 try:
                     metadata_doc = self.download_document(url_document)
                     metadata_documents.append(metadata_doc)
@@ -203,8 +217,9 @@ class BOEScrapper(BaseScrapper):
         """
         logger = lg.getLogger(self.download_document.__name__)
         logger.info("Scrapping document: %s", url)
+        headers = {"User-Agent": get_random_user_agent()}
         try:
-            response = requests_retry_session().get(url, timeout=20)
+            response = requests_retry_session().get(url, headers=headers, timeout=20)
             response.raise_for_status()
             soup = BeautifulSoup(response.text, "lxml")
             with tempfile.NamedTemporaryFile("w", delete=False) as fn:

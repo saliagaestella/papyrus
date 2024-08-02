@@ -37,4 +37,4 @@ def dates(date_start: str, date_end: str):
 
 
 if __name__ == "__main__":
-    today()
+    today_boe()
