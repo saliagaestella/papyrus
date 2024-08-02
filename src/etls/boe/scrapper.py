@@ -2,47 +2,13 @@ import logging as lg
 import tempfile
 import typing as tp
 from datetime import date, datetime
-import time
-import random
 
-import requests
 from bs4 import BeautifulSoup
-from requests.adapters import HTTPAdapter
-from requests.exceptions import HTTPError, ConnectTimeout, RequestException
-from urllib3.util.retry import Retry
+from requests.exceptions import HTTPError
 
 from src.etls.boe.metadata import BOEMetadataDocument, BOEMetadataReferencia
 from src.etls.common.scrapper import BaseScrapper
-
-USER_AGENTS = [
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3",
-    "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1.2 Safari/605.1.15",
-]
-
-
-def get_random_user_agent():
-    return random.choice(USER_AGENTS)
-
-
-def requests_retry_session(
-    retries=10,
-    backoff_factor=2,
-    status_forcelist=(500, 502, 504),
-    session=None,
-):
-    session = session or requests.Session()
-    retry = Retry(
-        total=retries,
-        read=retries,
-        connect=retries,
-        backoff_factor=backoff_factor,
-        status_forcelist=status_forcelist,
-    )
-    adapter = HTTPAdapter(max_retries=retry)
-    session.mount("http://", adapter)
-    session.mount("https://", adapter)
-    return session
+from src.etls.utils import create_retry_session
 
 
 def _extract_metadata(soup) -> tp.Dict:
@@ -115,34 +81,26 @@ def _extract_metadata(soup) -> tp.Dict:
     metadata_dict["notas"] = [
         nota.get_text() for nota in soup.select("documento > analisis > notas > nota")
     ]
-    posteriores_refs = soup.select(
-        "documento > analisis > referencias > posteriores > posterior"
-    )
-    if posteriores_refs:
-        metadata_dict["ref_posteriores"] = [
-            BOEMetadataReferencia(
-                id=ref["referencia"],
-                palabra=ref.palabra.get_text(),
-                texto=ref.texto.get_text(),
-            )
-            for ref in posteriores_refs
-        ]
-    else:
-        metadata_dict["ref_posteriores"] = []
-    anteriores_refs = soup.select(
-        "documento > analisis > referencias > anteriores > anterior"
-    )
-    if anteriores_refs:
-        metadata_dict["ref_anteriores"] = [
-            BOEMetadataReferencia(
-                id=ref["referencia"],
-                palabra=ref.palabra.get_text(),
-                texto=ref.texto.get_text(),
-            )
-            for ref in anteriores_refs
-        ]
-    else:
-        metadata_dict["ref_anteriores"] = []
+    metadata_dict["ref_posteriores"] = [
+        BOEMetadataReferencia(
+            id=ref["referencia"],
+            palabra=ref.palabra.get_text(),
+            texto=ref.texto.get_text(),
+        )
+        for ref in soup.select(
+            "documento > analisis > referencias > posteriores > posterior"
+        )
+    ]
+    metadata_dict["ref_anteriores"] = [
+        BOEMetadataReferencia(
+            id=ref["referencia"],
+            palabra=ref.palabra.get_text(),
+            texto=ref.texto.get_text(),
+        )
+        for ref in soup.select(
+            "documento > analisis > referencias > anteriores > anterior"
+        )
+    ]
     return metadata_dict
 
 
@@ -154,29 +112,23 @@ def _list_links_day(url: str) -> tp.List[str]:
     """
     logger = lg.getLogger(_list_links_day.__name__)
     logger.info("Scrapping day: %s", url)
-    headers = {"User-Agent": get_random_user_agent()}
-    try:
-        response = requests_retry_session().get(url, headers=headers, timeout=20)
-        response.raise_for_status()
-        soup = BeautifulSoup(response.text, "xml")  # Use XML parser here
-        id_links = [
-            url.text.split("?id=")[-1]
-            for section in soup.find_all(
-                lambda tag: tag.name == "seccion"
-                and "num" in tag.attrs
-                and (
-                    tag.attrs["num"] == "1" or tag.attrs["num"] == "T"
-                )  # Note: Sección 1 and Tribunal Supremo
-            )
-            for url in section.find_all("urlxml")
-        ]
-        logger.info(
-            "Scrapped day successfully %s (%s BOE documents)", url, len(id_links)
+    session = create_retry_session(retries=5)
+    response = session.get(url, timeout=10)
+    response.raise_for_status()
+    soup = BeautifulSoup(response.text, "lxml")
+    id_links = [
+        url.text.split("?id=")[-1]
+        for section in soup.find_all(
+            lambda tag: tag.name == "seccion"
+            and "num" in tag.attrs
+            and (
+                tag.attrs["num"] == "1" or tag.attrs["num"] == "T"
+            )  # Note: Sección 1 and Tribunal Supremo
         )
-        return id_links
-    except (HTTPError, ConnectTimeout, RequestException) as e:
-        logger.error("Failed to scrap day %s: %s", url, e)
-        return []
+        for url in section.find_all("urlxml")
+    ]
+    logger.info("Scrapped day successfully %s (%s BOE documents)", url, len(id_links))
+    return id_links
 
 
 class BOEScrapper(BaseScrapper):
@@ -191,21 +143,19 @@ class BOEScrapper(BaseScrapper):
             id_links = _list_links_day(day_url)
             for id_link in id_links:
                 url_document = f"https://www.boe.es/diario_boe/xml.php?id={id_link}"
-                time.sleep(
-                    random.uniform(5, 10)
-                )  # Increased random delay between requests
                 try:
                     metadata_doc = self.download_document(url_document)
                     metadata_documents.append(metadata_doc)
-                except (HTTPError, ConnectTimeout, RequestException) as e:
+                except HTTPError:
                     logger.error(
-                        "Not scrapped document %s on day %s: %s",
-                        url_document,
-                        day_url,
-                        e,
+                        "Not scrapped document %s on day %s", url_document, day_url
                     )
-        except (HTTPError, ConnectTimeout, RequestException) as e:
-            logger.error("Not scrapped document on day %s: %s", day_url, e)
+                except AttributeError:
+                    logger.error(
+                        "Not scrapped document %s on day %s", url_document, day_url
+                    )
+        except HTTPError:
+            logger.error("Not scrapped document on day %s", day_url)
         logger.info("Downloaded BOE content for day %s", day)
         return metadata_documents
 
@@ -219,19 +169,13 @@ class BOEScrapper(BaseScrapper):
         """
         logger = lg.getLogger(self.download_document.__name__)
         logger.info("Scrapping document: %s", url)
-        headers = {"User-Agent": get_random_user_agent()}
-        try:
-            response = requests_retry_session().get(url, headers=headers, timeout=20)
-            response.raise_for_status()
-            soup = BeautifulSoup(response.text, "xml")
-            with tempfile.NamedTemporaryFile("w", delete=False) as fn:
-                text = soup.select_one("documento > texto").get_text()
-                fn.write(text)
-            metadata_doc = BOEMetadataDocument(
-                filepath=fn.name, **_extract_metadata(soup)
-            )
-            logger.info("Scrapped document successfully %s", url)
-            return metadata_doc
-        except (HTTPError, ConnectTimeout, RequestException) as e:
-            logger.error("Failed to download document %s: %s", url, e)
-            raise
+        session = create_retry_session(retries=5)
+        response = session.get(url, timeout=10)
+        response.raise_for_status()
+        soup = BeautifulSoup(response.text, "lxml")
+        with tempfile.NamedTemporaryFile("w", delete=False) as fn:
+            text = soup.select_one("documento > texto").get_text()
+            fn.write(text)
+        metadata_doc = BOEMetadataDocument(filepath=fn.name, **_extract_metadata(soup))
+        logger.info("Scrapped document successfully %s", url)
+        return metadata_doc
