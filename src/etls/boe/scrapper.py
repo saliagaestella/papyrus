@@ -1,5 +1,7 @@
 import logging as lg
+import random
 import tempfile
+import time
 import typing as tp
 from datetime import date, datetime
 
@@ -143,6 +145,7 @@ class BOEScrapper(BaseScrapper):
             id_links = _list_links_day(day_url)
             for id_link in id_links:
                 url_document = f"https://www.boe.es/diario_boe/xml.php?id={id_link}"
+                time.sleep(random.uniform(5, 10))
                 try:
                     metadata_doc = self.download_document(url_document)
                     metadata_documents.append(metadata_doc)
