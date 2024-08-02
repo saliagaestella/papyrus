@@ -26,8 +26,8 @@ def get_random_user_agent():
 
 
 def requests_retry_session(
-    retries=5,
-    backoff_factor=1,
+    retries=10,
+    backoff_factor=2,
     status_forcelist=(500, 502, 504),
     session=None,
 ):
@@ -158,7 +158,7 @@ def _list_links_day(url: str) -> tp.List[str]:
     try:
         response = requests_retry_session().get(url, headers=headers, timeout=20)
         response.raise_for_status()
-        soup = BeautifulSoup(response.text, "lxml")
+        soup = BeautifulSoup(response.text, "xml")  # Use XML parser here
         id_links = [
             url.text.split("?id=")[-1]
             for section in soup.find_all(
@@ -191,7 +191,9 @@ class BOEScrapper(BaseScrapper):
             id_links = _list_links_day(day_url)
             for id_link in id_links:
                 url_document = f"https://www.boe.es/diario_boe/xml.php?id={id_link}"
-                time.sleep(random.uniform(1, 5))
+                time.sleep(
+                    random.uniform(5, 10)
+                )  # Increased random delay between requests
                 try:
                     metadata_doc = self.download_document(url_document)
                     metadata_documents.append(metadata_doc)
@@ -221,7 +223,7 @@ class BOEScrapper(BaseScrapper):
         try:
             response = requests_retry_session().get(url, headers=headers, timeout=20)
             response.raise_for_status()
-            soup = BeautifulSoup(response.text, "lxml")
+            soup = BeautifulSoup(response.text, "xml")
             with tempfile.NamedTemporaryFile("w", delete=False) as fn:
                 text = soup.select_one("documento > texto").get_text()
                 fn.write(text)
