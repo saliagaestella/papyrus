@@ -5,10 +5,32 @@ from datetime import date, datetime
 
 import requests
 from bs4 import BeautifulSoup
-from requests.exceptions import HTTPError
+from requests.adapters import HTTPAdapter
+from requests.exceptions import HTTPError, ConnectTimeout
+from urllib3.util.retry import Retry
 
 from src.etls.boe.metadata import BOEMetadataDocument, BOEMetadataReferencia
 from src.etls.common.scrapper import BaseScrapper
+
+
+def requests_retry_session(
+    retries=3,
+    backoff_factor=0.3,
+    status_forcelist=(500, 502, 504),
+    session=None,
+):
+    session = session or requests.Session()
+    retry = Retry(
+        total=retries,
+        read=retries,
+        connect=retries,
+        backoff_factor=backoff_factor,
+        status_forcelist=status_forcelist,
+    )
+    adapter = HTTPAdapter(max_retries=retry)
+    session.mount("http://", adapter)
+    session.mount("https://", adapter)
+    return session
 
 
 def _extract_metadata(soup) -> tp.Dict:
@@ -120,7 +142,7 @@ def _list_links_day(url: str) -> tp.List[str]:
     """
     logger = lg.getLogger(_list_links_day.__name__)
     logger.info("Scrapping day: %s", url)
-    response = requests.get(url, timeout=100)
+    response = requests_retry_session().get(url, timeout=10)
     response.raise_for_status()
     soup = BeautifulSoup(response.text, "lxml")
     id_links = [
@@ -176,12 +198,18 @@ class BOEScrapper(BaseScrapper):
         """
         logger = lg.getLogger(self.download_document.__name__)
         logger.info("Scrapping document: %s", url)
-        response = requests.get(url, timeout=10)
-        response.raise_for_status()
-        soup = BeautifulSoup(response.text, "lxml")
-        with tempfile.NamedTemporaryFile("w", delete=False) as fn:
-            text = soup.select_one("documento > texto").get_text()
-            fn.write(text)
-        metadata_doc = BOEMetadataDocument(filepath=fn.name, **_extract_metadata(soup))
-        logger.info("Scrapped document successfully %s", url)
-        return metadata_doc
+        try:
+            response = requests_retry_session().get(url, timeout=10)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.text, "lxml")
+            with tempfile.NamedTemporaryFile("w", delete=False) as fn:
+                text = soup.select_one("documento > texto").get_text()
+                fn.write(text)
+            metadata_doc = BOEMetadataDocument(
+                filepath=fn.name, **_extract_metadata(soup)
+            )
+            logger.info("Scrapped document successfully %s", url)
+            return metadata_doc
+        except (HTTPError, ConnectTimeout) as e:
+            logger.error("Failed to download document %s: %s", url, e)
+            raise
