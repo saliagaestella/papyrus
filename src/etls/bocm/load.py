@@ -1,15 +1,10 @@
 from datetime import date, datetime
 import os
 
-import typer
-
 from src.etls.bocm.scrapper import BOCMScrapper
 from src.etls.utils import catch_exceptions
 from src.etls.bocm.defs import COLLECTION_NAME
 from src.etls.common.utils import TextLoader
-
-
-app = typer.Typer()
 
 
 @catch_exceptions(cancel_on_failure=True)
