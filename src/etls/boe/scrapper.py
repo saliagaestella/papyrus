@@ -6,7 +6,7 @@ from datetime import date, datetime
 import requests
 from bs4 import BeautifulSoup
 from requests.adapters import HTTPAdapter
-from requests.exceptions import HTTPError, ConnectTimeout
+from requests.exceptions import HTTPError, ConnectTimeout, RequestException
 from urllib3.util.retry import Retry
 
 from src.etls.boe.metadata import BOEMetadataDocument, BOEMetadataReferencia
@@ -14,8 +14,8 @@ from src.etls.common.scrapper import BaseScrapper
 
 
 def requests_retry_session(
-    retries=3,
-    backoff_factor=0.3,
+    retries=5,
+    backoff_factor=1,
     status_forcelist=(500, 502, 504),
     session=None,
 ):
@@ -142,22 +142,28 @@ def _list_links_day(url: str) -> tp.List[str]:
     """
     logger = lg.getLogger(_list_links_day.__name__)
     logger.info("Scrapping day: %s", url)
-    response = requests_retry_session().get(url, timeout=10)
-    response.raise_for_status()
-    soup = BeautifulSoup(response.text, "lxml")
-    id_links = [
-        url.text.split("?id=")[-1]
-        for section in soup.find_all(
-            lambda tag: tag.name == "seccion"
-            and "num" in tag.attrs
-            and (
-                tag.attrs["num"] == "1" or tag.attrs["num"] == "T"
-            )  # Note: Sección 1 and Tribunal Supremo
+    try:
+        response = requests_retry_session().get(url, timeout=20)
+        response.raise_for_status()
+        soup = BeautifulSoup(response.text, "lxml")
+        id_links = [
+            url.text.split("?id=")[-1]
+            for section in soup.find_all(
+                lambda tag: tag.name == "seccion"
+                and "num" in tag.attrs
+                and (
+                    tag.attrs["num"] == "1" or tag.attrs["num"] == "T"
+                )  # Note: Sección 1 and Tribunal Supremo
+            )
+            for url in section.find_all("urlxml")
+        ]
+        logger.info(
+            "Scrapped day successfully %s (%s BOE documents)", url, len(id_links)
         )
-        for url in section.find_all("urlxml")
-    ]
-    logger.info("Scrapped day successfully %s (%s BOE documents)", url, len(id_links))
-    return id_links
+        return id_links
+    except (HTTPError, ConnectTimeout, RequestException) as e:
+        logger.error("Failed to scrap day %s: %s", url, e)
+        return []
 
 
 class BOEScrapper(BaseScrapper):
@@ -175,16 +181,15 @@ class BOEScrapper(BaseScrapper):
                 try:
                     metadata_doc = self.download_document(url_document)
                     metadata_documents.append(metadata_doc)
-                except HTTPError:
+                except (HTTPError, ConnectTimeout, RequestException) as e:
                     logger.error(
-                        "Not scrapped document %s on day %s", url_document, day_url
+                        "Not scrapped document %s on day %s: %s",
+                        url_document,
+                        day_url,
+                        e,
                     )
-                except AttributeError:
-                    logger.error(
-                        "Not scrapped document %s on day %s", url_document, day_url
-                    )
-        except HTTPError:
-            logger.error("Not scrapped document on day %s", day_url)
+        except (HTTPError, ConnectTimeout, RequestException) as e:
+            logger.error("Not scrapped document on day %s: %s", day_url, e)
         logger.info("Downloaded BOE content for day %s", day)
         return metadata_documents
 
@@ -199,7 +204,7 @@ class BOEScrapper(BaseScrapper):
         logger = lg.getLogger(self.download_document.__name__)
         logger.info("Scrapping document: %s", url)
         try:
-            response = requests_retry_session().get(url, timeout=10)
+            response = requests_retry_session().get(url, timeout=20)
             response.raise_for_status()
             soup = BeautifulSoup(response.text, "lxml")
             with tempfile.NamedTemporaryFile("w", delete=False) as fn:
@@ -210,6 +215,6 @@ class BOEScrapper(BaseScrapper):
             )
             logger.info("Scrapped document successfully %s", url)
             return metadata_doc
-        except (HTTPError, ConnectTimeout) as e:
+        except (HTTPError, ConnectTimeout, RequestException) as e:
             logger.error("Failed to download document %s: %s", url, e)
             raise
