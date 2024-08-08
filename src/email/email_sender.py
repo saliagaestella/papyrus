@@ -3,7 +3,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 
-def send_email(documents):
+def send_email(documents, collection_name):
     smtp_server = "smtp.gmail.com"
     port = 587
     sender_email = "6inimartin6@gmail.com"
@@ -15,7 +15,7 @@ def send_email(documents):
     message["From"] = sender_email
     message["To"] = ", ".join(receiver_email)
 
-    html_content = write_html(documents)
+    html_content = write_html(documents, collection_name)
 
     part = MIMEText(html_content, "html")
     message.attach(part)
@@ -34,14 +34,14 @@ def send_email(documents):
     return 0
 
 
-def write_html(documents):
+def write_html(documents, collection_name):
     html_content = f"""
     <html>
     <head>
         <title>Newsletter</title>
     </head>
     <body>
-        <h1>Resumen de Novedades Normativas</h1>"""
+        <h1>Resumen de Novedades Normativas:</h1> {collection_name}"""
 
     for key, document in documents.items():
         output_final = document[1]
