@@ -41,7 +41,7 @@ def write_html(documents, collection_name):
         <title>Newsletter</title>
     </head>
     <body>
-        <h1>Resumen de Novedades Normativas:</h1> {collection_name}"""
+        <h1>Resumen de Novedades Normativas: {collection_name}</h1>"""
 
     for key, document in documents.items():
         output_final = document[1]
