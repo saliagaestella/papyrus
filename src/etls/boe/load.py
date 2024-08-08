@@ -14,7 +14,7 @@ def today_boe():
     for doc in docs:
         loader = TextLoader(file_path=doc.filepath, metadata=doc.dict())
         document = loader.load()
-        documents[document.metadata["identificador"]] = document
+        documents[document[0].metadata["identificador"]] = document[0]
         os.remove(doc.filepath)
 
     return documents

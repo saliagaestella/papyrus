@@ -10,6 +10,7 @@ sys.path.append(os.getenv("PROJECT_PATH"))
 from src.docs_processor.processor import DocumentProcessor
 from src.etls.boe.load import dates, today_boe
 from src.etls.bocm.load import today_bocm
+from src.etls.boa.load import today_boa
 from src.initialize import Initializer
 from src.email.email_sender import send_email
 from src.database.upload_documents import upload_documents
@@ -31,6 +32,12 @@ def main():
         processor=processor,
         initializer=initializer,
         collection_name="BOCM",
+    )
+    process_documents(
+        documents=today_boa(),
+        processor=processor,
+        initializer=initializer,
+        collection_name="BOA",
     )
 
 
@@ -66,7 +73,7 @@ def process_documents(documents, processor, initializer, collection_name):
 
     if results:
         upload_documents(results, initializer)
-        send_email(results)
+        send_email(results, collection_name)
 
         for result in results:
             print(result)
