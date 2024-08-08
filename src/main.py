@@ -11,6 +11,7 @@ from src.docs_processor.processor import DocumentProcessor
 from src.etls.boe.load import dates, today_boe
 from src.etls.bocm.load import today_bocm
 from src.etls.boa.load import today_boa
+from src.etls.boja.load import today_boja
 from src.initialize import Initializer
 from src.email.email_sender import send_email
 from src.database.upload_documents import upload_documents
@@ -38,6 +39,12 @@ def main():
         processor=processor,
         initializer=initializer,
         collection_name="BOA",
+    )
+    process_documents(
+        documents=today_boja(),
+        processor=processor,
+        initializer=initializer,
+        collection_name="BOJA",
     )
 
 
