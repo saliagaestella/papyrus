@@ -23,36 +23,45 @@ def main():
     processor = DocumentProcessor(initializer=initializer)
     # documents = dates(date_start="2024/06/01", date_end="2024/06/07")
 
-    process_documents(
+    results_boe = process_documents(
         documents=today_boe(),
         processor=processor,
         initializer=initializer,
         collection_name="BOE",
     )
-    process_documents(
+    results_bocm = process_documents(
         documents=today_bocm(),
         processor=processor,
         initializer=initializer,
         collection_name="BOCM",
     )
-    process_documents(
+    results_boa = process_documents(
         documents=today_boa(),
         processor=processor,
         initializer=initializer,
         collection_name="BOA",
     )
-    process_documents(
+    results_boja = process_documents(
         documents=today_boja(),
         processor=processor,
         initializer=initializer,
         collection_name="BOJA",
     )
-    process_documents(
+    results_bopv = process_documents(
         documents=today_bopv(),
         processor=processor,
         initializer=initializer,
         collection_name="BOPV",
     )
+
+    results_joined = (
+        results_boe | results_bocm | results_boa | results_boja | results_bopv
+    )
+
+    if not results_joined:
+        return
+    else:
+        send_email(results_joined, "TODO")
 
 
 def process_documents(documents, processor, initializer, collection_name):
@@ -76,7 +85,7 @@ def process_documents(documents, processor, initializer, collection_name):
         warnings.warn(
             f"No new documents found to process for collection {collection_name}."
         )
-        return
+        return {}
 
     for doc_id, document in new_documents.items():
         try:
@@ -87,10 +96,9 @@ def process_documents(documents, processor, initializer, collection_name):
 
     if results:
         upload_documents(results, initializer)
-        send_email(results, collection_name)
-
         for result in results:
             print(result)
+        return results
 
 
 if __name__ == "__main__":
