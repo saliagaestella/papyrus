@@ -47,7 +47,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
       
       - name: Deploy to Vercel
-        run: npx vercel --token ${{ secrets.VERCEL_TOKEN }} --prod
+        run: npx vercel --token ${{ secrets.VERCEL_TOKEN }} --prod --yes
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
