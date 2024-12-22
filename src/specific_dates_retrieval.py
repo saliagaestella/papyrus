@@ -20,10 +20,11 @@ from src.database.upload_documents import upload_documents
 
 def download_dates():
     initializer = Initializer()
+
     processor = DocumentProcessor(initializer=initializer)
 
     results_boe = process_documents(
-        documents=dates_boe(date_start="2024/12/21", date_end="2024/12/21"),
+        documents=dates_boe(date_start="2024/12/12", date_end="2024/12/12"),
         processor=processor,
         initializer=initializer,
         collection_name="BOE",
@@ -63,7 +64,7 @@ def download_dates():
     if not results_joined:
         return
     else:
-        send_email(results_joined, "TODO")
+        send_email(results_joined)
 
 
 def process_documents(documents, processor, initializer, collection_name):

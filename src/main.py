@@ -60,7 +60,7 @@ def main():
     if not results_joined:
         return
     else:
-        send_email(results_joined, "TODO")
+        send_email(results_joined)
 
 
 def process_documents(documents, processor, initializer, collection_name):
