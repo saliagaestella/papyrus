@@ -24,7 +24,7 @@ def download_dates():
     processor = DocumentProcessor(initializer=initializer)
 
     results_boe = process_documents(
-        documents=dates_boe(date_start="2024/12/12", date_end="2024/12/12"),
+        documents=dates_boe(date_start="2024/12/4", date_end="2024/12/4"),
         processor=processor,
         initializer=initializer,
         collection_name="BOE",

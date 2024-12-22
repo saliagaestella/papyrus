@@ -1,6 +1,7 @@
 import json
 import os
 import tiktoken
+import logging as lg
 from src.initialize import Initializer
 from src.docs_processor.utils import (
     create_chunks,
@@ -17,6 +18,7 @@ class DocumentProcessor:
         self.results = None
 
     def process_document(self, text: str):
+        logger = lg.getLogger(self.process_document.__name__)
         clean_text = text.replace("  ", " ").replace("\n", "; ").replace(";", " ")
         max_tokens_response_summary = (
             int(self.config["max_words_response_summary"]) * 4 / 3
@@ -27,11 +29,12 @@ class DocumentProcessor:
             clean_text,
             self.config,
         )
-        print(chunk_tokens)
+
+        logger.info(f"Total tokens in the chunk: {chunk_tokens}")
 
         chunks = create_chunks(clean_text, chunk_tokens, self.tokenizer)
         text_chunks = [self.tokenizer.decode(chunk) for chunk in chunks]
-        print(f"Number of API calls/chunks: {len(text_chunks)}")
+        logger.info(f"Number of API calls/chunks: {len(text_chunks)}")
 
         self.results = [self._process_chunk(chunk) for chunk in text_chunks]
         self._postprocess_results()
@@ -42,12 +45,13 @@ class DocumentProcessor:
         return self.results
 
     def _process_chunk(self, chunk: str):
+        logger = lg.getLogger(self._process_chunk.__name__)
         result, input_token, output_token = extract_chunk(
             chunk, self.config, self.initializer.openai_client
         )
-        print(f"Result: \n {result}")
-        print(f"Number of input tokens: {input_token}")
-        print(f"Number of output tokens: {output_token}")
+        logger.info(f"Result: \n {result}")
+        logger.info(f"Number of input tokens: {input_token}")
+        logger.info(f"Number of output tokens: {output_token}")
         return result
 
     def _postprocess_results(self):

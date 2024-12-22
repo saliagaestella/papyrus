@@ -1,5 +1,6 @@
+from textwrap import dedent
 import tiktoken
-
+import logging as lg
 
 from src.initialize import Initializer
 
@@ -13,6 +14,7 @@ def num_tokens_from_string(string: str, model) -> int:
 
 
 def max_tokens_per_chunk(prompt, max_tokens_response_summary, clean_text, config):
+    logger = lg.getLogger(max_tokens_per_chunk.__name__)
 
     tokens_prompt_summary = num_tokens_from_string(prompt, config["model"])
     max_doc_tokens_per_prompt = (
@@ -23,7 +25,7 @@ def max_tokens_per_chunk(prompt, max_tokens_response_summary, clean_text, config
     ) / 1.5  # por condición de tokenizer, para no cortar a mitad de frase
     total_doc_tokens = num_tokens_from_string(clean_text, config["model"])
 
-    print(total_doc_tokens)
+    logger.info(f"Total tokens in the document: {total_doc_tokens}")
     return max_doc_tokens_per_prompt
 
 
@@ -69,7 +71,7 @@ def extract_chunk(document, config, client):
     messages = [
         {
             "role": "system",
-            "content": system_prompt,
+            "content": dedent(system_prompt),
         },
         {"role": "user", "content": document},
     ]

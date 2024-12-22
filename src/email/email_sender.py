@@ -52,7 +52,7 @@ def write_html(documents):
                 font-family: 'Arial', sans-serif;
                 margin: 0;
                 padding: 0;
-                background-color: #f4f4f9;
+                background-color: #FAF7F0;
                 color: #333;
             }}
             .container {{
@@ -65,16 +65,17 @@ def write_html(documents):
             }}
             h1 {{
                 text-align: center;
-                color: #0056b3;
+                color: #05141C;
             }}
             h2 {{
-                color: #0077cc;
+                color: #89A231;
             }}
             p {{
                 line-height: 1.6;
+                color: #05141C;
             }}
             a {{
-                color: #0077cc;
+                color: #89A231;
                 text-decoration: none;
             }}
             a:hover {{
@@ -122,14 +123,10 @@ def write_html(documents):
                 <p><strong>Resumen:</strong> {document[1]['resumenes']}</p>
                 <p><strong>Impacto:</strong> {'; '.join(document[1]['impactos'])}</p>
                 <p><a href="https://www.boe.es/diario_boe/txt.php?id={key}">Leer más: {key}</a></p>
-                <div class="share-buttons">
-                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.boe.es/diario_boe/txt.php?id={key}" class="linkedin">Compartir en LinkedIn</a>
-                    <a href="https://api.whatsapp.com/send?text=Echa un vistazo a este documento: https://www.boe.es/diario_boe/txt.php?id={key}" class="whatsapp">Compartir en WhatsApp</a>
-                </div>
             </div>''' for key, document in documents.items())}
 
             <div class="footer">
-                <p>&copy; {date.today().year} Resumen de Normativas. Todos los derechos reservados.</p>
+                <p>&copy; {date.today().year} Papyrus. Todos los derechos reservados.</p>
             </div>
         </div>
     </body>
