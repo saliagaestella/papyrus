@@ -8,7 +8,7 @@ load_dotenv()
 sys.path.append(os.getenv("PROJECT_PATH"))
 
 from src.docs_processor.processor import DocumentProcessor
-from src.etls.boe.load import dates, today_boe
+from src.etls.boe.load import dates_boe, today_boe
 from src.etls.bocm.load import today_bocm
 from src.etls.boa.load import today_boa
 from src.etls.boja.load import today_boja
@@ -18,16 +18,17 @@ from src.email.email_sender import send_email
 from src.database.upload_documents import upload_documents
 
 
-def main():
+def download_dates():
     initializer = Initializer()
     processor = DocumentProcessor(initializer=initializer)
 
     results_boe = process_documents(
-        documents=today_boe(),
+        documents=dates_boe(date_start="2024/12/21", date_end="2024/12/21"),
         processor=processor,
         initializer=initializer,
         collection_name="BOE",
     )
+    """
     results_bocm = process_documents(
         documents=today_bocm(),
         processor=processor,
@@ -55,7 +56,9 @@ def main():
 
     results_joined = (
         results_boe | results_bocm | results_boa | results_boja | results_bopv
-    )
+    )"""
+
+    results_joined = results_boe
 
     if not results_joined:
         return
@@ -101,4 +104,4 @@ def process_documents(documents, processor, initializer, collection_name):
 
 
 if __name__ == "__main__":
-    main()
+    download_dates()

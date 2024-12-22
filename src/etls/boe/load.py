@@ -20,7 +20,7 @@ def today_boe():
     return documents
 
 
-def dates(date_start: str, date_end: str):
+def dates_boe(date_start: str, date_end: str):
     boe_scrapper = BOEScrapper()
     docs = boe_scrapper.download_days(
         date_start=datetime.strptime(date_start, "%Y/%m/%d").date(),
@@ -30,7 +30,7 @@ def dates(date_start: str, date_end: str):
     for doc in docs:
         loader = TextLoader(file_path=doc.filepath, metadata=doc.dict())
         document = loader.load()
-        documents[document.metadata["identificador"]] = document
+        documents[document[0].metadata["identificador"]] = document[0]
         os.remove(doc.filepath)
 
     return documents

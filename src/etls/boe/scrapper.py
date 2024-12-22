@@ -6,6 +6,7 @@ import typing as tp
 from datetime import date, datetime
 
 from bs4 import BeautifulSoup
+import requests
 from requests.exceptions import HTTPError
 
 from src.etls.boe.metadata import BOEMetadataDocument, BOEMetadataReferencia
@@ -106,30 +107,26 @@ def _extract_metadata(soup) -> tp.Dict:
     return metadata_dict
 
 
-def _list_links_day(url: str) -> tp.List[str]:
+def _list_links_day(day_url: str, content: str) -> tp.List[str]:
     """Get a list of links in a BOE url day filtering by Seccion 1 and Seccion T.
 
-    :param url: day url link. Example: https://www.boe.es/diario_boe/xml.php?id=BOE-S-20230817
+    :param content: Content of the request. Example: https://www.boe.es/diario_boe/xml.php?id=BOE-S-20230817
     :return: list of id documents to explore (links)
     """
     logger = lg.getLogger(_list_links_day.__name__)
-    logger.info("Scrapping day: %s", url)
-    session = create_retry_session(retries=10)
-    response = session.get(url, timeout=10)
-    response.raise_for_status()
-    soup = BeautifulSoup(response.text, "lxml")
+    logger.info("Scrapping day: %s", day_url)
+    soup = BeautifulSoup(content, features="xml")
     id_links = [
-        url.text.split("?id=")[-1]
+        url.text.split("?id=")[-1]  # Extract the ID from the URL
         for section in soup.find_all(
             lambda tag: tag.name == "seccion"
-            and "num" in tag.attrs
-            and (
-                tag.attrs["num"] == "1" or tag.attrs["num"] == "T"
-            )  # Note: Sección 1 and Tribunal Supremo
+            and "codigo" in tag.attrs
+            and tag.attrs["codigo"] in ["1", "T"]  # Filter seccion 1 or Tribunal Supremo
         )
-        for url in section.find_all("urlxml")
+        for item in section.find_all("item")  # Go deeper into <item>
+        for url in item.find_all("url_xml")  # Find <url_xml> inside <item>
     ]
-    logger.info("Scrapped day successfully %s (%s BOE documents)", url, len(id_links))
+    logger.info("Scrapped day successfully %s (%s BOE documents)", day_url, len(id_links))
     return id_links
 
 
@@ -139,26 +136,33 @@ class BOEScrapper(BaseScrapper):
         logger = lg.getLogger(self.download_day.__name__)
         logger.info("Downloading BOE content for day %s", day)
         day_str = day.strftime("%Y%m%d")
-        day_url = f"https://www.boe.es/diario_boe/xml.php?id=BOE-S-{day_str}"
+        day_url = f"https://www.boe.es/datosabiertos/api/boe/sumario/{day_str}"
         metadata_documents = []
         try:
-            id_links = _list_links_day(day_url)
+            headers = {'Accept': 'application/xml'}
+            response = requests.get(day_url, headers=headers)
+            response.raise_for_status()  # This will raise an HTTPError for bad responses
+            id_links = _list_links_day(day_url, response.text)
             for id_link in id_links:
                 url_document = f"https://www.boe.es/diario_boe/xml.php?id={id_link}"
-                time.sleep(random.uniform(5, 10))
                 try:
                     metadata_doc = self.download_document(url_document)
                     metadata_documents.append(metadata_doc)
-                except HTTPError:
+                except HTTPError as e:
                     logger.error(
-                        "Not scrapped document %s on day %s", url_document, day_url
+                        "Not scrapped document %s on day %s. HTTPError: %s",
+                        url_document,
+                        day_url,
+                        e,
                     )
                 except AttributeError:
                     logger.error(
                         "Not scrapped document %s on day %s", url_document, day_url
                     )
-        except HTTPError:
-            logger.error("Not scrapped document on day %s", day_url)
+        except HTTPError as e:
+            logger.error("Not scrapped document on day %s. HTTPError: %s", day_url, e)
+            logger.error("Status Code: %s, Response Content: %s", e.response.status_code, e.response.text)
+            print(e.response.status_code, e.response.text, e)
         logger.info("Downloaded BOE content for day %s", day)
         return metadata_documents
 
