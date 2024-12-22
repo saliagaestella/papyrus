@@ -2,9 +2,11 @@ from datetime import date
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+import logging as lg
 
 
 def send_email(documents):
+    logger = lg.getLogger(send_email.__name__)
     smtp_server = "smtp.gmail.com"
     port = 587
     sender_email = "6inimartin6@gmail.com"
@@ -30,9 +32,9 @@ def send_email(documents):
         server.starttls()
         server.login(sender_email, password)
         server.sendmail(sender_email, receiver_email, message.as_string())
-        print("El correo ha sido enviado exitosamente.")
+        logger.info("El correo ha sido enviado exitosamente.")
     except Exception as e:
-        print(f"Error al enviar el correo: {e}")
+        logger.info(f"Error al enviar el correo: {e}")
     finally:
         server.quit()
 
@@ -43,6 +45,8 @@ def write_html(documents):
     html_content = f"""
     <!DOCTYPE html>
     <html lang="es">
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,6 +58,7 @@ def write_html(documents):
                 padding: 0;
                 background-color: #FAF7F0;
                 color: #333;
+                -webkit-appearance: none;
             }}
             .container {{
                 max-width: 800px;
@@ -62,6 +67,7 @@ def write_html(documents):
                 background-color: #ffffff;
                 border-radius: 8px;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                -webkit-appearance: none;
             }}
             h1 {{
                 text-align: center;
@@ -91,23 +97,6 @@ def write_html(documents):
                 margin-top: 20px;
                 font-size: 0.9em;
                 color: #666;
-            }}
-            .share-buttons {{
-                margin-top: 20px;
-                text-align: center;
-            }}
-            .share-buttons a {{
-                margin: 0 10px;
-                text-decoration: none;
-                color: #ffffff;
-                padding: 10px 20px;
-                border-radius: 5px;
-            }}
-            .linkedin {{
-                background-color: #0077b5;
-            }}
-            .whatsapp {{
-                background-color: #25d366;
             }}
         </style>
     </head>
