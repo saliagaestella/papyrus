@@ -17,7 +17,7 @@ class DocumentProcessor:
         self.config = initializer.config
         self.results = None
 
-    def process_document(self, text: str, name: str):
+    def process_document(self, text: str, name: str = None):
         logger = lg.getLogger(self.process_document.__name__)
         clean_text = text.replace("  ", " ").replace("\n", "; ").replace(";", " ")
         max_tokens_response_summary = (
@@ -41,7 +41,10 @@ class DocumentProcessor:
         self._clean_aggregated_results()
         self._unify_summary()
         self._generate_final_summary()
-        self._shorten_name(name)
+        if name:
+            self._shorten_name(name)
+        else:
+            self.results["short_name"] = None
 
         return self.results
 

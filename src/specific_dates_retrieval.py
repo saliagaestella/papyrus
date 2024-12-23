@@ -92,7 +92,11 @@ def process_documents(documents, processor, initializer, collection_name):
 
     for doc_id, document in new_documents.items():
         try:
-            ai_result = processor.process_document(text=document.page_content, name=document.metadata["titulo"])
+            name = document.metadata["titulo"]
+        except:
+            name = None
+        try:
+            ai_result = processor.process_document(text=document.page_content, name=name)
             results[doc_id] = [document, ai_result]
         except Exception as e:
             print(f"Failed to process document {doc_id}: {e}")
