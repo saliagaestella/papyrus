@@ -8,7 +8,7 @@ load_dotenv()
 sys.path.append(os.getenv("PROJECT_PATH"))
 
 from src.docs_processor.processor import DocumentProcessor
-from src.etls.boe.load import dates_boe, today_boe
+from src.etls.boe.load import dates_boe
 from src.etls.bocm.load import today_bocm
 from src.etls.boa.load import today_boa
 from src.etls.boja.load import today_boja
@@ -24,7 +24,7 @@ def download_dates():
     processor = DocumentProcessor(initializer=initializer)
 
     results_boe = process_documents(
-        documents=dates_boe(date_start="2024/11/28", date_end="2024/11/28"),
+        documents=dates_boe(date_start="2024/11/22", date_end="2024/11/22"),
         processor=processor,
         initializer=initializer,
         collection_name="BOE",
@@ -92,7 +92,7 @@ def process_documents(documents, processor, initializer, collection_name):
 
     for doc_id, document in new_documents.items():
         try:
-            ai_result = processor.process_document(document.page_content)
+            ai_result = processor.process_document(text=document.page_content, name=document.metadata["titulo"])
             results[doc_id] = [document, ai_result]
         except Exception as e:
             print(f"Failed to process document {doc_id}: {e}")

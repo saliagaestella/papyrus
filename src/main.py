@@ -8,7 +8,7 @@ load_dotenv()
 sys.path.append(os.getenv("PROJECT_PATH"))
 
 from src.docs_processor.processor import DocumentProcessor
-from src.etls.boe.load import dates, today_boe
+from src.etls.boe.load import today_boe
 from src.etls.bocm.load import today_bocm
 from src.etls.boa.load import today_boa
 from src.etls.boja.load import today_boja

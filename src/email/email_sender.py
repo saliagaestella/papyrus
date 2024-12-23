@@ -106,7 +106,7 @@ def write_html(documents):
 
             {''.join(f'''
             <div class="document">
-                <h2>{document[0].metadata["titulo"]}</h2>
+                <h2>{document[1]["short_name"]}</h2>
                 <p><strong>Etiquetas:</strong> {'; '.join(document[1]['etiquetas'])}</p>
                 <p><strong>Stakeholders:</strong> {', '.join(document[1]['stakeholders'])}</p>
                 <p><strong>Resumen:</strong> {document[1]['resumenes']}</p>

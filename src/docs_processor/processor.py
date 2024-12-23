@@ -17,7 +17,7 @@ class DocumentProcessor:
         self.config = initializer.config
         self.results = None
 
-    def process_document(self, text: str):
+    def process_document(self, text: str, name: str):
         logger = lg.getLogger(self.process_document.__name__)
         clean_text = text.replace("  ", " ").replace("\n", "; ").replace(";", " ")
         max_tokens_response_summary = (
@@ -41,6 +41,7 @@ class DocumentProcessor:
         self._clean_aggregated_results()
         self._unify_summary()
         self._generate_final_summary()
+        self._shorten_name(name)
 
         return self.results
 
@@ -195,3 +196,27 @@ class DocumentProcessor:
             response.usage.prompt_tokens,
             response.usage.completion_tokens,
         )
+
+    def _shorten_name(self, name: str):
+        messages = [
+            {
+                "role": "system",
+                "content": "Tu trabajo es acortar el nombre del documento a un nombre más corto, manteniendo la profesionalidad",
+            },
+            {"role": "user", "content": name},
+        ]
+
+        client = self.initializer.openai_client
+        response = client.chat.completions.create(
+            model=self.config["model"],
+            messages=messages,
+            temperature=0,
+            max_tokens=500,
+            top_p=1,
+            frequency_penalty=0,
+            presence_penalty=0,
+        )
+
+        short_name = response.choices[0].message.content
+
+        self.results["short_name"] = short_name
