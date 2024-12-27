@@ -108,9 +108,7 @@ def write_html(documents):
             <div class="document">
                 <h2>{document[1]["short_name"]}</h2>
                 <p><strong>Etiquetas:</strong> {'; '.join(document[1]['etiquetas'])}</p>
-                <p><strong>Stakeholders:</strong> {', '.join(document[1]['stakeholders'])}</p>
                 <p><strong>Resumen:</strong> {document[1]['resumenes']}</p>
-                <p><strong>Impacto:</strong> {'; '.join(document[1]['impactos'])}</p>
                 <p><a href="https://www.boe.es/diario_boe/txt.php?id={key}">Leer más: {key}</a></p>
             </div>''' for key, document in documents.items())}
 
