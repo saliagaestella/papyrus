@@ -52,8 +52,9 @@ def write_html(documents):
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Newsletter</title>
         <style>
+            @import url('https://fonts.googleapis.com/css2?family=Aptos:wght@400;700&display=swap');
             body {{
-                font-family: 'Arial', sans-serif;
+                font-family: 'Aptos', sans-serif;
                 margin: 0;
                 padding: 0;
                 background-color: #FAF7F0;
@@ -98,18 +99,27 @@ def write_html(documents):
                 font-size: 0.9em;
                 color: #666;
             }}
+            .etiqueta {{
+                display: inline-block;
+                background-color: #FAF7F0;
+                color: #05141C;
+                padding: 5px 10px;
+                border-radius: 15px;
+                margin: 2px;
+                font-size: 0.9em;
+            }}
         </style>
     </head>
     <body>
         <div class="container">
-            <h1>Resumen de Novedades Normativas: {date.today()}</h1>
+            <h1>Papyrus Newsletter {date.today()}</h1>
 
             {''.join(f'''
             <div class="document">
                 <h2>{document[1]["short_name"]}</h2>
-                <p><strong>Etiquetas:</strong> {'; '.join(document[1]['etiquetas'])}</p>
+                <p>{''.join(f'<span class="etiqueta">{etiqueta}</span>' for etiqueta in document[1]['etiquetas'])}</p>
                 <p>{document[1]['resumenes']}</p>
-                <p><a href="https://www.boe.es/diario_boe/txt.php?id={key}">Leer más: {key}</a></p>
+                <p><a href="{document[0].metadata["url_html"]}">Leer más: {key}</a></p>
             </div>''' for key, document in documents.items())}
 
             <div class="footer">

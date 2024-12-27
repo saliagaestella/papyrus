@@ -20,6 +20,7 @@ def _extract_metadata(soup) -> tp.Dict:
     # Metadatos
     if identificador := soup.documento.metadatos.identificador:
         metadata_dict["identificador"] = identificador.get_text()
+        metadata_dict["url_html"] = f"https://www.boe.es/diario_boe/txt.php?id={identificador.get_text()}"
 
     if diario := soup.documento.metadatos.diario:
         metadata_dict["diario"] = diario.get_text()
@@ -37,7 +38,7 @@ def _extract_metadata(soup) -> tp.Dict:
         metadata_dict["titulo"] = titulo.get_text()
 
     if url_pdf := soup.documento.metadatos.url_pdf:
-        metadata_dict["url_pdf"] = url_pdf.get_text()
+        metadata_dict["url_pdf"] = f"https://www.boe.es{url_pdf.get_text()}"
 
     if origen_legislativo := soup.documento.metadatos.origen_legislativo:
         metadata_dict["origen_legislativo"] = origen_legislativo.get_text()

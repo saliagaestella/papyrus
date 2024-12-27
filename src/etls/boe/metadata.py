@@ -30,6 +30,7 @@ class BOEMetadataDocument(MetadataDocument):
     rango: str = ""
     titulo: str
     url_pdf: str
+    url_html: str
     origen_legislativo: str = ""
     fecha_publicacion: str
     fecha_disposicion: str = ""
