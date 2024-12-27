@@ -87,7 +87,7 @@ def _extract_metadata(soup) -> tp.Dict:
     metadata_dict["tipo"] = tipo
     metadata_dict["apartado"] = apartado
 
-    metadata_dict["titulo"] = cve
+    metadata_dict["titulo"] = soup.find('div', {'id': 'entradilla'}).get_text(strip=True)
     metadata_dict["url_pdf"] = pdf_link
     metadata_dict["url_html"] = html_link
 

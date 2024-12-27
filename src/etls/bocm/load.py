@@ -1,4 +1,4 @@
-from datetime import date, datetime
+from datetime import date
 import os
 
 from src.etls.bocm.scrapper import BOCMScrapper
