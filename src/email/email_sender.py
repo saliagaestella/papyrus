@@ -119,7 +119,7 @@ def write_html(documents):
                 <h2>{document[1]["short_name"]}</h2>
                 <p>{''.join(f'<span class="etiqueta">{etiqueta}</span>' for etiqueta in document[1]['etiquetas'])}</p>
                 <p>{document[1]['resumenes']}</p>
-                <p><a href="{document[0].metadata["url_html"]}">Leer más: {key}</a></p>
+                <p><a href="{document[0].metadata["url_pdf"]}">Leer más: {key}</a></p>
             </div>''' for key, document in documents.items())}
 
             <div class="footer">
