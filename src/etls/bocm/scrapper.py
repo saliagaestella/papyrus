@@ -87,7 +87,9 @@ def _extract_metadata(soup) -> tp.Dict:
     metadata_dict["tipo"] = tipo
     metadata_dict["apartado"] = apartado
 
-    metadata_dict["titulo"] = soup.find('div', {'id': 'entradilla'}).get_text(strip=True)
+    metadata_dict["titulo"] = soup.find("div", {"id": "entradilla"}).get_text(
+        strip=True
+    )
     metadata_dict["url_pdf"] = pdf_link
     metadata_dict["url_html"] = html_link
 
@@ -123,7 +125,7 @@ def _list_links_day(url: str) -> tp.List[str]:
     soup = BeautifulSoup(response.text, features="lxml")
 
     # filter by sections
-    sections_to_filter = ["1-A", "3-", "4-"]
+    sections_to_filter = ["1-A"]
     filtered_links = filter_links_by_section(soup, sections_to_filter)
     logger.info(
         "Scrapped day successfully %s (%s BOCM documents)", url, len(filtered_links)
