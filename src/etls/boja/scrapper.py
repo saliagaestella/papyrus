@@ -4,6 +4,9 @@ import typing as tp
 from datetime import date
 import re
 
+from pypdf import PdfReader
+import requests
+
 from src.etls.boja.metadata import BOJAMetadataDocument
 from src.etls.common.scrapper import BaseScrapper
 from src.etls.common.utils import ScrapperError, HTTPRequester
@@ -201,6 +204,17 @@ class BOJAScrapper(BaseScrapper):
                 else (h3.text.strip() if h3 is not None else "")
             )
             enlace_pdf = soup.find("a", class_="item_pdf_disposicion").get("href")
+            try:
+                pdf = requests.get(enlace_pdf, headers={"Accept": "application/pdf"})
+                with open("temp.pdf", "wb") as f:
+                    f.write(pdf.content)
+                with open("temp.pdf", "rb") as f:
+                    reader = PdfReader(f)
+                    num_paginas = len(reader.pages)
+                    tiempo_lectura = round(num_paginas * 2.5)
+            except:
+                pass
+
             parrafos = cuerpo.find_all("p")
 
             for parrafo in parrafos:
@@ -218,6 +232,8 @@ class BOJAScrapper(BaseScrapper):
                     "titulo": titulo,
                     "departamento": clean_text(organo_disposicion),
                     "url_pdf": enlace_pdf,
+                    "num_paginas": num_paginas,
+                    "tiempo_lectura": tiempo_lectura,
                     "tipologia": re.sub(r"^\d+\.\s*", "", tipo_disposicion),
                 }
             )

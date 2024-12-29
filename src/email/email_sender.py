@@ -5,7 +5,7 @@ from email.mime.text import MIMEText
 import logging as lg
 
 
-def send_email(documents):
+def send_email(documents, dates=date.today()):
     logger = lg.getLogger(send_email.__name__)
     smtp_server = "smtp.gmail.com"
     port = 587
@@ -41,7 +41,7 @@ def send_email(documents):
     return 0
 
 
-def write_html(documents):
+def write_html(documents, dates):
     html_content = f"""
     <!DOCTYPE html>
     <html lang="es">
@@ -116,7 +116,7 @@ def write_html(documents):
     </head>
     <body>
         <div class="container">
-            <h1>Papyrus Newsletter {date.today()}</h1>
+            <h1>Papyrus Newsletter {dates}</h1>
 
             {''.join(f'''
             <div class="document">

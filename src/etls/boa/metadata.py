@@ -22,6 +22,8 @@ class BOAMetadataDocument(MetadataDocument):
     subseccion: Optional[str] = None 
     rango: Optional[str] = None 
     codigo_materia: Optional[str] = None 
+    num_paginas: Optional[int] = None
+    tiempo_lectura: Optional[int] = None
 
     # Links
     titulo: Optional[str] = None 

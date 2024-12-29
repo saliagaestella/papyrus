@@ -18,6 +18,8 @@ class BOPVMetadataDocument(MetadataDocument):
     identificador: str
     departamento: Optional[str] = None
     tipologia: str
+    num_paginas: Optional[int] = None
+    tiempo_lectura: Optional[int] = None
 
     # Links
     titulo: Optional[str] = None

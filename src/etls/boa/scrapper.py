@@ -6,6 +6,7 @@ import random
 import json 
 from lxml import etree
 
+from pypdf import PdfReader
 import requests
 
 from src.etls.boa.metadata import BOAMetadataDocument
@@ -41,10 +42,20 @@ def _extract_metadata(doc: dict) -> tp.Dict:
         pass
     
     try:
-        metadata_dict["url_pdf"] = doc["UrlPdf"].split('´`')[0][1:]
-    except KeyError:
+        url_pdf = doc["UrlPdf"].split('´`')[0][1:]
+        metadata_dict["url_pdf"] = url_pdf
+
+        pdf = requests.get(url_pdf, headers={"Accept": "application/pdf"})
+        with open("temp.pdf", "wb") as f:
+            f.write(pdf.content)
+        with open("temp.pdf", "rb") as f:
+            reader = PdfReader(f)
+            num_paginas = len(reader.pages)
+            metadata_dict["num_paginas"] = num_paginas
+            metadata_dict["tiempo_lectura"] = round(num_paginas * 2.5)
+    except:
         pass
-    
+
     try:
         metadata_dict["url_boletin"] = doc["UrlBCOM"].split('´`')[0][1:]
     except KeyError:

@@ -1,3 +1,4 @@
+from datetime import date
 import os
 import sys
 import warnings
@@ -60,7 +61,7 @@ def main():
     if not results_joined:
         return
     else:
-        send_email(results_joined)
+        send_email(documents=results_joined, dates=date.today())
 
 
 def process_documents(documents, processor, initializer, collection_name):
@@ -92,7 +93,9 @@ def process_documents(documents, processor, initializer, collection_name):
         except:
             name = None
         try:
-            ai_result = processor.process_document(text=document.page_content, name=name)
+            ai_result = processor.process_document(
+                text=document.page_content, name=name
+            )
             results[doc_id] = [document, ai_result]
         except Exception as e:
             print(f"Failed to process document {doc_id}: {e}")

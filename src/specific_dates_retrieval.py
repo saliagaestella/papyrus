@@ -22,8 +22,8 @@ def download_dates():
     initializer = Initializer()
 
     processor = DocumentProcessor(initializer=initializer)
-    date_start = "2024/11/12"
-    date_end = "2024/11/12"
+    date_start = "2024/11/11"
+    date_end = "2024/11/11"
 
     results_boe = process_documents(
         documents=dates_boe(date_start=date_start, date_end=date_end),
@@ -63,7 +63,7 @@ def download_dates():
     if not results_joined:
         return
     else:
-        send_email(results_joined)
+        send_email(documents=results_joined, dates=f"{date_start} - {date_end}")
 
 
 def process_documents(documents, processor, initializer, collection_name):

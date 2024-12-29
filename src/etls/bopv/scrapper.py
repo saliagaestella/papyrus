@@ -5,6 +5,7 @@ from datetime import date
 import re
 import random
 
+from pypdf import PdfReader
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
@@ -161,6 +162,17 @@ class BOPVScrapper(BaseScrapper):
             base_url = url.rsplit("/", 1)[0] + "/"
             pdf_href = pdf_link_tag.get("href") if pdf_link_tag else ""
             pdf_url = urljoin(base_url, pdf_href)
+            try:
+                pdf = requests.get(pdf_url, headers={"Accept": "application/pdf"})
+                with open("temp.pdf", "wb") as f:
+                    f.write(pdf.content)
+                with open("temp.pdf", "rb") as f:
+                    reader = PdfReader(f)
+                    num_paginas = len(reader.pages)
+                    tiempo_lectura = round(num_paginas * 2.5)
+            except:
+                pass
+
             paragraphs = content_block.find_all(
                 "p",
                 class_=re.compile(
@@ -186,6 +198,8 @@ class BOPVScrapper(BaseScrapper):
                     "identificador": "/".join(url.split(".")[-2].split("/")[-3:]),
                     "departamento": organismo,
                     "url_pdf": pdf_url,
+                    "num_paginas": num_paginas,
+                    "tiempo_lectura": tiempo_lectura,
                     "tipologia": tipologia,
                 }
             )

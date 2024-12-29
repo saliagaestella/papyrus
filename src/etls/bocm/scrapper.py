@@ -4,6 +4,7 @@ import typing as tp
 from datetime import date, datetime
 import re
 
+from pypdf import PdfReader
 import requests
 from bs4 import BeautifulSoup
 from requests.exceptions import HTTPError
@@ -63,8 +64,8 @@ def _extract_metadata(soup) -> tp.Dict:
     fecha_publicacion, cve, html_link = metadata_from_head_tags(soup)
 
     # Desc doc header
-    numero_oficial, seccion_normalizada, paginas, pdf_link = metadata_from_doc_header(
-        soup
+    numero_oficial, seccion_normalizada, num_paginas, pdf_link = (
+        metadata_from_doc_header(soup)
     )
 
     # Metadata from document
@@ -76,7 +77,8 @@ def _extract_metadata(soup) -> tp.Dict:
     metadata_dict["rango"] = rango
     metadata_dict["identificador"] = cve
     metadata_dict["numero_oficial"] = numero_oficial
-    metadata_dict["paginas"] = paginas
+    metadata_dict["num_paginas"] = int(num_paginas)
+    metadata_dict["tiempo_lectura"] = round(num_paginas * 2.5)
 
     # departamento always match with organo
     metadata_dict["departamento"] = organo
@@ -112,7 +114,7 @@ def _extract_metadata(soup) -> tp.Dict:
 
 
 def _list_links_day(url: str) -> tp.List[str]:
-    """Get a list of links in a BOCM url day filtering by Seccion 1-A, 3 and 4.
+    """Get a list of links in a BOCM url day filtering by Seccion 1-A.
 
     :param url: summary url link. Example: https://www.bocm.es/boletin-completo/BOCM-20240103/2
     :return: list of urls filtered by sections to download

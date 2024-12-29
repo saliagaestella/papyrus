@@ -18,6 +18,8 @@ class BOJAMetadataDocument(MetadataDocument):
     identificador: str
     departamento: str
     tipologia: str
+    num_paginas: Optional[int] = None
+    tiempo_lectura: Optional[int] = None
 
     # Links
     titulo: Optional[str] = None

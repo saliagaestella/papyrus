@@ -1,4 +1,4 @@
-import typing as tp
+from typing import Optional
 from datetime import datetime
 
 from pydantic import BaseModel, field_validator, Field
@@ -24,7 +24,6 @@ class BOCMMetadataDocument(MetadataDocument):
     # Metadatos
     identificador: str = Field(pattern=CVE_REGEX, examples=["BOCM-20240129-24"])
     numero_oficial: str = ""  # Número de boletín
-    paginas: str
     departamento: str  # órgano (excepto sección 4, que no tiene)
 
     seccion_normalizada: str
@@ -33,6 +32,8 @@ class BOCMMetadataDocument(MetadataDocument):
     tipo: str = ""
     apartado: str = ""
     rango: str = ""
+    num_paginas: Optional[int] = None
+    tiempo_lectura: Optional[int] = None
 
     # Links
     titulo: str  # title
