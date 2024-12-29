@@ -124,7 +124,11 @@ def write_html(documents, dates):
                 <h2>{document[1]["short_name"]}</h2>
                 <p>{''.join(f'<span class="etiqueta">{etiqueta}</span>' for etiqueta in document[1]['divisiones_cnae'])}</p>
                 <p>{document[1]['resumenes']}</p>
-                <p><a href="{document[0].metadata["url_pdf"]}">Leer más: {key}</a> <span class="less-opacity">{document[0].metadata["num_paginas"]} páginas - tiempo estimado de lectura: {round(document[0].metadata["num_paginas"] * 2.5)} minutos</span></p>
+                <p><a href="{document[0].metadata["url_pdf"]}">Leer más: {key}</a> 
+                <span class="less-opacity">
+                    {document[0].metadata["num_paginas"]} {"página" if document[0].metadata["num_paginas"] == 1 else "páginas"} 
+                    - tiempo estimado de lectura: {document[0].metadata["tiempo_lectura"]} minutos
+                </span></p>
             </div>''' for key, document in documents.items())}
 
             <div class="footer">
