@@ -9,10 +9,10 @@ sys.path.append(os.getenv("PROJECT_PATH"))
 
 from src.docs_processor.processor import DocumentProcessor
 from src.etls.boe.load import dates_boe
-from src.etls.bocm.load import today_bocm
-from src.etls.boa.load import today_boa
-from src.etls.boja.load import today_boja
-from src.etls.bopv.load import today_bopv
+from src.etls.bocm.load import dates_bocm
+from src.etls.boa.load import dates_boa
+from src.etls.boja.load import dates_boja
+from src.etls.bopv.load import dates_bopv
 from src.initialize import Initializer
 from src.email.email_sender import send_email
 from src.database.upload_documents import upload_documents
@@ -22,34 +22,35 @@ def download_dates():
     initializer = Initializer()
 
     processor = DocumentProcessor(initializer=initializer)
+    date_start = "2024/11/12"
+    date_end = "2024/11/12"
 
     results_boe = process_documents(
-        documents=dates_boe(date_start="2024/11/13", date_end="2024/11/13"),
+        documents=dates_boe(date_start=date_start, date_end=date_end),
         processor=processor,
         initializer=initializer,
         collection_name="BOE",
     )
-    """
     results_bocm = process_documents(
-        documents=today_bocm(),
+        documents=dates_bocm(date_start=date_start, date_end=date_end),
         processor=processor,
         initializer=initializer,
         collection_name="BOCM",
     )
     results_boa = process_documents(
-        documents=today_boa(),
+        documents=dates_boa(date_start=date_start, date_end=date_end),
         processor=processor,
         initializer=initializer,
         collection_name="BOA",
     )
     results_boja = process_documents(
-        documents=today_boja(),
+        documents=dates_boja(date_start=date_start, date_end=date_end),
         processor=processor,
         initializer=initializer,
         collection_name="BOJA",
     )
     results_bopv = process_documents(
-        documents=today_bopv(),
+        documents=dates_bopv(date_start=date_start, date_end=date_end),
         processor=processor,
         initializer=initializer,
         collection_name="BOPV",
@@ -57,9 +58,7 @@ def download_dates():
 
     results_joined = (
         results_boe | results_bocm | results_boa | results_boja | results_bopv
-    )"""
-
-    results_joined = results_boe
+    )
 
     if not results_joined:
         return
@@ -96,7 +95,9 @@ def process_documents(documents, processor, initializer, collection_name):
         except:
             name = None
         try:
-            ai_result = processor.process_document(text=document.page_content, name=name)
+            ai_result = processor.process_document(
+                text=document.page_content, name=name
+            )
             results[doc_id] = [document, ai_result]
         except Exception as e:
             print(f"Failed to process document {doc_id}: {e}")
