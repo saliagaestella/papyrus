@@ -24,7 +24,7 @@ class DocumentProcessor:
             int(self.config["max_words_response_summary"]) * 4 / 3
         )
         chunk_tokens = max_tokens_per_chunk(
-            self.config["prompt"],
+            self.config["prompt_resumen"],
             max_tokens_response_summary,
             clean_text,
             self.config,
@@ -64,26 +64,28 @@ class DocumentProcessor:
             "etiquetas": set(),
             "impactos": set(),
             "stakeholders": set(),
+            "divisiones_cnae": set(),
         }
 
-        for result in self.results:
-            data = json.loads(result)
+        for data in self.results:
             aggregated["resumenes"].append(data["resumen"])
             aggregated["impactos"].add(data["impacto"])
             self._aggregate_data(aggregated, "stakeholders", data["stakeholders"])
             self._aggregate_data(aggregated, "etiquetas", data["etiquetas"])
+            self._aggregate_data(aggregated, "divisiones_cnae", data["divisiones_cnae"])
 
         for key in aggregated.keys():
             if isinstance(aggregated[key], set):
                 aggregated[key] = list(aggregated[key])
+
         self.results = aggregated
 
-    def _aggregate_data(self, aggregated, key, data):
+    def _aggregate_data(self, dictionary, key, data):
         if isinstance(data, list):
             for item in data:
-                aggregated[key].add(item)
+                dictionary[key].add(item)
         else:
-            aggregated[key].add(data)
+            dictionary[key].add(data)
 
     def _clean_aggregated_results(self):
         etiquetas_posibles = [

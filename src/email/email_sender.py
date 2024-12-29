@@ -22,7 +22,7 @@ def send_email(documents, dates=date.today()):
     message["From"] = sender_email
     message["To"] = ", ".join(receiver_email)
 
-    html_content = write_html(documents)
+    html_content = write_html(documents, dates)
 
     part = MIMEText(html_content, "html")
     message.attach(part)
@@ -111,6 +111,7 @@ def write_html(documents, dates):
             .less-opacity {{
                 opacity: 0.6;
                 font-size: 0.9em;
+                font-style: italic;
             }}
         </style>
     </head>
@@ -121,7 +122,7 @@ def write_html(documents, dates):
             {''.join(f'''
             <div class="document">
                 <h2>{document[1]["short_name"]}</h2>
-                <p>{''.join(f'<span class="etiqueta">{etiqueta}</span>' for etiqueta in document[1]['etiquetas'])}</p>
+                <p>{''.join(f'<span class="etiqueta">{etiqueta}</span>' for etiqueta in document[1]['divisiones_cnae'])}</p>
                 <p>{document[1]['resumenes']}</p>
                 <p><a href="{document[0].metadata["url_pdf"]}">Leer más: {key}</a> <span class="less-opacity">{document[0].metadata["num_paginas"]} páginas - tiempo estimado de lectura: {round(document[0].metadata["num_paginas"] * 2.5)} minutos</span></p>
             </div>''' for key, document in documents.items())}

@@ -1,3 +1,4 @@
+import json
 from textwrap import dedent
 import tiktoken
 import logging as lg
@@ -66,32 +67,47 @@ def create_chunks(text, n, tokenizer):
 
 # Hacer el prompt por cada chunk
 def extract_chunk(document, config, client):
-    system_prompt = config["prompt"]
+    prompts = {
+        "prompt_resumen": config["prompt_resumen"],
+        "prompt_cnae": config["prompt_cnae"],
+    }
+    input_tokens = 0
+    output_tokens = 0
 
-    messages = [
-        {
-            "role": "system",
-            "content": dedent(system_prompt),
-        },
-        {"role": "user", "content": document},
-    ]
+    for key, value in prompts.items():
+        messages = [
+            {
+                "role": "system",
+                "content": dedent(value),
+            },
+            {"role": "user", "content": dedent(document)},
+        ]
 
-    response = client.chat.completions.create(
-        model=config["model"],
-        response_format={"type": "json_object"},
-        messages=messages,
-        temperature=0,
-        max_tokens=config["max_words_response_summary"],
-        top_p=1,
-        frequency_penalty=0,
-        presence_penalty=0,
-    )
+        response = client.chat.completions.create(
+            model=config["model"],
+            response_format={"type": "json_object"},
+            messages=messages,
+            temperature=0,
+            max_tokens=config["max_words_response_summary"],
+            top_p=1,
+            frequency_penalty=0,
+            presence_penalty=0,
+        )
 
-    return (
-        response.choices[0].message.content,
-        response.usage.prompt_tokens,
-        response.usage.completion_tokens,
-    )
+        input_tokens += response.usage.prompt_tokens
+        output_tokens += response.usage.completion_tokens
+
+        if key == "prompt_resumen":
+            output = json.loads(response.choices[0].message.content)
+        elif key == "prompt_cnae":
+            respuesta = json.loads(response.choices[0].message.content)
+            output["divisiones_cnae"] = respuesta["divisiones_cnae"]
+        elif key == "prompt_rama_jca":
+            respuesta = json.loads(response.choices[0].message.content)
+            output["rama_jca"] = respuesta["rama_jca"]
+
+
+    return (output, input_tokens, output_tokens)
 
 
 if __name__ == "main":
