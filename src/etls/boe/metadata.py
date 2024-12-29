@@ -34,9 +34,12 @@ class BOEMetadataDocument(MetadataDocument):
     origen_legislativo: str = ""
     fecha_publicacion: str
     fecha_disposicion: str = ""
+    fecha_vigencia: str = ""
     anio: str
     mes: str
     dia: str
+    num_paginas: int
+    tiempo_lectura: int
 
     # Analisis
     observaciones: str = ""

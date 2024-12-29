@@ -37,6 +37,7 @@ pydantic==2.6.3
 pydantic_core==2.16.3
 Pygments==2.18.0
 pymongo==3.11.0
+pypdf==5.1.0
 python-dotenv==1.0.1
 PyYAML==6.0.1
 rapidfuzz==3.7.0

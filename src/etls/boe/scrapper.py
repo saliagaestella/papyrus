@@ -8,6 +8,7 @@ from datetime import date, datetime
 from bs4 import BeautifulSoup
 import requests
 from requests.exceptions import HTTPError
+from pypdf import PdfReader
 
 from src.etls.boe.metadata import BOEMetadataDocument, BOEMetadataReferencia
 from src.etls.common.scrapper import BaseScrapper
@@ -20,7 +21,9 @@ def _extract_metadata(soup) -> tp.Dict:
     # Metadatos
     if identificador := soup.documento.metadatos.identificador:
         metadata_dict["identificador"] = identificador.get_text()
-        metadata_dict["url_html"] = f"https://www.boe.es/diario_boe/txt.php?id={identificador.get_text()}"
+        metadata_dict["url_html"] = (
+            f"https://www.boe.es/diario_boe/txt.php?id={identificador.get_text()}"
+        )
 
     if diario := soup.documento.metadatos.diario:
         metadata_dict["diario"] = diario.get_text()
@@ -38,7 +41,17 @@ def _extract_metadata(soup) -> tp.Dict:
         metadata_dict["titulo"] = titulo.get_text()
 
     if url_pdf := soup.documento.metadatos.url_pdf:
-        metadata_dict["url_pdf"] = f"https://www.boe.es{url_pdf.get_text()}"
+        url = f"https://www.boe.es{url_pdf.get_text()}"
+        metadata_dict["url_pdf"] = url
+
+        pdf = requests.get(url, headers={"Accept": "application/pdf"})
+        with open("temp.pdf", "wb") as f:
+            f.write(pdf.content)
+        with open("temp.pdf", "rb") as f:
+            reader = PdfReader(f)
+            num_paginas = len(reader.pages)
+            metadata_dict["num_paginas"] = num_paginas
+            metadata_dict["tiempo_lectura"] = round(num_paginas * 2.5)
 
     if origen_legislativo := soup.documento.metadatos.origen_legislativo:
         metadata_dict["origen_legislativo"] = origen_legislativo.get_text()
@@ -48,6 +61,9 @@ def _extract_metadata(soup) -> tp.Dict:
 
     if fecha_disposicion := soup.documento.metadatos.fecha_disposicion:
         metadata_dict["fecha_disposicion"] = fecha_disposicion.get_text()
+
+    if fecha_vigencia := soup.documento.metadatos.fecha_vigencia:
+        metadata_dict["fecha_vigencia"] = fecha_vigencia.get_text()
 
     metadata_dict["anio"] = datetime.strptime(
         fecha_publicacion.get_text(), "%Y%m%d"
@@ -122,12 +138,15 @@ def _list_links_day(day_url: str, content: str) -> tp.List[str]:
         for section in soup.find_all(
             lambda tag: tag.name == "seccion"
             and "codigo" in tag.attrs
-            and tag.attrs["codigo"] in ["1", "T"]  # Filter seccion 1 or Tribunal Supremo
+            and tag.attrs["codigo"]
+            in ["1", "T"]  # Filter seccion 1 or Tribunal Supremo
         )
         for item in section.find_all("item")  # Go deeper into <item>
         for url in item.find_all("url_xml")  # Find <url_xml> inside <item>
     ]
-    logger.info("Scrapped day successfully %s (%s BOE documents)", day_url, len(id_links))
+    logger.info(
+        "Scrapped day successfully %s (%s BOE documents)", day_url, len(id_links)
+    )
     return id_links
 
 
@@ -140,7 +159,7 @@ class BOEScrapper(BaseScrapper):
         day_url = f"https://www.boe.es/datosabiertos/api/boe/sumario/{day_str}"
         metadata_documents = []
         try:
-            headers = {'Accept': 'application/xml'}
+            headers = {"Accept": "application/xml"}
             response = requests.get(day_url, headers=headers)
             response.raise_for_status()  # This will raise an HTTPError for bad responses
             id_links = _list_links_day(day_url, response.text)
@@ -162,7 +181,11 @@ class BOEScrapper(BaseScrapper):
                     )
         except HTTPError as e:
             logger.error("Not scrapped document on day %s. HTTPError: %s", day_url, e)
-            logger.error("Status Code: %s, Response Content: %s", e.response.status_code, e.response.text)
+            logger.error(
+                "Status Code: %s, Response Content: %s",
+                e.response.status_code,
+                e.response.text,
+            )
             print(e.response.status_code, e.response.text, e)
         logger.info("Downloaded BOE content for day %s", day)
         return metadata_documents

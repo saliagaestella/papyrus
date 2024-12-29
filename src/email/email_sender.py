@@ -108,6 +108,10 @@ def write_html(documents):
                 margin: 2px;
                 font-size: 0.9em;
             }}
+            .less-opacity {{
+                opacity: 0.6;
+                font-size: 0.9em;
+            }}
         </style>
     </head>
     <body>
@@ -119,7 +123,7 @@ def write_html(documents):
                 <h2>{document[1]["short_name"]}</h2>
                 <p>{''.join(f'<span class="etiqueta">{etiqueta}</span>' for etiqueta in document[1]['etiquetas'])}</p>
                 <p>{document[1]['resumenes']}</p>
-                <p><a href="{document[0].metadata["url_pdf"]}">Leer más: {key}</a></p>
+                <p><a href="{document[0].metadata["url_pdf"]}">Leer más: {key}</a> <span class="less-opacity">{document[0].metadata["num_paginas"]} páginas - tiempo estimado de lectura: {round(document[0].metadata["num_paginas"] * 2.5)} minutos</span></p>
             </div>''' for key, document in documents.items())}
 
             <div class="footer">
