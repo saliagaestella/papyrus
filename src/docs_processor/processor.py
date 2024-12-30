@@ -7,6 +7,7 @@ from src.docs_processor.utils import (
     create_chunks,
     extract_chunk,
     max_tokens_per_chunk,
+    num_tokens_from_string,
 )
 
 
@@ -20,20 +21,20 @@ class DocumentProcessor:
     def process_document(self, text: str, name: str = None):
         logger = lg.getLogger(self.process_document.__name__)
         clean_text = text.replace("  ", " ").replace("\n", "; ").replace(";", " ")
+        total_doc_tokens = num_tokens_from_string(clean_text, self.config["model"])
+        logger.info(f"Total tokens in the document: {total_doc_tokens}")
+
         max_tokens_response_summary = (
             int(self.config["max_words_response_summary"]) * 4 / 3
         )
-        chunk_tokens = max_tokens_per_chunk(
-            self.config["prompt_resumen"],
+        max_chunk_tokens = max_tokens_per_chunk(
             max_tokens_response_summary,
-            clean_text,
             self.config,
         )
+        logger.info(f"Max tokens per chunk: {max_chunk_tokens}")
 
-        logger.info(f"Total tokens in the chunk: {chunk_tokens}")
+        text_chunks = list(create_chunks(clean_text, max_chunk_tokens, self.tokenizer))
 
-        chunks = create_chunks(clean_text, chunk_tokens, self.tokenizer)
-        text_chunks = [self.tokenizer.decode(chunk) for chunk in chunks]
         logger.info(f"Number of API calls/chunks: {len(text_chunks)}")
 
         self.results = [self._process_chunk(chunk) for chunk in text_chunks]

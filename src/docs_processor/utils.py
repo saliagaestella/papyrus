@@ -14,20 +14,23 @@ def num_tokens_from_string(string: str, model) -> int:
     return num_tokens
 
 
-def max_tokens_per_chunk(prompt, max_tokens_response_summary, clean_text, config):
+def max_tokens_per_chunk(max_tokens_response_summary, config):
     logger = lg.getLogger(max_tokens_per_chunk.__name__)
 
-    tokens_prompt_summary = num_tokens_from_string(prompt, config["model"])
-    max_doc_tokens_per_prompt = (
+    tokens_prompt_resumen = num_tokens_from_string(
+        config["prompt_resumen"], config["model"]
+    )
+    tokens_prompt_cnae = num_tokens_from_string(config["prompt_cnae"], config["model"])
+    max_prompt_tokens = max(tokens_prompt_resumen, tokens_prompt_cnae)
+
+    max_tokens_per_prompt = (
         int(config["tokens_context_window"])
         - max_tokens_response_summary
-        - tokens_prompt_summary
+        - max_prompt_tokens
         - int(config["tokens_safeguard"])
     ) / 1.5  # por condición de tokenizer, para no cortar a mitad de frase
-    total_doc_tokens = num_tokens_from_string(clean_text, config["model"])
 
-    logger.info(f"Total tokens in the document: {total_doc_tokens}")
-    return max_doc_tokens_per_prompt
+    return int(max_tokens_per_prompt)
 
 
 def estimate_cost_before_call(
@@ -46,26 +49,34 @@ def estimate_cost_before_call(
 
 # Split a text into smaller chunks of size n, preferably ending at the end of a sentence
 def create_chunks(text, n, tokenizer):
-    tokens = tokenizer.encode(text)
-    """Yield successive n-sized chunks from text."""
+    tokens = tokenizer.encode(text)  # Encode the entire text into tokens
     i = 0
     while i < len(tokens):
-        # Find the nearest end of sentence within a range of 0.5 * n and 1.5 * n tokens
-        j = min(i + int(1.5 * n), len(tokens))
-        while j > i + int(0.5 * n):
-            # Decode the tokens and check for full stop or newline
-            chunk = tokenizer.decode(tokens[i:j])
-            if chunk.endswith(".") or chunk.endswith("\n"):
+        # Attempt to form a chunk up to 1.2 * n tokens
+        end = min(i + int(n * 1.2), len(tokens))
+        best_end = end  # Default to the maximum size allowed
+
+        # Decode the largest candidate chunk once
+        chunk = tokenizer.decode(tokens[i:end])
+
+        # Find the last sentence boundary (greedy search, moving backward)
+        for j in range(len(chunk) - 1, -1, -1):
+            if chunk[j] in {".", "!", "?", "\n"}:  # Sentence boundary
+                best_end = (
+                    i + tokenizer.encode(chunk[: j + 1]).__len__()
+                )  # Adjust token size
                 break
-            j -= 1
-        # If no end of sentence found, use n tokens as the chunk size
-        if j == i + int(0.5 * n):
-            j = min(i + n, len(tokens))
-        yield tokens[i:j]
-        i = j
+
+        # If no boundary is found, fallback to n tokens
+        if best_end == end and end - i > n:
+            best_end = i + n
+
+        # Yield the chunk and move to the next position
+        yield tokenizer.decode(tokens[i:best_end])
+        i = best_end
 
 
-# Hacer el prompt por cada chunk
+# Hacer los prompts por cada chunk
 def extract_chunk(document, config, client):
     prompts = {
         "prompt_resumen": config["prompt_resumen"],
@@ -105,7 +116,6 @@ def extract_chunk(document, config, client):
         elif key == "prompt_rama_jca":
             respuesta = json.loads(response.choices[0].message.content)
             output["rama_jca"] = respuesta["rama_jca"]
-
 
     return (output, input_tokens, output_tokens)
 
