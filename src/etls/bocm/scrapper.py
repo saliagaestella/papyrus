@@ -78,7 +78,7 @@ def _extract_metadata(soup) -> tp.Dict:
     metadata_dict["identificador"] = cve
     metadata_dict["numero_oficial"] = numero_oficial
     metadata_dict["num_paginas"] = int(num_paginas)
-    metadata_dict["tiempo_lectura"] = round(num_paginas * 2.5)
+    metadata_dict["tiempo_lectura"] = round(int(num_paginas) * 2.5)
 
     # departamento always match with organo
     metadata_dict["departamento"] = organo
