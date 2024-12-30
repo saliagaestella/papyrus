@@ -92,17 +92,13 @@ def process_documents(documents, processor, initializer, collection_name):
             name = document.metadata["titulo"]
         except:
             name = None
-        """try:
+        try:
             ai_result = processor.process_document(
                 text=document.page_content, name=name
             )
             results[doc_id] = [document, ai_result]
         except Exception as e:
-            print(f"Failed to process document {doc_id}: {e}")"""
-        ai_result = processor.process_document(
-                text=document.page_content, name=name
-            )
-        results[doc_id] = [document, ai_result]
+            print(f"Failed to process document {doc_id}: {e}")
 
     if results:
         upload_documents(results, initializer)
