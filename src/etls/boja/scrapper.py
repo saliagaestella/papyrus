@@ -213,7 +213,8 @@ class BOJAScrapper(BaseScrapper):
                     num_paginas = len(reader.pages)
                     tiempo_lectura = round(num_paginas * 2.5)
             except:
-                pass
+                num_paginas = None
+                tiempo_lectura = None
 
             parrafos = cuerpo.find_all("p")
 

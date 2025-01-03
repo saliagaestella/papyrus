@@ -23,36 +23,56 @@ def main():
     initializer = Initializer()
     processor = DocumentProcessor(initializer=initializer)
 
-    results_boe = process_documents(
-        documents=today_boe(),
-        processor=processor,
-        initializer=initializer,
-        collection_name="BOE",
-    )
-    results_bocm = process_documents(
-        documents=today_bocm(),
-        processor=processor,
-        initializer=initializer,
-        collection_name="BOCM",
-    )
-    results_boa = process_documents(
-        documents=today_boa(),
-        processor=processor,
-        initializer=initializer,
-        collection_name="BOA",
-    )
-    results_boja = process_documents(
-        documents=today_boja(),
-        processor=processor,
-        initializer=initializer,
-        collection_name="BOJA",
-    )
-    results_bopv = process_documents(
-        documents=today_bopv(),
-        processor=processor,
-        initializer=initializer,
-        collection_name="BOPV",
-    )
+    try:
+        results_boe = process_documents(
+            documents=today_boe(),
+            processor=processor,
+            initializer=initializer,
+            collection_name="BOE",
+        )
+    except Exception as e:
+        print(f"Failed to scrap BOE documents: {e}")
+        results_boe = {}
+    try:
+        results_bocm = process_documents(
+            documents=today_bocm(),
+            processor=processor,
+            initializer=initializer,
+            collection_name="BOCM",
+        )
+    except Exception as e:
+        print(f"Failed to scrap BOCM documents: {e}")
+        results_bocm = {}
+    try:
+        results_boa = process_documents(
+            documents=today_boa(),
+            processor=processor,
+            initializer=initializer,
+            collection_name="BOA",
+        )
+    except Exception as e:
+        print(f"Failed to scrap BOA documents: {e}")
+        results_boa = {}
+    try:
+        results_boja = process_documents(
+            documents=today_boja(),
+            processor=processor,
+            initializer=initializer,
+            collection_name="BOJA",
+        )
+    except Exception as e:
+        print(f"Failed to scrap BOJA documents: {e}")
+        results_boja = {}
+    try:
+        results_bopv = process_documents(
+            documents=today_bopv(),
+            processor=processor,
+            initializer=initializer,
+            collection_name="BOPV",
+        )
+    except Exception as e:
+        print(f"Failed to scrap BOPV documents: {e}")
+        results_bopv = {}
 
     results_joined = (
         results_boe | results_bocm | results_boa | results_boja | results_bopv
