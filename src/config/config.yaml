@@ -81,97 +81,97 @@ prompt_cnae: |
   Tu trabajo consiste en analizar el texto proporcionado y categorizarlo asignando entre 0 y 3 divisiones, las más relevantes,
   utilizando únicamente el listado de divisiones existentes en el CNAE. 
   No crees nuevas divisiones, ni asignes más de 3.
-  Escribe cada división al completo, con su respectivo código de dos dígitos y el título, tal como están escritas en el listado que comparto a continuación.
-  Si no encuentras ninguna división aplicable, escribe "No identificado" dentro de la lista.
+  Escribe cada división al completo, tal como están escritas en el listado que comparto a continuación.
+  Prioriza asignar una división aplicable como mínimo, pero si no encuentras ninguna división aplicable, escribe "No identificado" dentro de la lista.
   La estructura de tu respuesta debe ser en formato json: 
   {"divisiones_cnae":["<division_1>", "<division_2>", <...>]} o {"divisiones_cnae":["No identificado"]}
 
   Estas son las posibles divisiones del CNAE:
-  01 - Agricultura, ganadería, caza y servicios relacionados
-  02 - Silvicultura y explotación forestal
-  03 - Pesca y acuicultura
-  05 - Extracción de antracita, hulla y lignito
-  06 - Extracción de crudo de petróleo y gas natural
-  07 - Extracción de minerales metálicos
-  08 - Otras industrias extractivas
-  09 - Actividades de apoyo a las industrias extractivas
-  10 - Industria de la alimentación
-  11 - Fabricación de bebidas
-  12 - Industria del tabaco
-  13 - Industria textil
-  14 - Confección de prendas de vestir
-  15 - Industria del cuero y del calzado
-  16 - Industria de la madera y del corcho
-  17 - Industria del papel
-  18 - Artes gráficas y reproducción de soportes grabados
-  19 - Coquerías y refino de petróleo
-  20 - Industria química
-  21 - Fabricación de productos farmacéuticos
-  22 - Fabricación de productos de caucho y plásticos
-  23 - Fabricación de otros productos minerales no metálicos
-  24 - Metalurgia; fabricación de productos de hierro y acero
-  25 - Fabricación de productos metálicos, excepto maquinaria
-  26 - Fabricación de productos informáticos, electrónicos y ópticos
-  27 - Fabricación de material y equipo eléctrico
-  28 - Fabricación de maquinaria y equipo n.c.o.p
-  29 - Fabricación de vehículos de motor, remolques y semirremolques
-  30 - Fabricación de otro material de transporte
-  31 - Fabricación de muebles
-  32 - Otras industrias manufactureras
-  33 - Reparación e instalación de maquinaria y equipo
-  35 - Suministro de energía eléctrica, gas, vapor y aire acondicionado
-  36 - Captación, depuración y distribución de agua
-  37 - Recogida y tratamiento de aguas residuales
-  38 - Gestión de residuos
-  39 - Actividades de descontaminación
-  41 - Construcción de edificios
-  42 - Ingeniería civil
-  43 - Actividades de construcción especializada
-  45 - Venta y reparación de vehículos de motor
-  46 - Comercio al por mayor
-  47 - Comercio al por menor
-  49 - Transporte terrestre y por tubería
-  50 - Transporte marítimo y por vías navegables interiores
-  51 - Transporte aéreo
-  52 - Almacenamiento y actividades anexas al transporte
-  53 - Actividades postales y de correos
-  55 - Servicios de alojamiento
-  56 - Servicios de comidas y bebidas
-  58 - Edición
-  59 - Actividades cinematográficas y de vídeo
-  60 - Actividades de programación y emisión
-  61 - Telecomunicaciones
-  62 - Programación, consultoría y otras actividades informáticas
-  63 - Servicios de información
-  64 - Servicios financieros, excepto seguros y fondos de pensiones
-  65 - Seguros, reaseguros y fondos de pensiones
-  66 - Actividades auxiliares a los servicios financieros y seguros
-  68 - Actividades inmobiliarias
-  69 - Actividades jurídicas y de contabilidad
-  70 - Consultoría de gestión empresarial
-  71 - Servicios técnicos de arquitectura e ingeniería
-  72 - Investigación y desarrollo
-  73 - Publicidad y estudios de mercado
-  74 - Otras actividades profesionales, científicas y técnicas
-  75 - Actividades veterinarias
-  77 - Actividades de alquiler
-  78 - Actividades relacionadas con el empleo
-  79 - Agencias de viajes, operadores turísticos
-  80 - Actividades de seguridad e investigación
-  81 - Servicios a edificios y actividades de jardinería
-  82 - Actividades administrativas de oficina
-  84 - Administración pública y defensa
-  85 - Educación
-  86 - Actividades sanitarias
-  87 - Asistencia en establecimientos residenciales
-  88 - Actividades de servicios sociales sin alojamiento
-  90 - Actividades de creación, artísticas y espectáculos
-  91 - Bibliotecas, archivos, museos y otras actividades culturales
-  92 - Actividades de juegos de azar y apuestas
-  93 - Actividades deportivas, recreativas y de entretenimiento
-  94 - Actividades de organizaciones asociativas
-  95 - Reparación de ordenadores y artículos personales
-  96 - Otros servicios personales
-  97 - Actividades de los hogares como empleadores
-  98 - Actividades de los hogares como productores
-  99 - Actividades de organizaciones y organismos extraterritoriales'
+  Agricultura, ganadería, caza y servicios relacionados
+  Silvicultura y explotación forestal
+  Pesca y acuicultura
+  Extracción de antracita, hulla y lignito
+  Extracción de crudo de petróleo y gas natural
+  Extracción de minerales metálicos
+  Otras industrias extractivas
+  Actividades de apoyo a las industrias extractivas
+  Industria de la alimentación
+  Fabricación de bebidas
+  Industria del tabaco
+  Industria textil
+  Confección de prendas de vestir
+  Industria del cuero y del calzado
+  Industria de la madera y del corcho
+  Industria del papel
+  Artes gráficas y reproducción de soportes grabados
+  Coquerías y refino de petróleo
+  Industria química
+  Fabricación de productos farmacéuticos
+  Fabricación de productos de caucho y plásticos
+  Fabricación de otros productos minerales no metálicos
+  Metalurgia; fabricación de productos de hierro y acero
+  Fabricación de productos metálicos, excepto maquinaria
+  Fabricación de productos informáticos, electrónicos y ópticos
+  Fabricación de material y equipo eléctrico
+  Fabricación de maquinaria y equipo n.c.o.p
+  Fabricación de vehículos de motor, remolques y semirremolques
+  Fabricación de otro material de transporte
+  Fabricación de muebles
+  Otras industrias manufactureras
+  Reparación e instalación de maquinaria y equipo
+  Suministro de energía eléctrica, gas, vapor y aire acondicionado
+  Captación, depuración y distribución de agua
+  Recogida y tratamiento de aguas residuales
+  Gestión de residuos
+  Actividades de descontaminación
+  Construcción de edificios
+  Ingeniería civil
+  Actividades de construcción especializada
+  Venta y reparación de vehículos de motor
+  Comercio al por mayor
+  Comercio al por menor
+  Transporte terrestre y por tubería
+  Transporte marítimo y por vías navegables interiores
+  Transporte aéreo
+  Almacenamiento y actividades anexas al transporte
+  Actividades postales y de correos
+  Servicios de alojamiento
+  Servicios de comidas y bebidas
+  Edición
+  Actividades cinematográficas y de vídeo
+  Actividades de programación y emisión
+  Telecomunicaciones
+  Programación, consultoría y otras actividades informáticas
+  Servicios de información
+  Servicios financieros, excepto seguros y fondos de pensiones
+  Seguros, reaseguros y fondos de pensiones
+  Actividades auxiliares a los servicios financieros y seguros
+  Actividades inmobiliarias
+  Actividades jurídicas y de contabilidad
+  Consultoría de gestión empresarial
+  Servicios técnicos de arquitectura e ingeniería
+  Investigación y desarrollo
+  Publicidad y estudios de mercado
+  Otras actividades profesionales, científicas y técnicas
+  Actividades veterinarias
+  Actividades de alquiler
+  Actividades relacionadas con el empleo
+  Agencias de viajes, operadores turísticos
+  Actividades de seguridad e investigación
+  Servicios a edificios y actividades de jardinería
+  Actividades administrativas de oficina
+  Administración pública y defensa
+  Educación
+  Actividades sanitarias
+  Asistencia en establecimientos residenciales
+  Actividades de servicios sociales sin alojamiento
+  Actividades de creación, artísticas y espectáculos
+  Bibliotecas, archivos, museos y otras actividades culturales
+  Actividades de juegos de azar y apuestas
+  Actividades deportivas, recreativas y de entretenimiento
+  Actividades de organizaciones asociativas
+  Reparación de ordenadores y artículos personales
+  Otros servicios personales
+  Actividades de los hogares como empleadores
+  Actividades de los hogares como productores
+  Actividades de organizaciones y organismos extraterritoriales'

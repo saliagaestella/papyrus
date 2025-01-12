@@ -47,6 +47,9 @@ class DocumentProcessor:
         else:
             self.results["short_name"] = None
 
+        logger.info(f"Final document: {self.results}")
+        logger.info(f"Final CNAE classification: {self.results['divisiones_cnae']}")
+
         return self.results
 
     def _process_chunk(self, chunk: str):
@@ -54,7 +57,6 @@ class DocumentProcessor:
         result, input_token, output_token = extract_chunk(
             chunk, self.config, self.initializer.openai_client
         )
-        logger.info(f"Result: \n {result}")
         logger.info(f"Number of input tokens: {input_token}")
         logger.info(f"Number of output tokens: {output_token}")
         return result
@@ -66,6 +68,7 @@ class DocumentProcessor:
             "impactos": set(),
             "stakeholders": set(),
             "divisiones_cnae": set(),
+            #"divisiones_cnae_chunk_completo": set(),
         }
 
         for data in self.results:
@@ -74,6 +77,7 @@ class DocumentProcessor:
             self._aggregate_data(aggregated, "stakeholders", data["stakeholders"])
             self._aggregate_data(aggregated, "etiquetas", data["etiquetas"])
             self._aggregate_data(aggregated, "divisiones_cnae", data["divisiones_cnae"])
+            #self._aggregate_data(aggregated, "divisiones_cnae_chunk_completo", data["divisiones_cnae_chunk_completo"])
 
         for key in aggregated.keys():
             if isinstance(aggregated[key], set):
@@ -143,11 +147,11 @@ class DocumentProcessor:
                     output = [
                         element for element in value if element != "No identificado"
                     ]
-                """if key == "etiquetas":
+                    results[key] = output
+                    """if key == "etiquetas":
                     output = self._etiquetas_similares(
                         etiquetas_posibles, value, 0.5
                     )"""
-                results[key] = output
 
         self.results = results
 

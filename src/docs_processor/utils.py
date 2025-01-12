@@ -78,20 +78,170 @@ def create_chunks(text, n, tokenizer):
 
 # Hacer los prompts por cada chunk
 def extract_chunk(document, config, client):
-    prompts = {
-        "prompt_resumen": config["prompt_resumen"],
-        "prompt_cnae": config["prompt_cnae"],
-    }
+    logger = lg.getLogger(extract_chunk.__name__)
     input_tokens = 0
     output_tokens = 0
 
-    for key, value in prompts.items():
+    messages = [
+        {
+            "role": "system",
+            "content": dedent(config["prompt_resumen"]),
+        },
+        {"role": "user", "content": dedent(document)},
+    ]
+
+    response = client.chat.completions.create(
+        model=config["model"],
+        response_format={"type": "json_object"},
+        messages=messages,
+        temperature=0,
+        max_tokens=config["max_words_response_summary"],
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=0,
+    )
+
+    input_tokens += response.usage.prompt_tokens
+    output_tokens += response.usage.completion_tokens
+
+    output = json.loads(response.choices[0].message.content)
+    """if output["resumen"] != "No identificado":
+        output["divisiones_cnae"] = generate_divisiones_cnae(
+            config,
+            client,
+            output["resumen"],
+        )
+    else:
+        output["divisiones_cnae"] = []"""
+
+    if output["resumen"] != "No identificado":
+        output["divisiones_cnae"] = generate_divisiones_cnae(
+            config,
+            client,
+            dedent(document),
+        )
+    else:
+        output["divisiones_cnae"] = []
+
+    """elif key == "prompt_rama_jca":
+        respuesta = json.loads(response.choices[0].message.content)
+        output["rama_jca"] = respuesta["rama_jca"]"""
+
+    logger.info(f"AI Result: \n {output}")
+    return (output, input_tokens, output_tokens)
+
+
+def generate_divisiones_cnae(config, client, resumen):
+    """
+    Generates the cnae tags and checks if all tags in are within possible_tags.
+    Keeps prompting up to 5 times until all tags are valid.
+
+    Args:
+        tags (list): List of tags to validate.
+
+    Returns:
+        list: Validated list of tags or None if validation fails after 5 attempts.
+    """
+    logger = lg.getLogger(generate_divisiones_cnae.__name__)
+    prompt = dedent(config["prompt_cnae"])
+    possible_tags = [
+        "Agricultura, ganadería, caza y servicios relacionados",
+        "Silvicultura y explotación forestal",
+        "Pesca y acuicultura",
+        "Extracción de antracita, hulla y lignito",
+        "Extracción de crudo de petróleo y gas natural",
+        "Extracción de minerales metálicos",
+        "Otras industrias extractivas",
+        "Actividades de apoyo a las industrias extractivas",
+        "Industria de la alimentación",
+        "Fabricación de bebidas",
+        "Industria del tabaco",
+        "Industria textil",
+        "Confección de prendas de vestir",
+        "Industria del cuero y del calzado",
+        "Industria de la madera y del corcho",
+        "Industria del papel",
+        "Artes gráficas y reproducción de soportes grabados",
+        "Coquerías y refino de petróleo",
+        "Industria química",
+        "Fabricación de productos farmacéuticos",
+        "Fabricación de productos de caucho y plásticos",
+        "Fabricación de otros productos minerales no metálicos",
+        "Metalurgia; fabricación de productos de hierro y acero",
+        "Fabricación de productos metálicos, excepto maquinaria",
+        "Fabricación de productos informáticos, electrónicos y ópticos",
+        "Fabricación de material y equipo eléctrico",
+        "Fabricación de maquinaria y equipo n.c.o.p",
+        "Fabricación de vehículos de motor, remolques y semirremolques",
+        "Fabricación de otro material de transporte",
+        "Fabricación de muebles",
+        "Otras industrias manufactureras",
+        "Reparación e instalación de maquinaria y equipo",
+        "Suministro de energía eléctrica, gas, vapor y aire acondicionado",
+        "Captación, depuración y distribución de agua",
+        "Recogida y tratamiento de aguas residuales",
+        "Gestión de residuos",
+        "Actividades de descontaminación",
+        "Construcción de edificios",
+        "Ingeniería civil",
+        "Actividades de construcción especializada",
+        "Venta y reparación de vehículos de motor",
+        "Comercio al por mayor",
+        "Comercio al por menor",
+        "Transporte terrestre y por tubería",
+        "Transporte marítimo y por vías navegables interiores",
+        "Transporte aéreo",
+        "Almacenamiento y actividades anexas al transporte",
+        "Actividades postales y de correos",
+        "Servicios de alojamiento",
+        "Servicios de comidas y bebidas",
+        "Edición",
+        "Actividades cinematográficas y de vídeo",
+        "Actividades de programación y emisión",
+        "Telecomunicaciones",
+        "Programación, consultoría y otras actividades informáticas",
+        "Servicios de información",
+        "Servicios financieros, excepto seguros y fondos de pensiones",
+        "Seguros, reaseguros y fondos de pensiones",
+        "Actividades auxiliares a los servicios financieros y seguros",
+        "Actividades inmobiliarias",
+        "Actividades jurídicas y de contabilidad",
+        "Consultoría de gestión empresarial",
+        "Servicios técnicos de arquitectura e ingeniería",
+        "Investigación y desarrollo",
+        "Publicidad y estudios de mercado",
+        "Otras actividades profesionales, científicas y técnicas",
+        "Actividades veterinarias",
+        "Actividades de alquiler",
+        "Actividades relacionadas con el empleo",
+        "Agencias de viajes, operadores turísticos",
+        "Actividades de seguridad e investigación",
+        "Servicios a edificios y actividades de jardinería",
+        "Actividades administrativas de oficina",
+        "Administración pública y defensa",
+        "Educación",
+        "Actividades sanitarias",
+        "Asistencia en establecimientos residenciales",
+        "Actividades de servicios sociales sin alojamiento",
+        "Actividades de creación, artísticas y espectáculos",
+        "Bibliotecas, archivos, museos y otras actividades culturales",
+        "Actividades de juegos de azar y apuestas",
+        "Actividades deportivas, recreativas y de entretenimiento",
+        "Actividades de organizaciones asociativas",
+        "Reparación de ordenadores y artículos personales",
+        "Otros servicios personales",
+        "Actividades de los hogares como empleadores",
+        "Actividades de los hogares como productores",
+        "Actividades de organizaciones y organismos extraterritoriales",
+    ]
+    attempts = 0
+    while attempts < 1:
         messages = [
             {
                 "role": "system",
-                "content": dedent(value),
+                "content": prompt,
             },
-            {"role": "user", "content": dedent(document)},
+            {"role": "user", "content": resumen},
         ]
 
         response = client.chat.completions.create(
@@ -105,19 +255,23 @@ def extract_chunk(document, config, client):
             presence_penalty=0,
         )
 
-        input_tokens += response.usage.prompt_tokens
-        output_tokens += response.usage.completion_tokens
+        tags = [
+            tag.strip()
+            for tag in json.loads(response.choices[0].message.content)[
+                "divisiones_cnae"
+            ]
+        ]
 
-        if key == "prompt_resumen":
-            output = json.loads(response.choices[0].message.content)
-        elif key == "prompt_cnae":
-            respuesta = json.loads(response.choices[0].message.content)
-            output["divisiones_cnae"] = respuesta["divisiones_cnae"]
-        elif key == "prompt_rama_jca":
-            respuesta = json.loads(response.choices[0].message.content)
-            output["rama_jca"] = respuesta["rama_jca"]
+        if any(tag in possible_tags for tag in tags):
+            return tags
+        else:
+            logger.info(
+                f"Invalid tags detected ({tags}). Attempt {attempts + 1}/5. Please enter a valid list of tags."
+            )
+            attempts += 1
 
-    return (output, input_tokens, output_tokens)
+    logger.info("Maximum attempts reached. Validation failed.")
+    return []
 
 
 if __name__ == "main":

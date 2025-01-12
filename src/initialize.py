@@ -19,16 +19,36 @@ class Initializer:
         """Initializes and configures logging."""
         logger = lg.getLogger()
         logger.info("Initializing logging")
+
+        # Clear existing handlers
         logger.handlers = []
-        handler = lg.StreamHandler()
-        formatter = lg.Formatter(
+
+        # Console (StreamHandler) setup
+        console_handler = lg.StreamHandler()
+        console_formatter = lg.Formatter(
             "[%(asctime)s] [%(process)d] [%(levelname)s] [%(name)s] %(message)s"
         )
-        handler.setFormatter(formatter)
-        logger.addHandler(handler)
+        console_handler.setFormatter(console_formatter)
+
+        # FileHandler setup
+        file_handler = lg.FileHandler("application.log")
+        file_formatter = lg.Formatter(
+            "[%(asctime)s] [%(levelname)s] [%(name)s] %(message)s"
+        )
+        file_handler.setFormatter(file_formatter)
+
+        # Add handlers to logger
+        logger.addHandler(console_handler)
+        logger.addHandler(file_handler)
+
+        # Set the logging level
         logger.setLevel(lg.INFO)
+
         logger.info("Initialized logging")
+
+        # Ensure uvicorn logs use the same handlers
         lg.getLogger("uvicorn.error").handlers = logger.handlers
+
         return logger
 
     def _init_config(self):

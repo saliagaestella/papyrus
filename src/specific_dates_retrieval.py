@@ -22,8 +22,8 @@ def download_dates():
     initializer = Initializer()
 
     processor = DocumentProcessor(initializer=initializer)
-    date_start = "2024/11/1"
-    date_end = "2024/11/1"
+    date_start = "2023/12/3"
+    date_end = "2023/12/10"
 
     results_boe = process_documents(
         documents=dates_boe(date_start=date_start, date_end=date_end),
@@ -60,9 +60,7 @@ def download_dates():
         results_boe | results_bocm | results_boa | results_boja | results_bopv
     )"""
 
-    results_joined = (
-        results_boe
-    )
+    results_joined = results_boe
 
     if not results_joined:
         return
@@ -105,9 +103,7 @@ def process_documents(documents, processor, initializer, collection_name):
             results[doc_id] = [document, ai_result]
         except Exception as e:
             print(f"Failed to process document {doc_id}: {e}")"""
-        ai_result = processor.process_document(
-                text=document.page_content, name=name
-            )
+        ai_result = processor.process_document(text=document.page_content, name=name)
         results[doc_id] = [document, ai_result]
 
     if results:

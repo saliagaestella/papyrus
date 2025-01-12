@@ -1,0 +1,518 @@
+[2025-01-12 00:51:21,646] [INFO] [root] Initialized logging
+[2025-01-12 00:51:21,648] [INFO] [root] Configuration loaded
+[2025-01-12 00:51:21,648] [INFO] [root] Initializing OpenAI client
+[2025-01-12 00:51:21,690] [INFO] [root] Initialized OpenAI client
+[2025-01-12 00:51:21,690] [INFO] [root] Initializing MongoDB client
+[2025-01-12 00:51:22,396] [INFO] [root] Initialized MongoDB client
+[2025-01-12 00:51:22,512] [INFO] [download_days] Downloading content from day 2023-12-01 to 2023-12-02
+[2025-01-12 00:51:22,512] [INFO] [download_day] Downloading BOE content for day 2023-12-01
+[2025-01-12 00:51:22,641] [INFO] [_list_links_day] Scrapping day: https://www.boe.es/datosabiertos/api/boe/sumario/20231201
+[2025-01-12 00:51:22,656] [INFO] [_list_links_day] Scrapped day successfully https://www.boe.es/datosabiertos/api/boe/sumario/20231201 (2 BOE documents)
+[2025-01-12 00:51:22,656] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-24510
+[2025-01-12 00:51:22,888] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-24510
+[2025-01-12 00:51:22,889] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-24511
+[2025-01-12 00:51:23,231] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-24511
+[2025-01-12 00:51:23,232] [INFO] [download_day] Downloaded BOE content for day 2023-12-01
+[2025-01-12 00:51:23,233] [INFO] [download_day] Downloading BOE content for day 2023-12-02
+[2025-01-12 00:51:23,442] [INFO] [_list_links_day] Scrapping day: https://www.boe.es/datosabiertos/api/boe/sumario/20231202
+[2025-01-12 00:51:23,474] [INFO] [_list_links_day] Scrapped day successfully https://www.boe.es/datosabiertos/api/boe/sumario/20231202 (1 BOE documents)
+[2025-01-12 00:51:23,475] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-24623
+[2025-01-12 00:51:23,716] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-24623
+[2025-01-12 00:51:23,717] [INFO] [download_day] Downloaded BOE content for day 2023-12-02
+[2025-01-12 00:51:23,718] [INFO] [download_days] Downloaded content from day 2023-12-01 to 2023-12-02
+[2025-01-12 00:51:23,988] [INFO] [process_document] Total tokens in the document: 500
+[2025-01-12 00:51:24,011] [INFO] [process_document] Max tokens per chunk: 83519
+[2025-01-12 00:51:24,019] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-01-12 00:51:26,813] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:51:27,447] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:51:27,451] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 1/5. Please enter a valid list of tags.
+[2025-01-12 00:51:28,349] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:51:28,351] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 2/5. Please enter a valid list of tags.
+[2025-01-12 00:51:29,117] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:51:29,120] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 3/5. Please enter a valid list of tags.
+[2025-01-12 00:51:29,949] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:51:29,956] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 4/5. Please enter a valid list of tags.
+[2025-01-12 00:51:30,670] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:51:30,673] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 5/5. Please enter a valid list of tags.
+[2025-01-12 00:51:30,673] [INFO] [generate_divisiones_cnae] Maximum attempts reached. Validation failed.
+[2025-01-12 00:51:30,673] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'Se modifica el artículo 46.1 del Reglamento del Congreso, estableciendo las Comisiones Permanentes Legislativas. La Mesa del Congreso se encargará de trasladar los asuntos pendientes a las nuevas Comisiones competentes. La modificación entrará en vigor tras su publicación en el BOE y el Boletín Oficial de las Cortes Generales.', 'etiquetas': ['No identificado'], 'stakeholders': ['Congreso de los Diputados', 'Mesa del Congreso', 'Ciudadanos'], 'impacto': 'La modificación del Reglamento puede afectar la organización y funcionamiento del Congreso, optimizando la gestión de asuntos legislativos y mejorando la representación de diversas áreas temáticas.', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:51:30,673] [INFO] [_process_chunk] Number of input tokens: 1562
+[2025-01-12 00:51:30,673] [INFO] [_process_chunk] Number of output tokens: 148
+[2025-01-12 00:51:31,594] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:51:31,596] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:51:31,596] [INFO] [_process_chunk] Number of input tokens: 1065
+[2025-01-12 00:51:31,596] [INFO] [_process_chunk] Number of output tokens: 33
+[2025-01-12 00:51:33,102] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:51:33,843] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:51:33,847] [INFO] [process_document] Final document: {'resumenes': 'Se ha modificado el artículo 46.1 del Reglamento del Congreso, introduciendo la figura de las Comisiones Permanentes Legislativas. La responsabilidad de la Mesa del Congreso será trasladar los asuntos pendientes a las nuevas Comisiones que correspondan. Esta modificación entrará en vigor una vez sea publicada en el Boletín Oficial del Estado (BOE) y en el Boletín Oficial de las Cortes Generales.', 'etiquetas': ['No identificado'], 'impactos': ['La modificación del Reglamento puede afectar la organización y funcionamiento del Congreso, optimizando la gestión de asuntos legislativos y mejorando la representación de diversas áreas temáticas.'], 'stakeholders': ['Mesa del Congreso', 'Ciudadanos', 'Congreso de los Diputados'], 'divisiones_cnae': ['CNAE no identificado'], 'short_name': 'Modificación del Artículo 46.1 del Reglamento del Congreso'}
+[2025-01-12 00:51:33,847] [INFO] [process_document] Final CNAE classification: ['CNAE no identificado']
+[2025-01-12 00:51:33,884] [INFO] [process_document] Total tokens in the document: 14705
+[2025-01-12 00:51:33,886] [INFO] [process_document] Max tokens per chunk: 83519
+[2025-01-12 00:51:33,907] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-01-12 00:51:37,945] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:51:39,169] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:51:39,171] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 1/5. Please enter a valid list of tags.
+[2025-01-12 00:51:40,395] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:51:40,402] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 2/5. Please enter a valid list of tags.
+[2025-01-12 00:51:45,213] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:51:45,222] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 3/5. Please enter a valid list of tags.
+[2025-01-12 00:51:46,095] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:51:46,099] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 4/5. Please enter a valid list of tags.
+[2025-01-12 00:51:47,443] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:51:47,445] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 5/5. Please enter a valid list of tags.
+[2025-01-12 00:51:47,445] [INFO] [generate_divisiones_cnae] Maximum attempts reached. Validation failed.
+[2025-01-12 00:51:47,445] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'La Orden Ministerial aprueba el currículo de formación para suboficiales del Cuerpo General de la Armada y de Infantería de Marina, integrando formación militar, técnica y específica. Se establece un único currículo, se derogan normativas anteriores y se implementará en el curso académico 2024/2025, garantizando igualdad de género y adaptación a nuevas necesidades formativas.', 'etiquetas': ['Servicios de educación y formación', 'Servicios de salud y trabajo social', 'Otros servicios comunitarios, sociales y personales'], 'stakeholders': ['Ministerio de Defensa', 'Fuerzas Armadas', 'Alumnos de la enseñanza de formación'], 'impacto': 'La nueva regulación mejora la formación de suboficiales, adaptándose a necesidades actuales y garantizando igualdad de género. Se prevén implicaciones en la calidad de la enseñanza y en la preparación profesional de los futuros suboficiales.', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:51:47,445] [INFO] [_process_chunk] Number of input tokens: 15768
+[2025-01-12 00:51:47,445] [INFO] [_process_chunk] Number of output tokens: 200
+[2025-01-12 00:51:48,382] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:51:48,384] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:51:48,384] [INFO] [_process_chunk] Number of input tokens: 1065
+[2025-01-12 00:51:48,384] [INFO] [_process_chunk] Number of output tokens: 33
+[2025-01-12 00:51:50,329] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:51:52,062] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:51:52,065] [INFO] [process_document] Final document: {'resumenes': 'La Orden Ministerial establece un currículo unificado para la formación de suboficiales del Cuerpo General de la Armada y de Infantería de Marina, que abarca aspectos militares, técnicos y específicos. Esta normativa deroga regulaciones anteriores y se implementará a partir del curso académico 2024/2025. Además, se asegura la igualdad de género y se adapta a las nuevas necesidades formativas del ámbito militar.', 'etiquetas': ['Servicios de educación y formación', 'Otros servicios comunitarios, sociales y personales', 'Servicios de salud y trabajo social'], 'impactos': ['La nueva regulación mejora la formación de suboficiales, adaptándose a necesidades actuales y garantizando igualdad de género. Se prevén implicaciones en la calidad de la enseñanza y en la preparación profesional de los futuros suboficiales.'], 'stakeholders': ['Alumnos de la enseñanza de formación', 'Fuerzas Armadas', 'Ministerio de Defensa'], 'divisiones_cnae': ['CNAE no identificado'], 'short_name': 'Orden DEF/1294/2023: Currículo para Acceso a Suboficiales de la Armada.'}
+[2025-01-12 00:51:52,066] [INFO] [process_document] Final CNAE classification: ['CNAE no identificado']
+[2025-01-12 00:51:52,085] [INFO] [process_document] Total tokens in the document: 1716
+[2025-01-12 00:51:52,089] [INFO] [process_document] Max tokens per chunk: 83519
+[2025-01-12 00:51:52,099] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-01-12 00:51:54,833] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:51:55,652] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:51:55,654] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'Se publican los precios de venta al público (PVP) de labores de tabaco en Expendedurías de Tabaco y Timbre, conforme a la Ley 13/1998. Se detallan precios para cigarrillos y picaduras de pipa en la Península, Illes Balears, Ceuta y Melilla. La resolución entra en vigor el día de su publicación.', 'etiquetas': ['Alimentos, bebidas, tabaco y productos relacionados'], 'stakeholders': ['Fabricantes de tabaco', 'Importadores de tabaco', 'Expendedurías de Tabaco y Timbre'], 'impacto': 'La regulación de precios puede afectar la competitividad del mercado de tabacos, influir en la demanda y generar implicaciones fiscales para los fabricantes e importadores.', 'divisiones_cnae': ['Industria del tabaco']}
+[2025-01-12 00:51:55,654] [INFO] [_process_chunk] Number of input tokens: 2779
+[2025-01-12 00:51:55,654] [INFO] [_process_chunk] Number of output tokens: 177
+[2025-01-12 00:51:56,439] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:51:56,440] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:51:56,440] [INFO] [_process_chunk] Number of input tokens: 1065
+[2025-01-12 00:51:56,440] [INFO] [_process_chunk] Number of output tokens: 33
+[2025-01-12 00:51:58,268] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:51:58,980] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:51:58,983] [INFO] [process_document] Final document: {'resumenes': 'Se establece la publicación de los precios de venta al público (PVP) de las labores de tabaco en las Expendedurías de Tabaco y Timbre, de acuerdo con lo dispuesto en la Ley 13/1998. Esta normativa incluye la fijación de precios para cigarrillos y picaduras de pipa, aplicables en la Península, Illes Balears, Ceuta y Melilla. La resolución correspondiente tendrá efecto inmediato a partir de su publicación.', 'etiquetas': ['Alimentos, bebidas, tabaco y productos relacionados'], 'impactos': ['La regulación de precios puede afectar la competitividad del mercado de tabacos, influir en la demanda y generar implicaciones fiscales para los fabricantes e importadores.'], 'stakeholders': ['Expendedurías de Tabaco y Timbre', 'Importadores de tabaco', 'Fabricantes de tabaco'], 'divisiones_cnae': ['Industria del tabaco', 'CNAE no identificado'], 'short_name': 'Resolución del 1 de diciembre de 2023 sobre precios de tabaco.'}
+[2025-01-12 00:51:58,983] [INFO] [process_document] Final CNAE classification: ['Industria del tabaco', 'CNAE no identificado']
+[2025-01-12 00:52:01,898] [INFO] [send_email] El correo ha sido enviado exitosamente.
+[2025-01-12 00:52:43,288] [INFO] [root] Initialized logging
+[2025-01-12 00:52:43,290] [INFO] [root] Configuration loaded
+[2025-01-12 00:52:43,290] [INFO] [root] Initializing OpenAI client
+[2025-01-12 00:52:43,316] [INFO] [root] Initialized OpenAI client
+[2025-01-12 00:52:43,316] [INFO] [root] Initializing MongoDB client
+[2025-01-12 00:52:43,854] [INFO] [root] Initialized MongoDB client
+[2025-01-12 00:52:43,971] [INFO] [download_days] Downloading content from day 2023-12-03 to 2023-12-10
+[2025-01-12 00:52:43,971] [INFO] [download_day] Downloading BOE content for day 2023-12-03
+[2025-01-12 00:52:44,061] [ERROR] [download_day] Not scrapped document on day https://www.boe.es/datosabiertos/api/boe/sumario/20231203. HTTPError: 404 Client Error: Not Found for url: https://www.boe.es/datosabiertos/api/boe/sumario/20231203
+[2025-01-12 00:52:44,065] [ERROR] [download_day] Status Code: 404, Response Content: <?xml version="1.0" encoding="utf-8"?>
+<response>
+  <status>
+    <code>404</code>
+    <text>La información solicitada no existe</text>
+  </status>
+  <data/>
+</response>
+
+[2025-01-12 00:52:44,065] [INFO] [download_day] Downloaded BOE content for day 2023-12-03
+[2025-01-12 00:52:44,066] [INFO] [download_day] Downloading BOE content for day 2023-12-04
+[2025-01-12 00:52:44,539] [INFO] [_list_links_day] Scrapping day: https://www.boe.es/datosabiertos/api/boe/sumario/20231204
+[2025-01-12 00:52:44,599] [INFO] [_list_links_day] Scrapped day successfully https://www.boe.es/datosabiertos/api/boe/sumario/20231204 (0 BOE documents)
+[2025-01-12 00:52:44,599] [INFO] [download_day] Downloaded BOE content for day 2023-12-04
+[2025-01-12 00:52:44,600] [INFO] [download_day] Downloading BOE content for day 2023-12-05
+[2025-01-12 00:52:44,777] [INFO] [_list_links_day] Scrapping day: https://www.boe.es/datosabiertos/api/boe/sumario/20231205
+[2025-01-12 00:52:44,803] [INFO] [_list_links_day] Scrapped day successfully https://www.boe.es/datosabiertos/api/boe/sumario/20231205 (0 BOE documents)
+[2025-01-12 00:52:44,803] [INFO] [download_day] Downloaded BOE content for day 2023-12-05
+[2025-01-12 00:52:44,804] [INFO] [download_day] Downloading BOE content for day 2023-12-06
+[2025-01-12 00:52:44,973] [INFO] [_list_links_day] Scrapping day: https://www.boe.es/datosabiertos/api/boe/sumario/20231206
+[2025-01-12 00:52:44,985] [INFO] [_list_links_day] Scrapped day successfully https://www.boe.es/datosabiertos/api/boe/sumario/20231206 (6 BOE documents)
+[2025-01-12 00:52:44,985] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-24840
+[2025-01-12 00:52:45,251] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-24840
+[2025-01-12 00:52:45,252] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-24841
+[2025-01-12 00:52:46,768] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-24841
+[2025-01-12 00:52:46,770] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-24842
+[2025-01-12 00:52:47,242] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-24842
+[2025-01-12 00:52:47,244] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-24843
+[2025-01-12 00:52:47,652] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-24843
+[2025-01-12 00:52:47,654] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-24844
+[2025-01-12 00:52:48,181] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-24844
+[2025-01-12 00:52:48,183] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-24845
+[2025-01-12 00:52:48,415] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-24845
+[2025-01-12 00:52:48,416] [INFO] [download_day] Downloaded BOE content for day 2023-12-06
+[2025-01-12 00:52:48,417] [INFO] [download_day] Downloading BOE content for day 2023-12-07
+[2025-01-12 00:52:48,679] [INFO] [_list_links_day] Scrapping day: https://www.boe.es/datosabiertos/api/boe/sumario/20231207
+[2025-01-12 00:52:48,705] [INFO] [_list_links_day] Scrapped day successfully https://www.boe.es/datosabiertos/api/boe/sumario/20231207 (2 BOE documents)
+[2025-01-12 00:52:48,705] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-24912
+[2025-01-12 00:52:48,930] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-24912
+[2025-01-12 00:52:48,931] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-24913
+[2025-01-12 00:52:49,826] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-24913
+[2025-01-12 00:52:49,828] [INFO] [download_day] Downloaded BOE content for day 2023-12-07
+[2025-01-12 00:52:49,829] [INFO] [download_day] Downloading BOE content for day 2023-12-08
+[2025-01-12 00:52:50,246] [INFO] [_list_links_day] Scrapping day: https://www.boe.es/datosabiertos/api/boe/sumario/20231208
+[2025-01-12 00:52:50,259] [INFO] [_list_links_day] Scrapped day successfully https://www.boe.es/datosabiertos/api/boe/sumario/20231208 (3 BOE documents)
+[2025-01-12 00:52:50,259] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25010
+[2025-01-12 00:52:51,475] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25010
+[2025-01-12 00:52:51,476] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25011
+[2025-01-12 00:52:52,038] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25011
+[2025-01-12 00:52:52,039] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25012
+[2025-01-12 00:52:53,334] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25012
+[2025-01-12 00:52:53,334] [INFO] [download_day] Downloaded BOE content for day 2023-12-08
+[2025-01-12 00:52:53,335] [INFO] [download_day] Downloading BOE content for day 2023-12-09
+[2025-01-12 00:52:53,455] [INFO] [_list_links_day] Scrapping day: https://www.boe.es/datosabiertos/api/boe/sumario/20231209
+[2025-01-12 00:52:53,465] [INFO] [_list_links_day] Scrapped day successfully https://www.boe.es/datosabiertos/api/boe/sumario/20231209 (3 BOE documents)
+[2025-01-12 00:52:53,465] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25073
+[2025-01-12 00:52:53,683] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25073
+[2025-01-12 00:52:53,684] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25074
+[2025-01-12 00:52:54,067] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25074
+[2025-01-12 00:52:54,071] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25075
+[2025-01-12 00:52:54,343] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25075
+[2025-01-12 00:52:54,344] [INFO] [download_day] Downloaded BOE content for day 2023-12-09
+[2025-01-12 00:52:54,346] [INFO] [download_day] Downloading BOE content for day 2023-12-10
+[2025-01-12 00:52:54,482] [ERROR] [download_day] Not scrapped document on day https://www.boe.es/datosabiertos/api/boe/sumario/20231210. HTTPError: 404 Client Error: Not Found for url: https://www.boe.es/datosabiertos/api/boe/sumario/20231210
+[2025-01-12 00:52:54,483] [ERROR] [download_day] Status Code: 404, Response Content: <?xml version="1.0" encoding="utf-8"?>
+<response>
+  <status>
+    <code>404</code>
+    <text>La información solicitada no existe</text>
+  </status>
+  <data/>
+</response>
+
+[2025-01-12 00:52:54,483] [INFO] [download_day] Downloaded BOE content for day 2023-12-10
+[2025-01-12 00:52:54,485] [INFO] [download_days] Downloaded content from day 2023-12-03 to 2023-12-10
+[2025-01-12 00:52:54,748] [INFO] [process_document] Total tokens in the document: 13447
+[2025-01-12 00:52:54,749] [INFO] [process_document] Max tokens per chunk: 83519
+[2025-01-12 00:52:54,765] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-01-12 00:52:59,580] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:02,345] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:02,348] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'El real decreto establece requisitos para sistemas informáticos de facturación, buscando modernizar y digitalizar la gestión tributaria en España. Se enfoca en la integridad, trazabilidad y seguridad de los datos, promoviendo el cumplimiento tributario y la lucha contra el fraude. Se prevé la colaboración de pymes y autónomos en este proceso.', 'etiquetas': ['Servicios de TI: consultoría, desarrollo de software, Internet y soporte', 'Servicios financieros y de seguros', 'Otros servicios comunitarios, sociales y personales'], 'stakeholders': ['pymes', 'microempresas', 'autónomos', 'Administración tributaria', 'consumidores'], 'impacto': 'La norma busca mejorar la eficiencia fiscal y reducir el fraude, pero puede implicar costos de adaptación para pymes y autónomos. Se espera un aumento en la transparencia y la colaboración entre contribuyentes y la Administración tributaria.', 'divisiones_cnae': ['Programación, consultoría y otras actividades informáticas', 'Actividades administrativas de oficina', 'Actividades de apoyo a las industrias extractivas']}
+[2025-01-12 00:53:02,349] [INFO] [_process_chunk] Number of input tokens: 14510
+[2025-01-12 00:53:02,349] [INFO] [_process_chunk] Number of output tokens: 200
+[2025-01-12 00:53:03,123] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:03,125] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:53:03,125] [INFO] [_process_chunk] Number of input tokens: 1065
+[2025-01-12 00:53:03,125] [INFO] [_process_chunk] Number of output tokens: 33
+[2025-01-12 00:53:06,217] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:07,260] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:07,262] [INFO] [process_document] Final document: {'resumenes': 'El Real Decreto establece un marco normativo para la implementación de sistemas informáticos de facturación en España, con el objetivo de modernizar y digitalizar la gestión tributaria. Este marco se centra en garantizar la integridad, trazabilidad y seguridad de los datos, lo que a su vez promueve el cumplimiento de las obligaciones tributarias y contribuye a la lucha contra el fraude fiscal. Además, se contempla la colaboración activa de pequeñas y medianas empresas (pymes) y autónomos en la adopción de estas nuevas tecnologías, facilitando así una transición efectiva hacia un sistema más eficiente y transparente.', 'etiquetas': ['Servicios financieros y de seguros', 'Otros servicios comunitarios, sociales y personales', 'Servicios de TI: consultoría, desarrollo de software, Internet y soporte'], 'impactos': ['La norma busca mejorar la eficiencia fiscal y reducir el fraude, pero puede implicar costos de adaptación para pymes y autónomos. Se espera un aumento en la transparencia y la colaboración entre contribuyentes y la Administración tributaria.'], 'stakeholders': ['Administración tributaria', 'microempresas', 'consumidores', 'autónomos', 'pymes'], 'divisiones_cnae': ['Programación, consultoría y otras actividades informáticas', 'Actividades de apoyo a las industrias extractivas', 'Actividades administrativas de oficina', 'CNAE no identificado'], 'short_name': 'Real Decreto 1007/2023 sobre Requisitos de Sistemas de Facturación.'}
+[2025-01-12 00:53:07,262] [INFO] [process_document] Final CNAE classification: ['Programación, consultoría y otras actividades informáticas', 'Actividades de apoyo a las industrias extractivas', 'Actividades administrativas de oficina', 'CNAE no identificado']
+[2025-01-12 00:53:07,288] [INFO] [process_document] Total tokens in the document: 14164
+[2025-01-12 00:53:07,291] [INFO] [process_document] Max tokens per chunk: 83519
+[2025-01-12 00:53:07,313] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-01-12 00:53:10,579] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:13,726] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:13,728] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 1/5. Please enter a valid list of tags.
+[2025-01-12 00:53:16,247] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:16,248] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 2/5. Please enter a valid list of tags.
+[2025-01-12 00:53:19,877] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:19,880] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 3/5. Please enter a valid list of tags.
+[2025-01-12 00:53:20,770] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:20,773] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 4/5. Please enter a valid list of tags.
+[2025-01-12 00:53:22,203] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:22,206] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 5/5. Please enter a valid list of tags.
+[2025-01-12 00:53:22,206] [INFO] [generate_divisiones_cnae] Maximum attempts reached. Validation failed.
+[2025-01-12 00:53:22,206] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'La Ley 31/2022 modifica el IRPF y el Reglamento correspondiente, aumentando el umbral de ingresos para la tributación y ampliando deducciones por maternidad. También se introducen cambios para trabajadores desplazados y se actualizan retenciones en propiedad intelectual. La Ley 28/2022 eleva exenciones para acciones en empresas emergentes.', 'etiquetas': ['Servicios financieros y de seguros', 'Servicios de educación y formación', 'Otros servicios comunitarios, sociales y personales'], 'stakeholders': ['Trabajadores', 'Pensionistas', 'Empresas emergentes', 'Administraciones tributarias'], 'impacto': 'Incremento de ingresos disponibles para trabajadores y pensionistas, mejora en la atracción de talento extranjero y apoyo a empresas emergentes. Posibles implicaciones fiscales para la administración tributaria y ajustes en la gestión de retenciones.', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:53:22,206] [INFO] [_process_chunk] Number of input tokens: 15194
+[2025-01-12 00:53:22,206] [INFO] [_process_chunk] Number of output tokens: 202
+[2025-01-12 00:53:23,264] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:23,267] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:53:23,267] [INFO] [_process_chunk] Number of input tokens: 1098
+[2025-01-12 00:53:23,267] [INFO] [_process_chunk] Number of output tokens: 40
+[2025-01-12 00:53:26,412] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:27,107] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:27,110] [INFO] [process_document] Final document: {'resumenes': 'La Ley 31/2022 introduce modificaciones significativas en el Impuesto sobre la Renta de las Personas Físicas (IRPF) y su reglamento, destacando el aumento del umbral de ingresos para la tributación, lo que beneficia a los contribuyentes con menores ingresos. Además, se amplían las deducciones por maternidad, proporcionando un apoyo adicional a las familias. La ley también contempla ajustes para los trabajadores desplazados, facilitando su situación fiscal, y actualiza las retenciones aplicables a los ingresos por propiedad intelectual, adaptándose a las nuevas realidades del mercado. Por otro lado, la Ley 28/2022 establece un incremento en las exenciones fiscales aplicables a las acciones en empresas emergentes, fomentando así la inversión en este tipo de entidades y promoviendo el emprendimiento. En conjunto, estas leyes buscan mejorar la equidad fiscal y estimular el crecimiento económico.', 'etiquetas': ['Servicios financieros y de seguros', 'Otros servicios comunitarios, sociales y personales', 'Servicios de educación y formación'], 'impactos': ['Incremento de ingresos disponibles para trabajadores y pensionistas, mejora en la atracción de talento extranjero y apoyo a empresas emergentes. Posibles implicaciones fiscales para la administración tributaria y ajustes en la gestión de retenciones.'], 'stakeholders': ['Empresas emergentes', 'Pensionistas', 'Trabajadores', 'Administraciones tributarias'], 'divisiones_cnae': ['CNAE no identificado'], 'short_name': 'Real Decreto 1008/2023 sobre Modificaciones en IRPF y Sociedades.'}
+[2025-01-12 00:53:27,110] [INFO] [process_document] Final CNAE classification: ['CNAE no identificado']
+[2025-01-12 00:53:27,141] [INFO] [process_document] Total tokens in the document: 12494
+[2025-01-12 00:53:27,143] [INFO] [process_document] Max tokens per chunk: 83519
+[2025-01-12 00:53:27,165] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-01-12 00:53:30,759] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:32,142] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:32,145] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'El Real Decreto 829/2023 y sus modificaciones reestructuran los departamentos ministeriales para mejorar la eficacia y eficiencia de la Administración pública. Se crean nuevas direcciones generales y se establecen excepciones en los nombramientos, buscando una mejor respuesta a las necesidades de la ciudadanía y la modernización del Estado.', 'etiquetas': ['Administración, defensa y servicios de seguridad social'], 'stakeholders': ['Gobierno', 'Administración pública', 'Ciudadanía'], 'impacto': 'La reestructuración ministerial busca optimizar recursos y mejorar la atención a la ciudadanía, aunque puede generar incertidumbre en la transición y adaptación del personal a los nuevos órganos y funciones.', 'divisiones_cnae': ['Administración pública y defensa']}
+[2025-01-12 00:53:32,145] [INFO] [_process_chunk] Number of input tokens: 13524
+[2025-01-12 00:53:32,145] [INFO] [_process_chunk] Number of output tokens: 150
+[2025-01-12 00:53:34,305] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:34,308] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:53:34,308] [INFO] [_process_chunk] Number of input tokens: 1098
+[2025-01-12 00:53:34,308] [INFO] [_process_chunk] Number of output tokens: 40
+[2025-01-12 00:53:36,543] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:37,264] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:37,266] [INFO] [process_document] Final document: {'resumenes': 'El Real Decreto 829/2023, junto con sus modificaciones, tiene como objetivo la reestructuración de los departamentos ministeriales con el fin de optimizar la eficacia y eficiencia de la Administración pública. Esta reestructuración incluye la creación de nuevas direcciones generales y la implementación de excepciones en los procesos de nombramiento, todo ello orientado a proporcionar una respuesta más ágil y adecuada a las necesidades de la ciudadanía, así como a impulsar la modernización del Estado.', 'etiquetas': ['Administración, defensa y servicios de seguridad social'], 'impactos': ['La reestructuración ministerial busca optimizar recursos y mejorar la atención a la ciudadanía, aunque puede generar incertidumbre en la transición y adaptación del personal a los nuevos órganos y funciones.'], 'stakeholders': ['Administración pública', 'Ciudadanía', 'Gobierno'], 'divisiones_cnae': ['CNAE no identificado', 'Administración pública y defensa'], 'short_name': 'Real Decreto 1009/2023 sobre Estructura Orgánica Ministerial.'}
+[2025-01-12 00:53:37,267] [INFO] [process_document] Final CNAE classification: ['CNAE no identificado', 'Administración pública y defensa']
+[2025-01-12 00:53:37,287] [INFO] [process_document] Total tokens in the document: 10103
+[2025-01-12 00:53:37,290] [INFO] [process_document] Max tokens per chunk: 83519
+[2025-01-12 00:53:37,308] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-01-12 00:53:40,735] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:41,724] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:41,727] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 1/5. Please enter a valid list of tags.
+[2025-01-12 00:53:42,620] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:42,622] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 2/5. Please enter a valid list of tags.
+[2025-01-12 00:53:44,452] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:44,456] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 3/5. Please enter a valid list of tags.
+[2025-01-12 00:53:45,233] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:45,236] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 4/5. Please enter a valid list of tags.
+[2025-01-12 00:53:46,370] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:46,373] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 5/5. Please enter a valid list of tags.
+[2025-01-12 00:53:46,373] [INFO] [generate_divisiones_cnae] Maximum attempts reached. Validation failed.
+[2025-01-12 00:53:46,373] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'El Real Decreto 174/2021 establece el título de Técnico Superior en Formación para la movilidad segura y sostenible, regulando la formación vial y la habilitación de profesores. Se modifican normativas para facilitar el acceso a la enseñanza de conducción y se reconoce la formación de personal militar en este ámbito.', 'etiquetas': ['Servicios de educación y formación', 'Servicios de TI: consultoría, desarrollo de software, Internet y soporte', 'Otros servicios comunitarios, sociales y personales'], 'stakeholders': ['Ministerio de Defensa', 'Dirección General de Tráfico', 'Escuelas de conductores', 'Estudiantes de formación vial'], 'impacto': 'La modificación normativa facilitará el acceso a la formación vial, mejorará la calidad de la enseñanza y permitirá la integración laboral de personal militar, optimizando el proceso de obtención de permisos de conducción.', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:53:46,374] [INFO] [_process_chunk] Number of input tokens: 11146
+[2025-01-12 00:53:46,374] [INFO] [_process_chunk] Number of output tokens: 188
+[2025-01-12 00:53:47,810] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:47,813] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:53:47,813] [INFO] [_process_chunk] Number of input tokens: 1086
+[2025-01-12 00:53:47,813] [INFO] [_process_chunk] Number of output tokens: 40
+[2025-01-12 00:53:50,034] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:50,966] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:50,999] [INFO] [process_document] Final document: {'resumenes': 'El Real Decreto 174/2021 regula el título de Técnico Superior en Formación para la Movilidad Segura y Sostenible, estableciendo un marco normativo para la formación vial y la habilitación de los profesores de conducción. Este decreto introduce modificaciones en las normativas existentes con el fin de facilitar el acceso a la enseñanza de la conducción, además de reconocer la formación recibida por el personal militar en este ámbito. De esta manera, se busca promover una formación más accesible y adaptada a las necesidades actuales en materia de movilidad, garantizando la seguridad y sostenibilidad en el uso de vehículos.', 'etiquetas': ['Otros servicios comunitarios, sociales y personales', 'Servicios de TI: consultoría, desarrollo de software, Internet y soporte', 'Servicios de educación y formación'], 'impactos': ['La modificación normativa facilitará el acceso a la formación vial, mejorará la calidad de la enseñanza y permitirá la integración laboral de personal militar, optimizando el proceso de obtención de permisos de conducción.'], 'stakeholders': ['Escuelas de conductores', 'Dirección General de Tráfico', 'Estudiantes de formación vial', 'Ministerio de Defensa'], 'divisiones_cnae': ['CNAE no identificado'], 'short_name': 'Real Decreto 1010/2023 sobre modificación de Reglamentos de Escuelas de Conductores.'}
+[2025-01-12 00:53:50,999] [INFO] [process_document] Final CNAE classification: ['CNAE no identificado']
+[2025-01-12 00:53:51,012] [INFO] [process_document] Total tokens in the document: 5265
+[2025-01-12 00:53:51,014] [INFO] [process_document] Max tokens per chunk: 83519
+[2025-01-12 00:53:51,027] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-01-12 00:53:54,561] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:55,799] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:55,802] [INFO] [generate_divisiones_cnae] Invalid tags detected (['Administración pública y defensa', 'Actividades administrativas de oficina', 'No identificado']). Attempt 1/5. Please enter a valid list of tags.
+[2025-01-12 00:53:56,785] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:56,788] [INFO] [generate_divisiones_cnae] Invalid tags detected (['Administración pública y defensa', 'Actividades administrativas de oficina', 'No identificado']). Attempt 2/5. Please enter a valid list of tags.
+[2025-01-12 00:53:58,554] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:58,556] [INFO] [generate_divisiones_cnae] Invalid tags detected (['Administración pública y defensa', 'Actividades administrativas de oficina', 'No identificado']). Attempt 3/5. Please enter a valid list of tags.
+[2025-01-12 00:53:59,660] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:53:59,663] [INFO] [generate_divisiones_cnae] Invalid tags detected (['Administración pública y defensa', 'Actividades administrativas de oficina', 'No identificado']). Attempt 4/5. Please enter a valid list of tags.
+[2025-01-12 00:54:00,820] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:00,823] [INFO] [generate_divisiones_cnae] Invalid tags detected (['Administración pública y defensa', 'Actividades administrativas de oficina', 'No identificado']). Attempt 5/5. Please enter a valid list of tags.
+[2025-01-12 00:54:00,823] [INFO] [generate_divisiones_cnae] Maximum attempts reached. Validation failed.
+[2025-01-12 00:54:00,823] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'La Ley 39/2015 y el Real Decreto 203/2021 promueven la tramitación electrónica en las administraciones públicas. Se modifican reglamentos para incluir la tramitación electrónica en procedimientos sancionadores y liquidatorios de la Seguridad Social, estableciendo principios de cooperación y notificación electrónica, y garantizando la protección de datos.', 'etiquetas': ['Administración, defensa y servicios de seguridad social'], 'stakeholders': ['Administraciones públicas', 'Ciudadanos', 'Inspección de Trabajo y Seguridad Social'], 'impacto': 'La norma mejora la eficiencia administrativa y reduce tiempos de tramitación, pero requiere adaptación tecnológica y formación para su implementación efectiva, afectando a la relación entre administraciones y ciudadanos.', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:54:00,823] [INFO] [_process_chunk] Number of input tokens: 6298
+[2025-01-12 00:54:00,823] [INFO] [_process_chunk] Number of output tokens: 175
+[2025-01-12 00:54:02,142] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:02,143] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': 'No identificado', 'stakeholders': 'No identificado', 'impacto': 'No identificado', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:54:02,143] [INFO] [_process_chunk] Number of input tokens: 1095
+[2025-01-12 00:54:02,143] [INFO] [_process_chunk] Number of output tokens: 40
+[2025-01-12 00:54:04,652] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:05,581] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:05,582] [INFO] [process_document] Final document: {'resumenes': 'La Ley 39/2015 y el Real Decreto 203/2021 establecen un marco normativo que impulsa la tramitación electrónica en las administraciones públicas, con el objetivo de modernizar y agilizar los procedimientos administrativos. Estas normativas introducen modificaciones en diversos reglamentos para incorporar la tramitación electrónica en los procedimientos sancionadores y liquidatorios de la Seguridad Social. Además, se establecen principios fundamentales de cooperación entre las distintas administraciones y se regula la notificación electrónica, asegurando al mismo tiempo la protección de datos personales de los ciudadanos. Este enfoque busca mejorar la eficiencia administrativa y facilitar el acceso a los servicios públicos.', 'etiquetas': ['Administración, defensa y servicios de seguridad social'], 'impactos': ['La norma mejora la eficiencia administrativa y reduce tiempos de tramitación, pero requiere adaptación tecnológica y formación para su implementación efectiva, afectando a la relación entre administraciones y ciudadanos.'], 'stakeholders': ['Administraciones públicas', 'Inspección de Trabajo y Seguridad Social', 'Ciudadanos'], 'divisiones_cnae': ['CNAE no identificado'], 'short_name': 'Real Decreto 1011/2023 sobre modificación de reglamentos de sanciones y administración electrónica.'}
+[2025-01-12 00:54:05,583] [INFO] [process_document] Final CNAE classification: ['CNAE no identificado']
+[2025-01-12 00:54:05,602] [INFO] [process_document] Total tokens in the document: 12802
+[2025-01-12 00:54:05,604] [INFO] [process_document] Max tokens per chunk: 83519
+[2025-01-12 00:54:05,623] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-01-12 00:54:09,612] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:11,091] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:11,093] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'El real decreto aprobado en diciembre de 2023 establece la concesión directa de subvenciones para la rehabilitación del patrimonio histórico en Ceuta y Melilla, con un enfoque en la sostenibilidad y el turismo. Se busca mejorar la calidad de vida y la competitividad económica de estas ciudades, afectadas por su situación geopolítica y la pandemia.', 'etiquetas': ['Servicios de arquitectura, construcción, ingeniería e inspección', 'Servicios de educación y formación', 'Servicios de hotel, restaurante y comercio minorista'], 'stakeholders': ['Gobierno de España', 'Ayuntamientos de Ceuta y Melilla', 'Ciudadanos de Ceuta y Melilla'], 'impacto': 'La rehabilitación del patrimonio histórico impulsará el turismo, mejorará la economía local y fomentará la sostenibilidad, contribuyendo a la cohesión social y económica de Ceuta y Melilla.', 'divisiones_cnae': ['Actividades de apoyo a las industrias extractivas', 'Actividades de construcción especializada', 'Actividades de servicios sociales sin alojamiento']}
+[2025-01-12 00:54:11,093] [INFO] [_process_chunk] Number of input tokens: 13849
+[2025-01-12 00:54:11,093] [INFO] [_process_chunk] Number of output tokens: 193
+[2025-01-12 00:54:12,964] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:12,966] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:54:12,966] [INFO] [_process_chunk] Number of input tokens: 1081
+[2025-01-12 00:54:12,966] [INFO] [_process_chunk] Number of output tokens: 39
+[2025-01-12 00:54:17,086] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:18,426] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:18,427] [INFO] [process_document] Final document: {'resumenes': 'El Real Decreto aprobado en diciembre de 2023 establece un marco para la concesión directa de subvenciones destinadas a la rehabilitación del patrimonio histórico en las ciudades autónomas de Ceuta y Melilla. Este programa tiene como objetivo principal fomentar la sostenibilidad y potenciar el turismo en estas localidades, que han enfrentado desafíos significativos debido a su situación geopolítica y las repercusiones de la pandemia. A través de estas subvenciones, se pretende no solo preservar y revitalizar el patrimonio cultural, sino también mejorar la calidad de vida de sus habitantes y aumentar la competitividad económica de la región.', 'etiquetas': ['Servicios de hotel, restaurante y comercio minorista', 'Servicios de arquitectura, construcción, ingeniería e inspección', 'Servicios de educación y formación'], 'impactos': ['La rehabilitación del patrimonio histórico impulsará el turismo, mejorará la economía local y fomentará la sostenibilidad, contribuyendo a la cohesión social y económica de Ceuta y Melilla.'], 'stakeholders': ['Ayuntamientos de Ceuta y Melilla', 'Ciudadanos de Ceuta y Melilla', 'Gobierno de España'], 'divisiones_cnae': ['Actividades de construcción especializada', 'Actividades de servicios sociales sin alojamiento', 'CNAE no identificado', 'Actividades de apoyo a las industrias extractivas'], 'short_name': 'Real Decreto 1012/2023 sobre subvenciones para proyectos sostenibles en patrimonio histórico turístico en Ceuta y Melilla.'}
+[2025-01-12 00:54:18,427] [INFO] [process_document] Final CNAE classification: ['Actividades de construcción especializada', 'Actividades de servicios sociales sin alojamiento', 'CNAE no identificado', 'Actividades de apoyo a las industrias extractivas']
+[2025-01-12 00:54:18,431] [INFO] [process_document] Total tokens in the document: 2270
+[2025-01-12 00:54:18,433] [INFO] [process_document] Max tokens per chunk: 83519
+[2025-01-12 00:54:18,436] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-01-12 00:54:20,983] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:22,109] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:22,111] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 1/5. Please enter a valid list of tags.
+[2025-01-12 00:54:23,961] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:23,967] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 2/5. Please enter a valid list of tags.
+[2025-01-12 00:54:24,582] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:24,588] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 3/5. Please enter a valid list of tags.
+[2025-01-12 00:54:25,224] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:25,234] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 4/5. Please enter a valid list of tags.
+[2025-01-12 00:54:25,845] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:25,847] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 5/5. Please enter a valid list of tags.
+[2025-01-12 00:54:25,847] [INFO] [generate_divisiones_cnae] Maximum attempts reached. Validation failed.
+[2025-01-12 00:54:25,848] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'El Acuerdo de Asociación ACP-UE, vigente desde 2000, fue prorrogado mediante decisiones del Comité de Embajadores hasta el 31 de diciembre de 2023, debido a la falta de un nuevo acuerdo tras las negociaciones iniciadas en 2018. La última modificación se adoptó el 25 de octubre de 2023.', 'etiquetas': ['Servicios públicos', 'Servicios de investigación y desarrollo y consultoría relacionada', 'No identificado'], 'stakeholders': ['Unión Europea', 'Estados ACP', 'Comité de Embajadores ACP-UE'], 'impacto': 'La prórroga del Acuerdo garantiza la continuidad de relaciones comerciales y políticas entre la UE y los Estados ACP, evitando vacíos legales y asegurando la estabilidad en la cooperación internacional.', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:54:25,848] [INFO] [_process_chunk] Number of input tokens: 3333
+[2025-01-12 00:54:25,848] [INFO] [_process_chunk] Number of output tokens: 173
+[2025-01-12 00:54:26,871] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:26,874] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:54:26,874] [INFO] [_process_chunk] Number of input tokens: 1065
+[2025-01-12 00:54:26,874] [INFO] [_process_chunk] Number of output tokens: 32
+[2025-01-12 00:54:28,941] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:34,086] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:34,089] [INFO] [process_document] Final document: {'resumenes': 'El Acuerdo de Asociación ACP-UE, que ha estado en vigor desde el año 2000, ha sido prorrogado hasta el 31 de diciembre de 2023 mediante decisiones del Comité de Embajadores. Esta prórroga se debe a la ausencia de un nuevo acuerdo, a pesar de que las negociaciones para su renovación comenzaron en 2018. La última modificación del acuerdo se llevó a cabo el 25 de octubre de 2023.', 'etiquetas': ['Servicios de investigación y desarrollo y consultoría relacionada', 'Servicios públicos'], 'impactos': ['La prórroga del Acuerdo garantiza la continuidad de relaciones comerciales y políticas entre la UE y los Estados ACP, evitando vacíos legales y asegurando la estabilidad en la cooperación internacional.'], 'stakeholders': ['Estados ACP', 'Comité de Embajadores ACP-UE', 'Unión Europea'], 'divisiones_cnae': ['CNAE no identificado'], 'short_name': 'Prórroga del Acuerdo de Asociación ACP-UE: Decisión n.º 2/2023.'}
+[2025-01-12 00:54:34,089] [INFO] [process_document] Final CNAE classification: ['CNAE no identificado']
+[2025-01-12 00:54:34,113] [INFO] [process_document] Total tokens in the document: 13769
+[2025-01-12 00:54:34,116] [INFO] [process_document] Max tokens per chunk: 83519
+[2025-01-12 00:54:34,139] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-01-12 00:54:37,905] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:39,180] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:39,184] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 1/5. Please enter a valid list of tags.
+[2025-01-12 00:54:40,313] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:40,314] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 2/5. Please enter a valid list of tags.
+[2025-01-12 00:54:41,701] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:41,704] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'El Parlamento de las Illes Balears ha aprobado una ley para modificar el régimen tributario en materia de vivienda, buscando facilitar el acceso a la vivienda habitual para colectivos vulnerables. Se establecen bonificaciones y reducciones fiscales en el impuesto sobre transmisiones patrimoniales y el impuesto sobre sucesiones y donaciones, en un contexto de crisis económica y aumento de precios.', 'etiquetas': ['Servicios públicos', 'Servicios de salud y trabajo social', 'Servicios inmobiliarios'], 'stakeholders': ['Gobierno de las Illes Balears', 'Ciudadanos', 'Propietarios de vivienda', 'Jóvenes', 'Familias numerosas'], 'impacto': 'La ley busca mitigar la crisis de vivienda, facilitando el acceso a la misma mediante reducciones fiscales, lo que podría aumentar la demanda y oferta de viviendas. Sin embargo, puede generar un impacto en la recaudación fiscal y en la sostenibilidad del mercado inmobiliario.', 'divisiones_cnae': ['Actividades administrativas de oficina', 'Actividades jurídicas y de contabilidad', 'Administración pública y defensa']}
+[2025-01-12 00:54:41,705] [INFO] [_process_chunk] Number of input tokens: 14800
+[2025-01-12 00:54:41,705] [INFO] [_process_chunk] Number of output tokens: 219
+[2025-01-12 00:54:42,560] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:42,561] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:54:42,562] [INFO] [_process_chunk] Number of input tokens: 1097
+[2025-01-12 00:54:42,562] [INFO] [_process_chunk] Number of output tokens: 40
+[2025-01-12 00:54:45,129] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:45,923] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:45,925] [INFO] [process_document] Final document: {'resumenes': 'El Parlamento de las Illes Balears ha aprobado una ley destinada a modificar el régimen tributario relacionado con la vivienda, con el objetivo de facilitar el acceso a la vivienda habitual para colectivos vulnerables. Esta legislación incluye la implementación de bonificaciones y reducciones fiscales en el impuesto sobre transmisiones patrimoniales, así como en el impuesto sobre sucesiones y donaciones. Estas medidas se enmarcan en un contexto de crisis económica y un notable aumento de precios, buscando así aliviar la carga fiscal sobre aquellos sectores de la población que enfrentan mayores dificultades para acceder a la vivienda.', 'etiquetas': ['Servicios inmobiliarios', 'Servicios de salud y trabajo social', 'Servicios públicos'], 'impactos': ['La ley busca mitigar la crisis de vivienda, facilitando el acceso a la misma mediante reducciones fiscales, lo que podría aumentar la demanda y oferta de viviendas. Sin embargo, puede generar un impacto en la recaudación fiscal y en la sostenibilidad del mercado inmobiliario.'], 'stakeholders': ['Familias numerosas', 'Jóvenes', 'Propietarios de vivienda', 'Ciudadanos', 'Gobierno de las Illes Balears'], 'divisiones_cnae': ['Administración pública y defensa', 'Actividades jurídicas y de contabilidad', 'CNAE no identificado', 'Actividades administrativas de oficina'], 'short_name': 'Ley 11/2023 de modificación del Decreto Legislativo 1/2014 sobre tributos en las Illes Balears.'}
+[2025-01-12 00:54:45,926] [INFO] [process_document] Final CNAE classification: ['Administración pública y defensa', 'Actividades jurídicas y de contabilidad', 'CNAE no identificado', 'Actividades administrativas de oficina']
+[2025-01-12 00:54:45,935] [INFO] [process_document] Total tokens in the document: 2750
+[2025-01-12 00:54:45,939] [INFO] [process_document] Max tokens per chunk: 83519
+[2025-01-12 00:54:45,946] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-01-12 00:54:50,578] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:51,416] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:51,419] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 1/5. Please enter a valid list of tags.
+[2025-01-12 00:54:52,048] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:52,051] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 2/5. Please enter a valid list of tags.
+[2025-01-12 00:54:52,927] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:52,932] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 3/5. Please enter a valid list of tags.
+[2025-01-12 00:54:53,677] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:53,679] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 4/5. Please enter a valid list of tags.
+[2025-01-12 00:54:54,287] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:54,290] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 5/5. Please enter a valid list of tags.
+[2025-01-12 00:54:54,290] [INFO] [generate_divisiones_cnae] Maximum attempts reached. Validation failed.
+[2025-01-12 00:54:54,290] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'La Orden establece nuevos trazadores y marcadores para el gasóleo y queroseno, necesarios para aplicar tipos reducidos del Impuesto sobre Hidrocarburos, conforme a la Ley 38/1992. Se deroga la Orden PRE/1724/2002 y se incorpora la Decisión de Ejecución (UE) 2022/197. La norma entra en vigor tras su publicación.', 'etiquetas': ['Productos petrolíferos, combustible, electricidad y otras fuentes de energía'], 'stakeholders': ['Ministerio de Hacienda y Función Pública', 'Ministerio para la Transición Ecológica y el Reto Demográfico', 'Refinerías', 'Distribuidores de hidrocarburos', 'Consumidores finales'], 'impacto': 'La nueva regulación puede implicar ajustes en la producción y comercialización de gasóleos y querosenos, afectando costos y cumplimiento normativo. Se busca mejorar la trazabilidad y control fiscal, alineándose con normativas europeas.', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:54:54,290] [INFO] [_process_chunk] Number of input tokens: 3813
+[2025-01-12 00:54:54,290] [INFO] [_process_chunk] Number of output tokens: 222
+[2025-01-12 00:54:55,702] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:55,704] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:54:55,705] [INFO] [_process_chunk] Number of input tokens: 1065
+[2025-01-12 00:54:55,705] [INFO] [_process_chunk] Number of output tokens: 33
+[2025-01-12 00:54:57,232] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:59,769] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:54:59,777] [INFO] [process_document] Final document: {'resumenes': 'La Orden establece nuevos trazadores y marcadores para el gasóleo y queroseno, con el fin de aplicar tipos reducidos del Impuesto sobre Hidrocarburos, de acuerdo con lo dispuesto en la Ley 38/1992. Con esta normativa, se deroga la anterior Orden PRE/1724/2002 y se incorpora la Decisión de Ejecución (UE) 2022/197. La norma entrará en vigor inmediatamente después de su publicación.', 'etiquetas': ['Productos petrolíferos, combustible, electricidad y otras fuentes de energía'], 'impactos': ['La nueva regulación puede implicar ajustes en la producción y comercialización de gasóleos y querosenos, afectando costos y cumplimiento normativo. Se busca mejorar la trazabilidad y control fiscal, alineándose con normativas europeas.'], 'stakeholders': ['Ministerio de Hacienda y Función Pública', 'Consumidores finales', 'Refinerías', 'Ministerio para la Transición Ecológica y el Reto Demográfico', 'Distribuidores de hidrocarburos'], 'divisiones_cnae': ['CNAE no identificado'], 'short_name': 'Orden PJC/1318/2023 sobre Trazadores y Marcadores en Hidrocarburos.'}
+[2025-01-12 00:54:59,779] [INFO] [process_document] Final CNAE classification: ['CNAE no identificado']
+[2025-01-12 00:54:59,806] [INFO] [process_document] Total tokens in the document: 18812
+[2025-01-12 00:54:59,808] [INFO] [process_document] Max tokens per chunk: 83519
+[2025-01-12 00:54:59,834] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-01-12 00:55:03,217] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:05,551] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:05,553] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 1/5. Please enter a valid list of tags.
+[2025-01-12 00:55:06,555] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:06,558] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 2/5. Please enter a valid list of tags.
+[2025-01-12 00:55:08,601] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:08,603] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 3/5. Please enter a valid list of tags.
+[2025-01-12 00:55:10,736] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:10,740] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 4/5. Please enter a valid list of tags.
+[2025-01-12 00:55:11,942] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:11,945] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 5/5. Please enter a valid list of tags.
+[2025-01-12 00:55:11,945] [INFO] [generate_divisiones_cnae] Maximum attempts reached. Validation failed.
+[2025-01-12 00:55:11,945] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'El Parlamento Vasco ha aprobado la Ley 10/2023, que establece el Plan Vasco de Estadística 2023-2026 y modifica la Ley de Estadística de la CCAA de Euskadi. Este plan organiza la actividad estadística, define objetivos y establece la obligatoriedad de suministrar datos, integrando la perspectiva de género en las estadísticas.', 'etiquetas': ['Servicios públicos', 'Administración pública', 'Estadística'], 'stakeholders': ['Gobierno Vasco', 'Eustat-Instituto Vasco de Estadística', 'Ciudadanos de Euskadi'], 'impacto': 'La ley mejora la calidad y eficiencia de la actividad estadística, promueve la inclusión de la perspectiva de género y optimiza el uso de datos administrativos, lo que puede influir en la toma de decisiones y políticas públicas.', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:55:11,945] [INFO] [_process_chunk] Number of input tokens: 19857
+[2025-01-12 00:55:11,945] [INFO] [_process_chunk] Number of output tokens: 181
+[2025-01-12 00:55:12,889] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:12,892] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:55:12,892] [INFO] [_process_chunk] Number of input tokens: 1083
+[2025-01-12 00:55:12,892] [INFO] [_process_chunk] Number of output tokens: 40
+[2025-01-12 00:55:15,848] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:16,670] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:16,672] [INFO] [process_document] Final document: {'resumenes': 'El Parlamento Vasco ha aprobado la Ley 10/2023, que establece el Plan Vasco de Estadística para el periodo 2023-2026 y modifica la Ley de Estadística de la Comunidad Autónoma del País Vasco. Este nuevo plan tiene como objetivo organizar y estructurar la actividad estadística en la región, definiendo metas claras y estableciendo la obligatoriedad de proporcionar datos por parte de las entidades correspondientes. Además, se incorpora de manera integral la perspectiva de género en la elaboración de estadísticas, lo que refleja un compromiso con la igualdad y la inclusión en la recopilación y análisis de datos.', 'etiquetas': ['Estadística', 'Administración pública', 'Servicios públicos'], 'impactos': ['La ley mejora la calidad y eficiencia de la actividad estadística, promueve la inclusión de la perspectiva de género y optimiza el uso de datos administrativos, lo que puede influir en la toma de decisiones y políticas públicas.'], 'stakeholders': ['Ciudadanos de Euskadi', 'Eustat-Instituto Vasco de Estadística', 'Gobierno Vasco'], 'divisiones_cnae': ['CNAE no identificado'], 'short_name': 'Ley 10/2023 del Plan Vasco de Estadística 2023-2026.'}
+[2025-01-12 00:55:16,673] [INFO] [process_document] Final CNAE classification: ['CNAE no identificado']
+[2025-01-12 00:55:16,693] [INFO] [process_document] Total tokens in the document: 9952
+[2025-01-12 00:55:16,696] [INFO] [process_document] Max tokens per chunk: 83519
+[2025-01-12 00:55:16,717] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-01-12 00:55:20,249] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:23,246] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:23,248] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'El Parlamento Vasco ha aprobado la Ley 11/2023 de movilidad sostenible, que busca integrar un sistema de transporte menos contaminante y accesible. La ley establece principios y objetivos para reducir la contaminación, fomentar el transporte público y garantizar la participación ciudadana en la planificación de la movilidad en Euskadi.', 'etiquetas': ['Servicios de transporte (excl. transporte de residuos)', 'Servicios públicos', 'Otros servicios comunitarios, sociales y personales'], 'stakeholders': ['Gobierno Vasco', 'Ayuntamientos', 'Ciudadanía'], 'impacto': 'La ley promueve un transporte sostenible, reduciendo la contaminación y mejorando la accesibilidad. Implicaciones incluyen la necesidad de inversión en infraestructuras y cambios en la planificación urbana, así como la participación activa de la ciudadanía en la toma de decisiones.', 'divisiones_cnae': ['Transporte terrestre y por tubería', 'Transporte marítimo y por vías navegables interiores', 'Actividades de construcción especializada']}
+[2025-01-12 00:55:23,249] [INFO] [_process_chunk] Number of input tokens: 10986
+[2025-01-12 00:55:23,249] [INFO] [_process_chunk] Number of output tokens: 179
+[2025-01-12 00:55:24,149] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:24,152] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:55:24,153] [INFO] [_process_chunk] Number of input tokens: 1094
+[2025-01-12 00:55:24,153] [INFO] [_process_chunk] Number of output tokens: 39
+[2025-01-12 00:55:27,093] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:27,927] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:27,930] [INFO] [process_document] Final document: {'resumenes': 'El Parlamento Vasco ha aprobado la Ley 11/2023 de movilidad sostenible, cuyo objetivo principal es la creación de un sistema de transporte más accesible y menos contaminante en Euskadi. Esta legislación establece principios y metas claras para la reducción de la contaminación, la promoción del uso del transporte público y la garantía de la participación ciudadana en la planificación de la movilidad. Con ello, se busca no solo mejorar la calidad del aire y la sostenibilidad ambiental, sino también fomentar un modelo de transporte que responda a las necesidades de la población y contribuya al bienestar social.', 'etiquetas': ['Servicios de transporte (excl. transporte de residuos)', 'Otros servicios comunitarios, sociales y personales', 'Servicios públicos'], 'impactos': ['La ley promueve un transporte sostenible, reduciendo la contaminación y mejorando la accesibilidad. Implicaciones incluyen la necesidad de inversión en infraestructuras y cambios en la planificación urbana, así como la participación activa de la ciudadanía en la toma de decisiones.'], 'stakeholders': ['Ayuntamientos', 'Ciudadanía', 'Gobierno Vasco'], 'divisiones_cnae': ['Actividades de construcción especializada', 'Transporte marítimo y por vías navegables interiores', 'Transporte terrestre y por tubería', 'CNAE no identificado'], 'short_name': 'Ley 11/2023 de Movilidad Sostenible en Euskadi.'}
+[2025-01-12 00:55:27,931] [INFO] [process_document] Final CNAE classification: ['Actividades de construcción especializada', 'Transporte marítimo y por vías navegables interiores', 'Transporte terrestre y por tubería', 'CNAE no identificado']
+[2025-01-12 00:55:27,946] [INFO] [process_document] Total tokens in the document: 541
+[2025-01-12 00:55:27,951] [INFO] [process_document] Max tokens per chunk: 83519
+[2025-01-12 00:55:27,953] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-01-12 00:55:32,165] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:32,844] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:32,847] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'Se publican los precios de venta al público (PVP) de labores de tabaco en Expendedurías de Tabaco y Timbre, conforme a la Ley 13/1998. Se detallan precios para la Península, Illes Balears, Ceuta y Melilla, con vigencia inmediata tras su publicación en el BOE.', 'etiquetas': ['Alimentos, bebidas, tabaco y productos relacionados'], 'stakeholders': ['Fabricantes de tabaco', 'Importadores de tabaco', 'Expendedurías de Tabaco y Timbre'], 'impacto': 'Los nuevos PVP afectan la competitividad del mercado de tabacos, influyen en la demanda y pueden alterar los ingresos fiscales derivados de la venta de tabaco.', 'divisiones_cnae': ['Industria del tabaco']}
+[2025-01-12 00:55:32,848] [INFO] [_process_chunk] Number of input tokens: 1604
+[2025-01-12 00:55:32,848] [INFO] [_process_chunk] Number of output tokens: 169
+[2025-01-12 00:55:34,933] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:34,937] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:55:34,937] [INFO] [_process_chunk] Number of input tokens: 1065
+[2025-01-12 00:55:34,937] [INFO] [_process_chunk] Number of output tokens: 33
+[2025-01-12 00:55:37,148] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:37,746] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:37,748] [INFO] [process_document] Final document: {'resumenes': 'Se establece que los precios de venta al público (PVP) de las labores de tabaco serán publicados en las Expendedurías de Tabaco y Timbre, de acuerdo con lo estipulado en la Ley 13/1998. Estos precios se aplicarán a diversas regiones, incluyendo la Península, las Illes Balears, Ceuta y Melilla, y entrarán en vigor de manera inmediata tras su publicación en el Boletín Oficial del Estado (BOE).', 'etiquetas': ['Alimentos, bebidas, tabaco y productos relacionados'], 'impactos': ['Los nuevos PVP afectan la competitividad del mercado de tabacos, influyen en la demanda y pueden alterar los ingresos fiscales derivados de la venta de tabaco.'], 'stakeholders': ['Importadores de tabaco', 'Expendedurías de Tabaco y Timbre', 'Fabricantes de tabaco'], 'divisiones_cnae': ['CNAE no identificado', 'Industria del tabaco'], 'short_name': 'Resolución del 7 de diciembre de 2023 sobre precios de tabaco.'}
+[2025-01-12 00:55:37,748] [INFO] [process_document] Final CNAE classification: ['CNAE no identificado', 'Industria del tabaco']
+[2025-01-12 00:55:37,752] [INFO] [process_document] Total tokens in the document: 969
+[2025-01-12 00:55:37,757] [INFO] [process_document] Max tokens per chunk: 83519
+[2025-01-12 00:55:37,762] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-01-12 00:55:40,555] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:41,658] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:41,661] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 1/5. Please enter a valid list of tags.
+[2025-01-12 00:55:43,730] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:43,732] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 2/5. Please enter a valid list of tags.
+[2025-01-12 00:55:45,903] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:45,905] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 3/5. Please enter a valid list of tags.
+[2025-01-12 00:55:46,489] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:46,492] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 4/5. Please enter a valid list of tags.
+[2025-01-12 00:55:47,185] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:47,188] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 5/5. Please enter a valid list of tags.
+[2025-01-12 00:55:47,188] [INFO] [generate_divisiones_cnae] Maximum attempts reached. Validation failed.
+[2025-01-12 00:55:47,188] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'El Parlamento de Navarra aprueba una Ley Foral para conceder un crédito extraordinario de 1.594.526 euros a partidos políticos para financiar gastos de las elecciones del 28 de mayo de 2023. También se modifica la denominación de varias partidas presupuestarias para su correcta ejecución.', 'etiquetas': ['Servicios financieros y de seguros', 'Administración, defensa y servicios de seguridad social', 'No identificado'], 'stakeholders': ['Partidos políticos', 'Gobierno de Navarra', 'Ciudadanos'], 'impacto': 'La ley garantiza la financiación de gastos electorales, asegurando la transparencia y regularidad en el uso de fondos públicos. Implica un ajuste en el presupuesto que puede afectar otras partidas y la gestión financiera del Gobierno de Navarra.', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:55:47,188] [INFO] [_process_chunk] Number of input tokens: 2004
+[2025-01-12 00:55:47,188] [INFO] [_process_chunk] Number of output tokens: 169
+[2025-01-12 00:55:48,785] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:48,788] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:55:48,788] [INFO] [_process_chunk] Number of input tokens: 1093
+[2025-01-12 00:55:48,788] [INFO] [_process_chunk] Number of output tokens: 40
+[2025-01-12 00:55:51,921] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:53,143] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:53,146] [INFO] [process_document] Final document: {'resumenes': 'El Parlamento de Navarra ha aprobado una Ley Foral que autoriza un crédito extraordinario de 1.594.526 euros destinado a la financiación de los gastos de los partidos políticos en las elecciones del 28 de mayo de 2023. Además, se han realizado modificaciones en la denominación de varias partidas presupuestarias con el fin de asegurar su adecuada ejecución.', 'etiquetas': ['Servicios financieros y de seguros', 'Administración, defensa y servicios de seguridad social'], 'impactos': ['La ley garantiza la financiación de gastos electorales, asegurando la transparencia y regularidad en el uso de fondos públicos. Implica un ajuste en el presupuesto que puede afectar otras partidas y la gestión financiera del Gobierno de Navarra.'], 'stakeholders': ['Partidos políticos', 'Ciudadanos', 'Gobierno de Navarra'], 'divisiones_cnae': ['CNAE no identificado'], 'short_name': 'Ley Foral 19/2023 de Crédito Extraordinario para Subvenciones Electorales en Navarra.'}
+[2025-01-12 00:55:53,146] [INFO] [process_document] Final CNAE classification: ['CNAE no identificado']
+[2025-01-12 00:55:53,150] [INFO] [process_document] Total tokens in the document: 953
+[2025-01-12 00:55:53,155] [INFO] [process_document] Max tokens per chunk: 83519
+[2025-01-12 00:55:53,160] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-01-12 00:55:56,396] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:56,998] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:57,000] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 1/5. Please enter a valid list of tags.
+[2025-01-12 00:55:58,124] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:58,127] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 2/5. Please enter a valid list of tags.
+[2025-01-12 00:55:58,777] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:55:58,779] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 3/5. Please enter a valid list of tags.
+[2025-01-12 00:56:01,209] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:56:01,212] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 4/5. Please enter a valid list of tags.
+[2025-01-12 00:56:02,878] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:56:02,881] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 5/5. Please enter a valid list of tags.
+[2025-01-12 00:56:02,882] [INFO] [generate_divisiones_cnae] Maximum attempts reached. Validation failed.
+[2025-01-12 00:56:02,882] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'El Parlamento de Navarra aprueba una Ley Foral para conceder un crédito extraordinario de 1.000 euros al Departamento de Universidad, Innovación y Transformación Digital, destinado a la Fundación CENER, que se dedica a la investigación en energías renovables. La ley entra en vigor tras su publicación.', 'etiquetas': ['Servicios de investigación y desarrollo y consultoría relacionada', 'Servicios públicos', 'Otros servicios comunitarios, sociales y personales'], 'stakeholders': ['Gobierno de Navarra', 'Fundación CENER', 'Administración General del Estado', 'CIEMAT'], 'impacto': 'La ley permitirá a la Fundación CENER aumentar su capacidad de investigación en energías renovables, fortaleciendo la colaboración entre administraciones y promoviendo la innovación en el sector, con implicaciones positivas para el desarrollo económico y social de Navarra.', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:56:02,882] [INFO] [_process_chunk] Number of input tokens: 1989
+[2025-01-12 00:56:02,882] [INFO] [_process_chunk] Number of output tokens: 186
+[2025-01-12 00:56:04,054] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:56:04,058] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': ['CNAE no identificado']}
+[2025-01-12 00:56:04,058] [INFO] [_process_chunk] Number of input tokens: 1092
+[2025-01-12 00:56:04,058] [INFO] [_process_chunk] Number of output tokens: 40
+[2025-01-12 00:56:05,536] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:56:06,359] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-12 00:56:06,361] [INFO] [process_document] Final document: {'resumenes': 'El Parlamento de Navarra ha aprobado una Ley Foral que autoriza la concesión de un crédito extraordinario de 1.000 euros al Departamento de Universidad, Innovación y Transformación Digital. Este crédito está destinado a la Fundación CENER, una entidad enfocada en la investigación en el ámbito de las energías renovables. La ley entrará en vigor una vez sea publicada oficialmente.', 'etiquetas': ['Servicios públicos', 'Otros servicios comunitarios, sociales y personales', 'Servicios de investigación y desarrollo y consultoría relacionada'], 'impactos': ['La ley permitirá a la Fundación CENER aumentar su capacidad de investigación en energías renovables, fortaleciendo la colaboración entre administraciones y promoviendo la innovación en el sector, con implicaciones positivas para el desarrollo económico y social de Navarra.'], 'stakeholders': ['CIEMAT', 'Fundación CENER', 'Administración General del Estado', 'Gobierno de Navarra'], 'divisiones_cnae': ['CNAE no identificado'], 'short_name': 'Ley Foral 20/2023 de Crédito Extraordinario para Universidad e Innovación.'}
+[2025-01-12 00:56:06,362] [INFO] [process_document] Final CNAE classification: ['CNAE no identificado']
+[2025-01-12 00:56:09,334] [INFO] [send_email] El correo ha sido enviado exitosamente.
