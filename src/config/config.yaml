@@ -175,3 +175,206 @@ prompt_cnae: |
   Actividades de los hogares como empleadores
   Actividades de los hogares como productores
   Actividades de organizaciones y organismos extraterritoriales'
+
+prompt_rama_jca: |
+
+  'Eres Papyrus, un clasificador de documentos.
+  Tu trabajo consiste en analizar el texto proporcionado y categorizarlo asignando entre 0 y 3 ramas jurídicas, las más relevantes,
+  utilizando únicamente el listado de ramas jurídicas que se te proporcionará a continuación. 
+  No crees nuevas ramas, ni asignes más de 3, ni añadas más información a tu respuesta que las ramas jurídicas en el formato json, ni añadas nigún otro caracter a ningún elemento de la lista.
+  Escribe cada rama al completo, tal como están escritas en el listado que comparto a continuación.
+  Prioriza asignar una rama jurídica aplicable como mínimo, pero si no encuentras ninguna rama jurídica aplicable, escribe "No identificado" dentro de la lista.
+  La estructura de tu respuesta debe ser en formato json: 
+  {"ramas_juridicas":["<rama_1>", "<rama_2>", <...>]} o {"ramas_juridicas": "No identificado"}
+  
+  Estas son las posibles ramas jurídicas:
+  
+  Derecho Civil
+  Derecho Mercantil
+  Derecho Administrativo
+  Derecho Fiscal
+  Derecho Laboral
+  Derecho Procesal-Civil
+  Derecho Procesal-Penal
+  Derecho Constitucional
+  Derecho de la UE
+  Derecho Internacional Privado
+  Derecho Internacional Público
+  Derecho Penal Económico
+  Derecho Informático
+  Derecho Ambiental'
+
+subramas_juridicas:
+  Derecho Civil:
+    - genérico
+    - familia
+    - sucesiones
+    - divorcios
+    - arrendamientos
+    - responsabilidad civil
+    - contratos
+    - obligaciones
+    - propiedad
+    - derechos reales
+    - hipotecas
+    - servidumbres
+    - donaciones
+  Derecho Mercantil:
+    - genérico
+    - M&A
+    - financiero
+    - inmobiliario
+    - mercados de capital
+    - societario
+    - gobierno corporativo
+    - seguros
+    - propiedad industrial
+    - contratos mercantiles
+    - banca y seguros
+    - franquicias
+    - marcas y patentes
+    - quiebras y reestructuración empresarial
+  Derecho Administrativo:
+    - genérico
+    - energía
+    - medio ambiente
+    - urbanismo
+    - sectores regulados
+    - bancario
+    - contratación pública
+    - contencioso-administrativo
+    - subvenciones
+    - expropiaciones
+    - licencias y permisos
+    - responsabilidad patrimonial
+    - transparencia y buen gobierno
+  Derecho Fiscal:
+    - genérico
+    - tributación internacional
+    - IVA
+    - IS
+    - IRNR
+    - planificación fiscal
+    - impuestos locales
+    - procedimientos tributarios
+    - impuestos indirectos
+    - impuestos directos
+    - fiscalidad empresarial
+    - fiscalidad de personas físicas
+    - precios de transferencia
+  Derecho Laboral:
+    - genérico
+    - contratación
+    - despidos
+    - negociación colectiva
+    - reclamaciones salariales
+    - prevención de riesgos laborales
+    - seguridad social
+    - expatriados
+    - acoso laboral
+    - movilidad geográfica
+    - conflictos colectivos
+    - externalización
+  Derecho Procesal-Civil:
+    - genérico
+    - pleitos masa (cláusulas suelo, cárteles)
+    - impugnación acuerdos societarios
+    - desahucio
+    - ejecución de sentencias
+    - medidas cautelares
+    - responsabilidad civil
+    - arbitraje
+    - mediación
+    - procesos monitorios
+  Derecho Procesal-Penal:
+    - genérico
+    - delitos medioambientales
+    - delitos económicos
+    - delitos de sangre
+    - delitos informáticos
+    - blanqueo de capitales
+    - violencia de género
+    - delitos contra la propiedad
+    - delitos contra la seguridad vial
+    - delitos de corrupción
+    - delitos societarios
+    - delitos fiscales
+  Derecho Constitucional:
+    - genérico
+    - derechos fundamentales
+    - control de constitucionalidad
+    - reparto de competencias
+    - procedimientos constitucionales
+    - amparo constitucional
+    - estado de derecho
+    - sistemas electorales
+    - reformas constitucionales
+  Derecho de la UE:
+    - genérico
+    - mercado interior
+    - competencia
+    - protección de datos (GDPR)
+    - ayudas de Estado
+    - derechos fundamentales de la UE
+    - normativa comunitaria
+    - política agraria común
+    - libre circulación de bienes y personas
+  Derecho Internacional Privado:
+    - genérico
+    - conflictos de leyes
+    - contratos internacionales
+    - reconocimiento de sentencias extranjeras
+    - matrimonios internacionales
+    - adopciones internacionales
+    - arbitraje internacional
+    - comercio internacional
+  Derecho Internacional Público:
+    - genérico
+    - tratados internacionales
+    - derecho diplomático
+    - derecho humanitario
+    - organismos internacionales
+    - derechos humanos
+    - derecho del mar
+    - derecho penal internacional
+    - conflictos armados
+    - resolución de disputas internacionales
+  Derecho Penal Económico:
+    - genérico
+    - fraudes
+    - insolvencias punibles
+    - blanqueo de capitales
+    - delitos societarios
+    - delitos fiscales
+    - corrupción
+    - cárteles
+  Derecho Informático:
+    - genérico
+    - protección de datos
+    - ciberseguridad
+    - contratos tecnológicos
+    - blockchain y criptomonedas
+    - propiedad intelectual digital
+    - regulación de IA
+    - delitos informáticos
+  Derecho Ambiental:
+    - genérico
+    - cambio climático
+    - protección de la biodiversidad
+    - gestión de residuos
+    - energías renovables
+    - impacto ambiental
+    - contaminación
+    - legislación sobre agua
+    - legislación forestal
+
+prompt_subrama_jca: |
+  'Eres Papyrus, un clasificador de documentos.
+  Tu trabajo consiste en analizar el texto proporcionado y categorizarlo asignando entre 0 y 5 subramas jurídicas del Derecho Ambiental, las más relevantes,
+  utilizando únicamente el listado de ramas jurídicas que se te proporcionará a continuación. 
+  No crees nuevas divisiones, ni asignes más de 5.
+  Escribe cada subrama al completo, tal como están escritas en el listado que comparto a continuación.
+  Prioriza asignar una subrama jurídica aplicable como mínimo, pero si no encuentras ninguna subrama jurídica aplicable, escribe "No identificado" dentro de la lista.
+  La estructura de tu respuesta debe ser en formato json: 
+  {"subramas_juridicas":["<subrama_1>", "<subrama_2>", <...>]} o {"subramas_juridicas":["No identificado"]}{subramas_juridicas[rama]}
+  Estas son las posibles subramas jurídicas'

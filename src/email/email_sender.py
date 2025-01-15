@@ -108,6 +108,15 @@ def write_html(documents, dates):
                 margin: 2px;
                 font-size: 0.9em;
             }}
+            .etiqueta_2 {{
+                display: inline-block;
+                background-color: #F1F1F1;
+                color: #05141C;
+                padding: 5px 10px;
+                border-radius: 12px;
+                margin: 2px;
+                font-size: 0.9em;
+            }}
             .less-opacity {{
                 opacity: 0.6;
                 font-size: 0.9em;
@@ -123,6 +132,18 @@ def write_html(documents, dates):
             <div class="document">
                 <h2>{document[1]["short_name"]}</h2>
                 <p>{''.join(f'<span class="etiqueta">{etiqueta}</span>' for etiqueta in document[1]['divisiones_cnae'])}</p>
+                <p>
+                    {''.join(
+                        f'<span class="etiqueta">{rama}</span>'
+                        + ''.join(
+                            f'<span class="etiqueta_2">{subrama}</span>'
+                            for subrama in subramas
+                        )
+                        for rama, subramas in document[1]['ramas_juridicas'].items()
+                    ) if document[1]['ramas_juridicas'] else ''}
+                </p>
+
+
                 <p>{document[1]['resumenes']}</p>
                 <p><a href="{document[0].metadata["url_pdf"]}">Leer más: {key}</a> 
                 <span class="less-opacity">

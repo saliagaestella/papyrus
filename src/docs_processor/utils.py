@@ -123,9 +123,30 @@ def extract_chunk(document, config, client):
     else:
         output["divisiones_cnae"] = []
 
-    """elif key == "prompt_rama_jca":
-        respuesta = json.loads(response.choices[0].message.content)
-        output["rama_jca"] = respuesta["rama_jca"]"""
+    if output["resumen"] != "No identificado":
+        possible_tags = [rama for rama in config["subramas_juridicas"].keys()]
+        output["ramas_juridicas"] = generate_ramas_juridicas(
+            config, client, dedent(document), possible_tags
+        )
+    else:
+        output["ramas_juridicas"] = []
+
+    if output["ramas_juridicas"] and output["ramas_juridicas"] != "No identificado":
+        subramas_juridicas = config["subramas_juridicas"]
+        for rama in output["ramas_juridicas"]:
+            possible_tags = subramas_juridicas[rama]
+            prompt_subrama_jca_completa = (
+                f'{config["prompt_subrama_jca"]} del {rama}: {possible_tags}'
+            )
+            if isinstance(output["ramas_juridicas"], list):
+                output["ramas_juridicas"] = {key: [] for key in output["ramas_juridicas"]}
+            output["ramas_juridicas"][rama] = generate_subramas_juridicas(
+                config,
+                client,
+                dedent(document),
+                dedent(prompt_subrama_jca_completa),
+                possible_tags,
+            )
 
     logger.info(f"AI Result: \n {output}")
     return (output, input_tokens, output_tokens)
@@ -266,7 +287,114 @@ def generate_divisiones_cnae(config, client, resumen):
             return tags
         else:
             logger.info(
-                f"Invalid tags detected ({tags}). Attempt {attempts + 1}/5. Please enter a valid list of tags."
+                f"Invalid tags detected ({tags}). Attempt {attempts + 1}/1. Please enter a valid list of tags."
+            )
+            attempts += 1
+
+    logger.info("Maximum attempts reached. Validation failed.")
+    return []
+
+
+def generate_ramas_juridicas(config, client, resumen, possible_tags):
+    """
+    Generates the cnae tags and checks if all tags in are within possible_tags.
+    Keeps prompting up to 5 times until all tags are valid.
+
+    Args:
+        tags (list): List of tags to validate.
+
+    Returns:
+        list: Validated list of tags or None if validation fails after 5 attempts.
+    """
+    logger = lg.getLogger(generate_ramas_juridicas.__name__)
+    prompt = dedent(config["prompt_rama_jca"])
+    attempts = 0
+    while attempts < 1:
+        messages = [
+            {
+                "role": "system",
+                "content": prompt,
+            },
+            {"role": "user", "content": resumen},
+        ]
+
+        response = client.chat.completions.create(
+            model=config["model"],
+            response_format={"type": "json_object"},
+            messages=messages,
+            temperature=0,
+            max_tokens=config["max_words_response_summary"],
+            top_p=1,
+            frequency_penalty=0,
+            presence_penalty=0,
+        )
+
+        tags = [
+            tag.strip()
+            for tag in json.loads(response.choices[0].message.content)[
+                "ramas_juridicas"
+            ]
+        ]
+
+        if any(tag in possible_tags for tag in tags):
+            return tags
+        else:
+            logger.info(
+                f"Invalid legal branch detected ({tags}). Attempt {attempts + 1}/1. Please enter a valid list of branches."
+            )
+            attempts += 1
+
+    logger.info("Maximum attempts reached. Validation failed.")
+    return []
+
+
+def generate_subramas_juridicas(
+    config, client, resumen, prompt_subrama_jca_completa, possible_tags
+):
+    """
+    Generates the cnae tags and checks if all tags in are within possible_tags.
+    Keeps prompting up to 5 times until all tags are valid.
+
+    Args:
+        tags (list): List of tags to validate.
+
+    Returns:
+        list: Validated list of tags or None if validation fails after 5 attempts.
+    """
+    logger = lg.getLogger(generate_subramas_juridicas.__name__)
+    attempts = 0
+    while attempts < 1:
+        messages = [
+            {
+                "role": "system",
+                "content": prompt_subrama_jca_completa,
+            },
+            {"role": "user", "content": resumen},
+        ]
+
+        response = client.chat.completions.create(
+            model=config["model"],
+            response_format={"type": "json_object"},
+            messages=messages,
+            temperature=0,
+            max_tokens=config["max_words_response_summary"],
+            top_p=1,
+            frequency_penalty=0,
+            presence_penalty=0,
+        )
+
+        tags = [
+            tag.strip()
+            for tag in json.loads(response.choices[0].message.content)[
+                "subramas_juridicas"
+            ]
+        ]
+
+        if any(tag in possible_tags for tag in tags):
+            return tags
+        else:
+            logger.info(
+                f"Invalid legal sub-branch detected ({tags}). Attempt {attempts + 1}/1. Please enter a valid list of branches."
             )
             attempts += 1
 
