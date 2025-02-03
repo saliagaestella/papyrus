@@ -58,7 +58,7 @@ class BOJAScrapper(BaseScrapper):
                 items_a = listado_principal.find_all("a")
                 for item in items_a:
                     if re.search(
-                        r"\b(Disposiciones Generales|Otras Disposiciones)\b",
+                        r"\b(Disposiciones Generales)\b", #r"\b(Disposiciones Generales|Otras Disposiciones)\b",
                         item.text,
                         re.IGNORECASE,
                     ):

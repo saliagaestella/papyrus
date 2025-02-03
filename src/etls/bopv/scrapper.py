@@ -146,7 +146,7 @@ class BOPVScrapper(BaseScrapper):
                 raise ScrapperError("No se pudo encontrar la sección requerida.")
 
             seccion_text = seccion_tag.get_text(strip=True).upper()
-            if seccion_text not in ["DISPOSICIONES GENERALES", "OTRAS DISPOSICIONES"]:
+            if seccion_text not in ["DISPOSICIONES GENERALES"]: #if seccion_text not in ["DISPOSICIONES GENERALES", "OTRAS DISPOSICIONES"]:
                 return
             tipologia = seccion_tag.get_text(strip=True)
             organismo_tag = soup.find("h5", class_="BOPVOrganismo")
