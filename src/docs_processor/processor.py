@@ -14,14 +14,14 @@ from src.docs_processor.utils import (
 class DocumentProcessor:
     def __init__(self, initializer: Initializer):
         self.initializer = initializer
-        self.tokenizer = tiktoken.get_encoding("cl100k_base")
         self.config = initializer.config
+        self.tokenizer = tiktoken.get_encoding(self.config["tokenizer_encoder"])
         self.results = None
 
     def process_document(self, text: str, name: str = None):
         logger = lg.getLogger(self.process_document.__name__)
         clean_text = text.replace("  ", " ").replace("\n", "; ").replace(";", " ")
-        total_doc_tokens = num_tokens_from_string(clean_text, self.config["model"])
+        total_doc_tokens = num_tokens_from_string(clean_text, self.tokenizer)
         logger.info(f"Total tokens in the document: {total_doc_tokens}")
 
         max_tokens_response_summary = (
@@ -94,7 +94,6 @@ class DocumentProcessor:
                 for key2, value2 in value.items():
                     if isinstance(value2, set):
                         aggregated[key][key2] = list(value2)
-
 
         self.results = aggregated
 

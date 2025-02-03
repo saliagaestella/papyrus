@@ -2237,3 +2237,901 @@
 [2025-01-15 23:39:20,116] [INFO] [process_document] Final document: {'resumenes': 'El Real Decreto 829/2023 establece la estructura y funciones del Ministerio de Ciencia, Innovación y Universidades, que tiene la responsabilidad de dirigir la política gubernamental en materia de ciencia y educación universitaria. Este decreto tiene como objetivo principal fortalecer la investigación, el desarrollo y la innovación (I+D+I) en el país, así como optimizar las infraestructuras científicas. Para lograrlo, se prevé la concesión de subvenciones a entidades como la Fundació Institució dels Centres de Recerca de Catalunya y la Fundació URV, con el fin de promover la excelencia científica y fomentar un entorno propicio para el avance del conocimiento y la innovación.', 'etiquetas': ['Otros servicios comunitarios, sociales y personales', 'Servicios de educación y formación', 'Servicios de investigación y desarrollo y consultoría relacionada'], 'impactos': ['Las subvenciones mejorarán la infraestructura científica y tecnológica, fomentarán la investigación interdisciplinar y la formación de profesionales, contribuyendo a la excelencia en la I+D+I y a la calidad asistencial en el ámbito sanitario.'], 'stakeholders': ['Fundació URV', 'Estudiantes y profesionales sanitarios', 'Ministerio de Ciencia, Innovación y Universidades', 'Centros CERCA', 'Fundació Institució dels Centres de Recerca de Catalunya'], 'divisiones_cnae': ['Otras actividades profesionales, científicas y técnicas', 'Actividades de programación y emisión', 'Investigación y desarrollo'], 'ramas_juridicas': {'Derecho Administrativo': ['responsabilidad patrimonial', 'transparencia y buen gobierno', 'urbanismo', 'medio ambiente', 'subvenciones'], 'Derecho Fiscal': [], 'Derecho Constitucional': []}, 'short_name': 'Real Decreto 1132/2023 sobre subvenciones a fundaciones en I+D+i.'}
 [2025-01-15 23:39:20,116] [INFO] [process_document] Final CNAE classification: ['Otras actividades profesionales, científicas y técnicas', 'Actividades de programación y emisión', 'Investigación y desarrollo']
 [2025-01-15 23:39:22,976] [INFO] [send_email] El correo ha sido enviado exitosamente.
+[2025-01-26 16:30:09,156] [INFO] [root] Initialized logging
+[2025-01-26 16:30:09,162] [INFO] [root] Configuration loaded
+[2025-01-26 16:30:09,162] [INFO] [root] Initializing DeepSeek client
+[2025-01-26 16:30:09,198] [INFO] [root] Initialized DeepSeek client
+[2025-01-26 16:30:09,198] [INFO] [root] Initializing MongoDB client
+[2025-01-26 16:32:12,087] [INFO] [root] Initialized logging
+[2025-01-26 16:32:12,093] [INFO] [root] Configuration loaded
+[2025-01-26 16:32:12,093] [INFO] [root] Initializing DeepSeek client
+[2025-01-26 16:32:12,122] [INFO] [root] Initialized DeepSeek client
+[2025-01-26 16:32:12,122] [INFO] [root] Initializing MongoDB client
+[2025-01-26 16:37:58,184] [INFO] [root] Initialized logging
+[2025-01-26 16:37:58,190] [INFO] [root] Configuration loaded
+[2025-01-26 16:37:58,190] [INFO] [root] Initializing DeepSeek client
+[2025-01-26 16:37:58,217] [INFO] [root] Initialized DeepSeek client
+[2025-01-26 16:37:58,217] [INFO] [root] Initializing MongoDB client
+[2025-01-26 16:37:58,803] [INFO] [root] Initialized MongoDB client
+[2025-01-26 16:38:01,009] [INFO] [download_days] Downloading content from day 2023-12-21 to 2023-12-21
+[2025-01-26 16:38:01,010] [INFO] [download_day] Downloading BOE content for day 2023-12-21
+[2025-01-26 16:38:01,720] [INFO] [_list_links_day] Scrapping day: https://www.boe.es/datosabiertos/api/boe/sumario/20231221
+[2025-01-26 16:38:01,751] [INFO] [_list_links_day] Scrapped day successfully https://www.boe.es/datosabiertos/api/boe/sumario/20231221 (28 BOE documents)
+[2025-01-26 16:38:01,751] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25881
+[2025-01-26 16:38:02,899] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25881
+[2025-01-26 16:38:02,901] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25882
+[2025-01-26 16:38:04,651] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25882
+[2025-01-26 16:38:04,653] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25883
+[2025-01-26 16:38:05,210] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25883
+[2025-01-26 16:38:05,211] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25884
+[2025-01-26 16:38:05,506] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25884
+[2025-01-26 16:38:05,508] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25885
+[2025-01-26 16:38:05,800] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25885
+[2025-01-26 16:38:05,802] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25886
+[2025-01-26 16:38:06,204] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25886
+[2025-01-26 16:38:06,205] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25971
+[2025-01-26 16:38:06,588] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25971
+[2025-01-26 16:38:06,590] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25972
+[2025-01-26 16:38:06,956] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25972
+[2025-01-26 16:38:06,958] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25973
+[2025-01-26 16:38:07,307] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25973
+[2025-01-26 16:38:07,310] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25974
+[2025-01-26 16:38:07,587] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25974
+[2025-01-26 16:38:07,589] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25975
+[2025-01-26 16:38:07,887] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25975
+[2025-01-26 16:38:07,889] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25976
+[2025-01-26 16:38:08,168] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25976
+[2025-01-26 16:38:08,170] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25977
+[2025-01-26 16:38:08,455] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25977
+[2025-01-26 16:38:08,457] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25978
+[2025-01-26 16:38:08,760] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25978
+[2025-01-26 16:38:08,764] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25979
+[2025-01-26 16:38:09,035] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25979
+[2025-01-26 16:38:09,037] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25980
+[2025-01-26 16:38:09,313] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25980
+[2025-01-26 16:38:09,315] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25981
+[2025-01-26 16:38:09,588] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25981
+[2025-01-26 16:38:09,589] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25982
+[2025-01-26 16:38:09,886] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25982
+[2025-01-26 16:38:09,888] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25983
+[2025-01-26 16:38:10,169] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25983
+[2025-01-26 16:38:10,171] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25984
+[2025-01-26 16:38:10,501] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25984
+[2025-01-26 16:38:10,502] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25985
+[2025-01-26 16:38:10,876] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25985
+[2025-01-26 16:38:10,877] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25986
+[2025-01-26 16:38:11,214] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25986
+[2025-01-26 16:38:11,216] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25987
+[2025-01-26 16:38:11,539] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25987
+[2025-01-26 16:38:11,541] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25988
+[2025-01-26 16:38:12,038] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25988
+[2025-01-26 16:38:12,039] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25989
+[2025-01-26 16:38:12,347] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25989
+[2025-01-26 16:38:12,349] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25990
+[2025-01-26 16:38:12,654] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25990
+[2025-01-26 16:38:12,655] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25991
+[2025-01-26 16:38:12,974] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25991
+[2025-01-26 16:38:12,976] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25992
+[2025-01-26 16:38:13,297] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25992
+[2025-01-26 16:38:13,298] [INFO] [download_day] Downloaded BOE content for day 2023-12-21
+[2025-01-26 16:38:13,300] [INFO] [download_days] Downloaded content from day 2023-12-21 to 2023-12-21
+[2025-01-26 16:47:31,365] [INFO] [root] Initialized logging
+[2025-01-26 16:47:31,371] [INFO] [root] Configuration loaded
+[2025-01-26 16:47:31,371] [INFO] [root] Initializing DeepSeek client
+[2025-01-26 16:47:31,400] [INFO] [root] Initialized DeepSeek client
+[2025-01-26 16:47:31,400] [INFO] [root] Initializing MongoDB client
+[2025-01-26 16:47:31,858] [INFO] [root] Initialized MongoDB client
+[2025-01-26 16:47:31,969] [INFO] [download_days] Downloading content from day 2023-12-21 to 2023-12-21
+[2025-01-26 16:47:31,969] [INFO] [download_day] Downloading BOE content for day 2023-12-21
+[2025-01-26 16:47:32,201] [INFO] [_list_links_day] Scrapping day: https://www.boe.es/datosabiertos/api/boe/sumario/20231221
+[2025-01-26 16:47:32,228] [INFO] [_list_links_day] Scrapped day successfully https://www.boe.es/datosabiertos/api/boe/sumario/20231221 (28 BOE documents)
+[2025-01-26 16:47:32,228] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25881
+[2025-01-26 16:47:32,572] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25881
+[2025-01-26 16:47:32,573] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25882
+[2025-01-26 16:47:33,188] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25882
+[2025-01-26 16:47:33,189] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25883
+[2025-01-26 16:47:33,505] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25883
+[2025-01-26 16:47:33,506] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25884
+[2025-01-26 16:47:33,847] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25884
+[2025-01-26 16:47:33,850] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25885
+[2025-01-26 16:47:34,148] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25885
+[2025-01-26 16:47:34,151] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25886
+[2025-01-26 16:47:34,505] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25886
+[2025-01-26 16:47:34,507] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25971
+[2025-01-26 16:47:34,802] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25971
+[2025-01-26 16:47:34,804] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25972
+[2025-01-26 16:47:35,109] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25972
+[2025-01-26 16:47:35,111] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25973
+[2025-01-26 16:47:35,411] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25973
+[2025-01-26 16:47:35,413] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25974
+[2025-01-26 16:47:35,732] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25974
+[2025-01-26 16:47:35,734] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25975
+[2025-01-26 16:47:36,039] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25975
+[2025-01-26 16:47:36,041] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25976
+[2025-01-26 16:47:36,311] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25976
+[2025-01-26 16:47:36,313] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25977
+[2025-01-26 16:47:36,590] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25977
+[2025-01-26 16:47:36,592] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25978
+[2025-01-26 16:47:36,899] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25978
+[2025-01-26 16:47:36,902] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25979
+[2025-01-26 16:47:37,225] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25979
+[2025-01-26 16:47:37,227] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25980
+[2025-01-26 16:47:37,567] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25980
+[2025-01-26 16:47:37,569] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25981
+[2025-01-26 16:47:37,881] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25981
+[2025-01-26 16:47:37,883] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25982
+[2025-01-26 16:47:38,229] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25982
+[2025-01-26 16:47:38,231] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25983
+[2025-01-26 16:47:38,592] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25983
+[2025-01-26 16:47:38,594] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25984
+[2025-01-26 16:47:38,882] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25984
+[2025-01-26 16:47:38,884] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25985
+[2025-01-26 16:47:39,249] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25985
+[2025-01-26 16:47:39,250] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25986
+[2025-01-26 16:47:39,592] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25986
+[2025-01-26 16:47:39,594] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25987
+[2025-01-26 16:47:39,927] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25987
+[2025-01-26 16:47:39,929] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25988
+[2025-01-26 16:47:40,323] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25988
+[2025-01-26 16:47:40,324] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25989
+[2025-01-26 16:47:40,601] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25989
+[2025-01-26 16:47:40,603] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25990
+[2025-01-26 16:47:40,918] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25990
+[2025-01-26 16:47:40,920] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25991
+[2025-01-26 16:47:41,224] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25991
+[2025-01-26 16:47:41,226] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25992
+[2025-01-26 16:47:41,522] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25992
+[2025-01-26 16:47:41,524] [INFO] [download_day] Downloaded BOE content for day 2023-12-21
+[2025-01-26 16:47:41,525] [INFO] [download_days] Downloaded content from day 2023-12-21 to 2023-12-21
+[2025-01-26 16:47:41,575] [INFO] [process_document] Total tokens in the document: 6701
+[2025-01-26 16:49:58,216] [INFO] [root] Initialized logging
+[2025-01-26 16:49:58,222] [INFO] [root] Configuration loaded
+[2025-01-26 16:49:58,222] [INFO] [root] Initializing DeepSeek client
+[2025-01-26 16:49:58,244] [INFO] [root] Initialized DeepSeek client
+[2025-01-26 16:49:58,244] [INFO] [root] Initializing MongoDB client
+[2025-01-26 16:49:58,786] [INFO] [root] Initialized MongoDB client
+[2025-01-26 16:49:58,896] [INFO] [download_days] Downloading content from day 2023-12-21 to 2023-12-21
+[2025-01-26 16:49:58,896] [INFO] [download_day] Downloading BOE content for day 2023-12-21
+[2025-01-26 16:49:59,090] [INFO] [_list_links_day] Scrapping day: https://www.boe.es/datosabiertos/api/boe/sumario/20231221
+[2025-01-26 16:49:59,115] [INFO] [_list_links_day] Scrapped day successfully https://www.boe.es/datosabiertos/api/boe/sumario/20231221 (28 BOE documents)
+[2025-01-26 16:49:59,116] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25881
+[2025-01-26 16:49:59,447] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25881
+[2025-01-26 16:49:59,448] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25882
+[2025-01-26 16:50:00,074] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25882
+[2025-01-26 16:50:00,075] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25883
+[2025-01-26 16:50:00,346] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25883
+[2025-01-26 16:50:00,348] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25884
+[2025-01-26 16:50:00,629] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25884
+[2025-01-26 16:50:00,631] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25885
+[2025-01-26 16:50:00,933] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25885
+[2025-01-26 16:50:00,934] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25886
+[2025-01-26 16:50:01,240] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25886
+[2025-01-26 16:50:01,241] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25971
+[2025-01-26 16:50:01,540] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25971
+[2025-01-26 16:50:01,542] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25972
+[2025-01-26 16:50:01,859] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25972
+[2025-01-26 16:50:01,861] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25973
+[2025-01-26 16:50:02,152] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25973
+[2025-01-26 16:50:02,153] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25974
+[2025-01-26 16:50:02,439] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25974
+[2025-01-26 16:50:02,441] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25975
+[2025-01-26 16:50:02,731] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25975
+[2025-01-26 16:50:02,732] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25976
+[2025-01-26 16:50:03,113] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25976
+[2025-01-26 16:50:03,114] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25977
+[2025-01-26 16:50:03,394] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25977
+[2025-01-26 16:50:03,396] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25978
+[2025-01-26 16:50:03,702] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25978
+[2025-01-26 16:50:03,704] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25979
+[2025-01-26 16:50:04,021] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25979
+[2025-01-26 16:50:04,023] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25980
+[2025-01-26 16:50:04,324] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25980
+[2025-01-26 16:50:04,326] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25981
+[2025-01-26 16:50:04,651] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25981
+[2025-01-26 16:50:04,653] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25982
+[2025-01-26 16:50:04,984] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25982
+[2025-01-26 16:50:04,986] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25983
+[2025-01-26 16:50:05,315] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25983
+[2025-01-26 16:50:05,316] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25984
+[2025-01-26 16:50:05,606] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25984
+[2025-01-26 16:50:05,608] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25985
+[2025-01-26 16:50:05,937] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25985
+[2025-01-26 16:50:05,939] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25986
+[2025-01-26 16:50:06,237] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25986
+[2025-01-26 16:50:06,238] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25987
+[2025-01-26 16:50:06,548] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25987
+[2025-01-26 16:50:06,550] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25988
+[2025-01-26 16:50:06,988] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25988
+[2025-01-26 16:50:06,989] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25989
+[2025-01-26 16:50:07,271] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25989
+[2025-01-26 16:50:07,272] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25990
+[2025-01-26 16:50:07,622] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25990
+[2025-01-26 16:50:07,624] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25991
+[2025-01-26 16:50:07,971] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25991
+[2025-01-26 16:50:07,973] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25992
+[2025-01-26 16:50:08,281] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25992
+[2025-01-26 16:50:08,283] [INFO] [download_day] Downloaded BOE content for day 2023-12-21
+[2025-01-26 16:50:08,284] [INFO] [download_days] Downloaded content from day 2023-12-21 to 2023-12-21
+[2025-01-26 16:50:08,360] [INFO] [process_document] Total tokens in the document: 6701
+[2025-01-26 16:50:08,362] [INFO] [process_document] Max tokens per chunk: 40693
+[2025-01-26 16:50:08,371] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-01-26 16:50:09,155] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 16:50:17,745] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 16:50:21,227] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 16:50:24,400] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 16:50:28,540] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 16:50:31,875] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 16:50:35,053] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-01-26 16:50:35,053] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-01-26 16:50:35,053] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'El Real Decreto establece medidas para la organización de la XXXVII Copa América en Barcelona, incluyendo regulaciones sobre navegación marítima y aérea, meteorología y uso del dominio público radioeléctrico. Se declara el evento de excepcional interés público, facilitando su desarrollo y asegurando su impacto positivo en la ciudad.', 'etiquetas': ['Servicios recreativos, culturales y deportivos.', 'Servicios públicos.', 'Servicios de apoyo y auxiliares de transporte; servicios de agencias de viajes.'], 'stakeholders': ['Gobierno del Estado', 'Entidad organizadora de la Copa América', 'Equipos participantes', 'Autoridad Portuaria de Barcelona', 'Capitanía Marítima de Barcelona', 'Agencia Estatal de Meteorología (AEMET)', 'Ministerio de Transportes y Movilidad Sostenible'], 'impacto': 'Facilita la organización de un evento de gran relevancia internacional, promoviendo el turismo y la economía local. Establece un marco legal para la navegación marítima y aérea, meteorología y telecomunicaciones, asegurando la seguridad y eficiencia del evento.', 'divisiones_cnae': ['Actividades deportivas, recreativas y de entretenimiento', 'Transporte marítimo y por vías navegables interiores', 'Transporte aéreo'], 'ramas_juridicas': {'Derecho Administrativo': ['medio ambiente', 'urbanismo', 'licencias y permisos', 'transparencia y buen gobierno'], 'Derecho Constitucional': ['reparto de competencias', 'procedimientos constitucionales', 'estado de derecho'], 'Derecho de la UE': []}}
+[2025-01-26 16:50:35,053] [INFO] [_process_chunk] Number of input tokens: 7611
+[2025-01-26 16:50:35,054] [INFO] [_process_chunk] Number of output tokens: 274
+[2025-01-26 16:50:35,460] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 16:50:37,409] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': [], 'ramas_juridicas': []}
+[2025-01-26 16:50:37,409] [INFO] [_process_chunk] Number of input tokens: 1315
+[2025-01-26 16:50:37,409] [INFO] [_process_chunk] Number of output tokens: 42
+[2025-01-26 16:50:37,785] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 16:50:43,038] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 16:50:44,473] [INFO] [process_document] Final document: {'resumenes': 'El Real Decreto regula la organización de la XXXVII Copa América en Barcelona, declarándola de excepcional interés público para garantizar su correcto desarrollo y maximizar su impacto positivo en la ciudad. Entre las medidas adoptadas, se incluyen disposiciones específicas sobre navegación marítima y aérea, así como la gestión de la meteorología y el uso del dominio público radioeléctrico. Estas regulaciones buscan facilitar la logística del evento, asegurar la seguridad de los participantes y espectadores, y optimizar la coordinación entre las distintas entidades involucradas. La declaración de interés público subraya la importancia del evento tanto a nivel deportivo como económico y social para Barcelona.', 'etiquetas': ['Servicios de apoyo y auxiliares de transporte; servicios de agencias de viajes.', 'Servicios públicos.', 'Servicios recreativos, culturales y deportivos.'], 'impactos': ['Facilita la organización de un evento de gran relevancia internacional, promoviendo el turismo y la economía local. Establece un marco legal para la navegación marítima y aérea, meteorología y telecomunicaciones, asegurando la seguridad y eficiencia del evento.'], 'stakeholders': ['Autoridad Portuaria de Barcelona', 'Capitanía Marítima de Barcelona', 'Equipos participantes', 'Ministerio de Transportes y Movilidad Sostenible', 'Agencia Estatal de Meteorología (AEMET)', 'Entidad organizadora de la Copa América', 'Gobierno del Estado'], 'divisiones_cnae': ['Transporte marítimo y por vías navegables interiores', 'Actividades deportivas, recreativas y de entretenimiento', 'Transporte aéreo'], 'ramas_juridicas': {'Derecho Administrativo': ['licencias y permisos', 'transparencia y buen gobierno', 'medio ambiente', 'urbanismo'], 'Derecho Constitucional': ['reparto de competencias', 'procedimientos constitucionales', 'estado de derecho'], 'Derecho de la UE': []}, 'short_name': 'Real Decreto 1124/2023: Medidas para la XXXVII Copa América en Barcelona.'}
+[2025-01-26 16:50:44,474] [INFO] [process_document] Final CNAE classification: ['Transporte marítimo y por vías navegables interiores', 'Actividades deportivas, recreativas y de entretenimiento', 'Transporte aéreo']
+[2025-01-26 16:50:44,532] [INFO] [process_document] Total tokens in the document: 62454
+[2025-01-26 16:50:44,534] [INFO] [process_document] Max tokens per chunk: 40693
+[2025-01-26 16:50:44,594] [INFO] [process_document] Number of API calls/chunks: 3
+[2025-01-26 16:50:45,601] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 17:03:01,497] [INFO] [root] Initialized logging
+[2025-01-26 17:03:01,503] [INFO] [root] Configuration loaded
+[2025-01-26 17:03:01,503] [INFO] [root] Initializing DeepSeek client
+[2025-01-26 17:03:01,530] [INFO] [root] Initialized DeepSeek client
+[2025-01-26 17:03:01,530] [INFO] [root] Initializing MongoDB client
+[2025-01-26 17:03:02,184] [INFO] [root] Initialized MongoDB client
+[2025-01-26 17:03:02,314] [INFO] [download_days] Downloading content from day 2023-12-21 to 2023-12-21
+[2025-01-26 17:03:02,315] [INFO] [download_day] Downloading BOE content for day 2023-12-21
+[2025-01-26 17:03:02,528] [INFO] [_list_links_day] Scrapping day: https://www.boe.es/datosabiertos/api/boe/sumario/20231221
+[2025-01-26 17:03:02,563] [INFO] [_list_links_day] Scrapped day successfully https://www.boe.es/datosabiertos/api/boe/sumario/20231221 (28 BOE documents)
+[2025-01-26 17:03:02,563] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25881
+[2025-01-26 17:03:02,917] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25881
+[2025-01-26 17:03:02,918] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25882
+[2025-01-26 17:03:03,493] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25882
+[2025-01-26 17:03:03,493] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25883
+[2025-01-26 17:03:03,753] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25883
+[2025-01-26 17:03:03,755] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25884
+[2025-01-26 17:03:04,028] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25884
+[2025-01-26 17:03:04,029] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25885
+[2025-01-26 17:03:04,312] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25885
+[2025-01-26 17:03:04,313] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25886
+[2025-01-26 17:03:04,613] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25886
+[2025-01-26 17:03:04,615] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25971
+[2025-01-26 17:03:04,917] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25971
+[2025-01-26 17:03:04,919] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25972
+[2025-01-26 17:03:05,210] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25972
+[2025-01-26 17:03:05,211] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25973
+[2025-01-26 17:03:05,489] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25973
+[2025-01-26 17:03:05,490] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25974
+[2025-01-26 17:03:05,793] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25974
+[2025-01-26 17:03:05,795] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25975
+[2025-01-26 17:03:06,083] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25975
+[2025-01-26 17:03:06,084] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25976
+[2025-01-26 17:03:06,392] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25976
+[2025-01-26 17:03:06,395] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25977
+[2025-01-26 17:03:06,736] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25977
+[2025-01-26 17:03:06,739] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25978
+[2025-01-26 17:03:07,099] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25978
+[2025-01-26 17:03:07,101] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25979
+[2025-01-26 17:03:07,412] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25979
+[2025-01-26 17:03:07,413] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25980
+[2025-01-26 17:03:07,761] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25980
+[2025-01-26 17:03:07,763] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25981
+[2025-01-26 17:03:08,063] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25981
+[2025-01-26 17:03:08,065] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25982
+[2025-01-26 17:03:08,375] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25982
+[2025-01-26 17:03:08,377] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25983
+[2025-01-26 17:03:08,652] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25983
+[2025-01-26 17:03:08,653] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25984
+[2025-01-26 17:03:08,930] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25984
+[2025-01-26 17:03:08,930] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25985
+[2025-01-26 17:03:09,231] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25985
+[2025-01-26 17:03:09,232] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25986
+[2025-01-26 17:03:09,532] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25986
+[2025-01-26 17:03:09,533] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25987
+[2025-01-26 17:03:09,819] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25987
+[2025-01-26 17:03:09,821] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25988
+[2025-01-26 17:03:10,209] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25988
+[2025-01-26 17:03:10,210] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25989
+[2025-01-26 17:03:10,512] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25989
+[2025-01-26 17:03:10,514] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25990
+[2025-01-26 17:03:10,855] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25990
+[2025-01-26 17:03:10,856] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25991
+[2025-01-26 17:03:11,168] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25991
+[2025-01-26 17:03:11,170] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25992
+[2025-01-26 17:03:11,514] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25992
+[2025-01-26 17:03:11,516] [INFO] [download_day] Downloaded BOE content for day 2023-12-21
+[2025-01-26 17:03:11,518] [INFO] [download_days] Downloaded content from day 2023-12-21 to 2023-12-21
+[2025-01-26 17:03:11,573] [INFO] [process_document] Total tokens in the document: 6701
+[2025-01-26 17:03:11,575] [INFO] [process_document] Max tokens per chunk: 40693
+[2025-01-26 17:03:11,586] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-01-26 17:03:12,183] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 17:03:19,022] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 17:03:21,325] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 17:03:23,590] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 17:03:25,625] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 17:03:26,984] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-01-26 17:03:26,985] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-01-26 17:03:27,470] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 17:03:28,801] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-01-26 17:03:28,802] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-01-26 17:03:28,802] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'El Real Decreto establece medidas para la organización de la XXXVII Copa América en Barcelona, incluyendo regulaciones sobre navegación marítima y aérea, meteorología y uso del dominio público radioeléctrico. Se designan zonas de exclusión para la navegación y se establecen procedimientos para operaciones portuarias y marítimas, asegurando la seguridad y eficiencia del evento.', 'etiquetas': ['Servicios recreativos, culturales y deportivos.', 'Servicios de apoyo y auxiliares de transporte; servicios de agencias de viajes.'], 'stakeholders': ['Entidad organizadora de la Copa América', 'Capitanía Marítima de Barcelona', 'Autoridad Portuaria de Barcelona', 'Agencia Estatal de Meteorología (AEMET)', 'Ministerio de Transportes y Movilidad Sostenible'], 'impacto': 'El decreto facilita la organización del evento, asegurando la seguridad y eficiencia en las operaciones marítimas y aéreas, y promoviendo el uso responsable del dominio público radioeléctrico. Impacta positivamente en la economía local y en la imagen internacional de Barcelona.', 'divisiones_cnae': ['Actividades deportivas, recreativas y de entretenimiento', 'Transporte marítimo y por vías navegables interiores', 'Transporte aéreo'], 'ramas_juridicas': {'Derecho Administrativo': ['medio ambiente', 'urbanismo', 'licencias y permisos', 'transparencia y buen gobierno'], 'Derecho Constitucional': [], 'Derecho Internacional Público': []}}
+[2025-01-26 17:03:28,802] [INFO] [_process_chunk] Number of input tokens: 7611
+[2025-01-26 17:03:28,802] [INFO] [_process_chunk] Number of output tokens: 268
+[2025-01-26 17:03:29,210] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 17:03:30,762] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': [], 'ramas_juridicas': []}
+[2025-01-26 17:03:30,763] [INFO] [_process_chunk] Number of input tokens: 1315
+[2025-01-26 17:03:30,763] [INFO] [_process_chunk] Number of output tokens: 42
+[2025-01-26 17:03:31,107] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 17:03:36,069] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 17:03:46,620] [INFO] [process_document] Final document: {'resumenes': 'El Real Decreto regula la organización de la XXXVII Copa América en Barcelona, estableciendo un marco normativo integral para garantizar el correcto desarrollo del evento. Entre las medidas adoptadas, se incluyen regulaciones específicas sobre navegación marítima y aérea, así como disposiciones relativas a la meteorología y al uso del dominio público radioeléctrico. Se designan zonas de exclusión para la navegación, tanto marítima como aérea, con el fin de asegurar la seguridad de los participantes y del público. Además, se establecen procedimientos detallados para las operaciones portuarias y marítimas, optimizando la logística y garantizando la eficiencia operativa durante el evento. Estas medidas buscan no solo facilitar la celebración de la competición, sino también proteger el interés público y garantizar el cumplimiento de las normativas de seguridad y medioambientales.', 'etiquetas': ['Servicios recreativos, culturales y deportivos.', 'Servicios de apoyo y auxiliares de transporte; servicios de agencias de viajes.'], 'impactos': ['El decreto facilita la organización del evento, asegurando la seguridad y eficiencia en las operaciones marítimas y aéreas, y promoviendo el uso responsable del dominio público radioeléctrico. Impacta positivamente en la economía local y en la imagen internacional de Barcelona.'], 'stakeholders': ['Autoridad Portuaria de Barcelona', 'Ministerio de Transportes y Movilidad Sostenible', 'Entidad organizadora de la Copa América', 'Agencia Estatal de Meteorología (AEMET)', 'Capitanía Marítima de Barcelona'], 'divisiones_cnae': ['Actividades deportivas, recreativas y de entretenimiento', 'Transporte marítimo y por vías navegables interiores', 'Transporte aéreo'], 'ramas_juridicas': {'Derecho Administrativo': ['transparencia y buen gobierno', 'licencias y permisos', 'medio ambiente', 'urbanismo'], 'Derecho Constitucional': [], 'Derecho Internacional Público': []}, 'short_name': '**Real Decreto 1124/2023: Medidas para la XXXVII Copa América en Barcelona**'}
+[2025-01-26 17:03:46,622] [INFO] [process_document] Final CNAE classification: ['Actividades deportivas, recreativas y de entretenimiento', 'Transporte marítimo y por vías navegables interiores', 'Transporte aéreo']
+[2025-01-26 17:03:46,680] [INFO] [process_document] Total tokens in the document: 62454
+[2025-01-26 17:03:46,681] [INFO] [process_document] Max tokens per chunk: 40693
+[2025-01-26 17:03:46,734] [INFO] [process_document] Number of API calls/chunks: 3
+[2025-01-26 17:03:47,964] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 17:12:50,217] [INFO] [root] Initialized logging
+[2025-01-26 17:12:50,223] [INFO] [root] Configuration loaded
+[2025-01-26 17:12:50,223] [INFO] [root] Initializing DeepSeek client
+[2025-01-26 17:12:50,246] [INFO] [root] Initialized DeepSeek client
+[2025-01-26 17:12:50,247] [INFO] [root] Initializing MongoDB client
+[2025-01-26 17:12:50,740] [INFO] [root] Initialized MongoDB client
+[2025-01-26 17:12:50,856] [INFO] [download_days] Downloading content from day 2023-12-21 to 2023-12-21
+[2025-01-26 17:12:50,856] [INFO] [download_day] Downloading BOE content for day 2023-12-21
+[2025-01-26 17:12:51,053] [INFO] [_list_links_day] Scrapping day: https://www.boe.es/datosabiertos/api/boe/sumario/20231221
+[2025-01-26 17:12:51,080] [INFO] [_list_links_day] Scrapped day successfully https://www.boe.es/datosabiertos/api/boe/sumario/20231221 (28 BOE documents)
+[2025-01-26 17:12:51,080] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25881
+[2025-01-26 17:12:51,384] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25881
+[2025-01-26 17:12:51,385] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25882
+[2025-01-26 17:12:51,949] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25882
+[2025-01-26 17:12:51,950] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25883
+[2025-01-26 17:12:52,204] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25883
+[2025-01-26 17:12:52,206] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25884
+[2025-01-26 17:12:52,491] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25884
+[2025-01-26 17:12:52,492] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25885
+[2025-01-26 17:12:52,794] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25885
+[2025-01-26 17:12:52,796] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25886
+[2025-01-26 17:12:53,151] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25886
+[2025-01-26 17:12:53,153] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25971
+[2025-01-26 17:12:53,492] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25971
+[2025-01-26 17:12:53,494] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25972
+[2025-01-26 17:12:53,847] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25972
+[2025-01-26 17:12:53,849] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25973
+[2025-01-26 17:12:54,210] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25973
+[2025-01-26 17:12:54,213] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25974
+[2025-01-26 17:12:54,580] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25974
+[2025-01-26 17:12:54,582] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25975
+[2025-01-26 17:12:54,897] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25975
+[2025-01-26 17:12:54,899] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25976
+[2025-01-26 17:12:55,224] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25976
+[2025-01-26 17:12:55,225] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25977
+[2025-01-26 17:12:55,542] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25977
+[2025-01-26 17:12:55,544] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25978
+[2025-01-26 17:12:55,836] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25978
+[2025-01-26 17:12:55,838] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25979
+[2025-01-26 17:12:56,125] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25979
+[2025-01-26 17:12:56,127] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25980
+[2025-01-26 17:12:56,406] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25980
+[2025-01-26 17:12:56,408] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25981
+[2025-01-26 17:12:56,684] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25981
+[2025-01-26 17:12:56,686] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25982
+[2025-01-26 17:12:56,969] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25982
+[2025-01-26 17:12:56,971] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25983
+[2025-01-26 17:12:58,287] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25983
+[2025-01-26 17:12:58,289] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25984
+[2025-01-26 17:12:58,646] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25984
+[2025-01-26 17:12:58,650] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25985
+[2025-01-26 17:12:59,032] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25985
+[2025-01-26 17:12:59,033] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25986
+[2025-01-26 17:12:59,363] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25986
+[2025-01-26 17:12:59,365] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25987
+[2025-01-26 17:12:59,743] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25987
+[2025-01-26 17:12:59,745] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25988
+[2025-01-26 17:13:00,201] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25988
+[2025-01-26 17:13:00,201] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25989
+[2025-01-26 17:13:00,560] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25989
+[2025-01-26 17:13:00,562] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25990
+[2025-01-26 17:13:00,879] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25990
+[2025-01-26 17:13:00,881] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25991
+[2025-01-26 17:13:01,307] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25991
+[2025-01-26 17:13:01,308] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25992
+[2025-01-26 17:13:01,652] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25992
+[2025-01-26 17:13:01,654] [INFO] [download_day] Downloaded BOE content for day 2023-12-21
+[2025-01-26 17:13:01,656] [INFO] [download_days] Downloaded content from day 2023-12-21 to 2023-12-21
+[2025-01-26 17:13:01,713] [INFO] [process_document] Total tokens in the document: 6701
+[2025-01-26 17:13:01,715] [INFO] [process_document] Max tokens per chunk: 40693
+[2025-01-26 17:13:01,726] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-01-26 17:13:02,431] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 17:20:05,701] [INFO] [root] Initialized logging
+[2025-01-26 17:20:05,707] [INFO] [root] Configuration loaded
+[2025-01-26 17:20:05,707] [INFO] [root] Initializing DeepSeek client
+[2025-01-26 17:20:05,733] [INFO] [root] Initialized DeepSeek client
+[2025-01-26 17:20:05,733] [INFO] [root] Initializing MongoDB client
+[2025-01-26 17:20:07,659] [INFO] [root] Initialized MongoDB client
+[2025-01-26 17:20:07,795] [INFO] [download_days] Downloading content from day 2023-12-21 to 2023-12-21
+[2025-01-26 17:20:07,795] [INFO] [download_day] Downloading BOE content for day 2023-12-21
+[2025-01-26 17:20:08,072] [INFO] [_list_links_day] Scrapping day: https://www.boe.es/datosabiertos/api/boe/sumario/20231221
+[2025-01-26 17:20:08,095] [INFO] [_list_links_day] Scrapped day successfully https://www.boe.es/datosabiertos/api/boe/sumario/20231221 (28 BOE documents)
+[2025-01-26 17:20:08,095] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25881
+[2025-01-26 17:20:08,498] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25881
+[2025-01-26 17:20:08,500] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25882
+[2025-01-26 17:20:09,807] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25882
+[2025-01-26 17:20:09,808] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25883
+[2025-01-26 17:20:10,184] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25883
+[2025-01-26 17:20:10,186] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25884
+[2025-01-26 17:20:10,547] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25884
+[2025-01-26 17:20:10,550] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25885
+[2025-01-26 17:20:10,895] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25885
+[2025-01-26 17:20:10,897] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25886
+[2025-01-26 17:20:11,352] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25886
+[2025-01-26 17:20:11,354] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25971
+[2025-01-26 17:20:11,698] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25971
+[2025-01-26 17:20:11,699] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25972
+[2025-01-26 17:20:12,089] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25972
+[2025-01-26 17:20:12,090] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25973
+[2025-01-26 17:20:12,421] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25973
+[2025-01-26 17:20:12,423] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25974
+[2025-01-26 17:20:12,754] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25974
+[2025-01-26 17:20:12,756] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25975
+[2025-01-26 17:20:13,080] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25975
+[2025-01-26 17:20:13,082] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25976
+[2025-01-26 17:20:13,458] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25976
+[2025-01-26 17:20:13,460] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25977
+[2025-01-26 17:20:13,816] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25977
+[2025-01-26 17:20:13,819] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25978
+[2025-01-26 17:20:14,152] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25978
+[2025-01-26 17:20:14,155] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25979
+[2025-01-26 17:20:14,488] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25979
+[2025-01-26 17:20:14,490] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25980
+[2025-01-26 17:20:14,866] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25980
+[2025-01-26 17:20:14,868] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25981
+[2025-01-26 17:20:15,208] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25981
+[2025-01-26 17:20:15,210] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25982
+[2025-01-26 17:20:15,541] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25982
+[2025-01-26 17:20:15,543] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25983
+[2025-01-26 17:20:15,897] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25983
+[2025-01-26 17:20:15,900] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25984
+[2025-01-26 17:20:16,231] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25984
+[2025-01-26 17:20:16,233] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25985
+[2025-01-26 17:20:16,684] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25985
+[2025-01-26 17:20:16,685] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25986
+[2025-01-26 17:20:18,049] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25986
+[2025-01-26 17:20:18,051] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25987
+[2025-01-26 17:20:18,374] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25987
+[2025-01-26 17:20:18,376] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25988
+[2025-01-26 17:20:18,764] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25988
+[2025-01-26 17:20:18,765] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25989
+[2025-01-26 17:20:19,068] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25989
+[2025-01-26 17:20:19,070] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25990
+[2025-01-26 17:20:19,384] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25990
+[2025-01-26 17:20:19,386] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25991
+[2025-01-26 17:20:19,690] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25991
+[2025-01-26 17:20:19,691] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25992
+[2025-01-26 17:20:19,980] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25992
+[2025-01-26 17:20:19,981] [INFO] [download_day] Downloaded BOE content for day 2023-12-21
+[2025-01-26 17:20:19,983] [INFO] [download_days] Downloaded content from day 2023-12-21 to 2023-12-21
+[2025-01-26 17:20:41,708] [INFO] [process_document] Total tokens in the document: 6701
+[2025-01-26 17:20:41,712] [INFO] [process_document] Max tokens per chunk: 40693
+[2025-01-26 17:20:41,729] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-01-26 17:20:42,639] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 17:20:49,379] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 17:20:52,657] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 17:20:55,319] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 17:20:57,646] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 17:21:00,040] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-01-26 17:21:00,040] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-01-26 17:21:00,645] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 17:21:02,617] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-01-26 17:21:02,617] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-01-26 17:21:02,617] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'El Real Decreto establece medidas para la organización de la XXXVII Copa América en Barcelona, incluyendo regulaciones sobre navegación marítima y aérea, meteorología y uso del dominio público radioeléctrico. Se declara el evento de excepcional interés público, facilitando su preparación y desarrollo con apoyo gubernamental.', 'etiquetas': ['Servicios recreativos, culturales y deportivos.', 'Servicios de apoyo y auxiliares de transporte; servicios de agencias de viajes.'], 'stakeholders': ['Gobierno del Estado', 'Entidad organizadora de la Copa América', 'Equipos participantes', 'Autoridad Portuaria de Barcelona', 'Capitanía Marítima de Barcelona'], 'impacto': 'Facilita la organización de un evento deportivo internacional, promoviendo el turismo y la economía local. Requiere coordinación interadministrativa y medidas específicas para la seguridad y logística del evento.', 'divisiones_cnae': ['Actividades deportivas, recreativas y de entretenimiento', 'Transporte marítimo y por vías navegables interiores', 'Actividades de seguridad e investigación'], 'ramas_juridicas': {'Derecho Administrativo': ['medio ambiente', 'urbanismo', 'licencias y permisos', 'transparencia y buen gobierno', 'contratación pública'], 'Derecho Constitucional': [], 'Derecho de la UE': []}}
+[2025-01-26 17:21:02,618] [INFO] [_process_chunk] Number of input tokens: 7611
+[2025-01-26 17:21:02,618] [INFO] [_process_chunk] Number of output tokens: 223
+[2025-01-26 17:21:03,613] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 17:21:05,665] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': [], 'ramas_juridicas': []}
+[2025-01-26 17:21:05,666] [INFO] [_process_chunk] Number of input tokens: 1315
+[2025-01-26 17:21:05,666] [INFO] [_process_chunk] Number of output tokens: 42
+[2025-01-26 17:21:06,030] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 17:21:13,444] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 17:21:15,319] [INFO] [process_document] Final document: {'resumenes': 'El Real Decreto establece un marco normativo integral para la organización de la XXXVII Copa América en Barcelona, declarando el evento de excepcional interés público. Esta declaración permite la movilización de recursos y apoyo gubernamental para garantizar la preparación y ejecución eficiente del evento. Entre las medidas destacadas se incluyen regulaciones específicas sobre navegación marítima y aérea en las zonas afectadas, con el fin de asegurar la seguridad y el orden durante las competiciones. Además, se establecen protocolos para el uso del dominio público radioeléctrico, garantizando las comunicaciones necesarias para el desarrollo del evento. Asimismo, se contempla la colaboración con servicios meteorológicos para proporcionar información precisa y oportuna que contribuya a la seguridad y logística de las actividades. En conjunto, el Real Decreto busca facilitar la organización de la Copa América, asegurando su éxito y minimizando posibles incidencias mediante un enfoque coordinado y respaldado por las instituciones públicas.', 'etiquetas': ['Servicios de apoyo y auxiliares de transporte; servicios de agencias de viajes.', 'Servicios recreativos, culturales y deportivos.'], 'impactos': ['Facilita la organización de un evento deportivo internacional, promoviendo el turismo y la economía local. Requiere coordinación interadministrativa y medidas específicas para la seguridad y logística del evento.'], 'stakeholders': ['Gobierno del Estado', 'Autoridad Portuaria de Barcelona', 'Equipos participantes', 'Capitanía Marítima de Barcelona', 'Entidad organizadora de la Copa América'], 'divisiones_cnae': ['Actividades de seguridad e investigación', 'Actividades deportivas, recreativas y de entretenimiento', 'Transporte marítimo y por vías navegables interiores'], 'ramas_juridicas': {'Derecho Administrativo': ['licencias y permisos', 'transparencia y buen gobierno', 'medio ambiente', 'contratación pública', 'urbanismo'], 'Derecho Constitucional': [], 'Derecho de la UE': []}, 'short_name': '**Real Decreto 1124/2023: Medidas para la XXXVII Copa América en Barcelona**'}
+[2025-01-26 17:21:15,320] [INFO] [process_document] Final CNAE classification: ['Actividades de seguridad e investigación', 'Actividades deportivas, recreativas y de entretenimiento', 'Transporte marítimo y por vías navegables interiores']
+[2025-01-26 17:21:15,366] [INFO] [process_document] Total tokens in the document: 62454
+[2025-01-26 17:21:15,368] [INFO] [process_document] Max tokens per chunk: 40693
+[2025-01-26 17:21:15,422] [INFO] [process_document] Number of API calls/chunks: 3
+[2025-01-26 17:21:16,661] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 17:47:57,067] [INFO] [openai._base_client] Retrying request to /chat/completions in 0.425755 seconds
+[2025-01-26 17:47:58,383] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-26 18:16:14,383] [INFO] [openai._base_client] Retrying request to /chat/completions in 0.828263 seconds
+[2025-01-27 20:03:12,395] [INFO] [root] Initialized logging
+[2025-01-27 20:03:12,402] [INFO] [root] Configuration loaded
+[2025-01-27 20:03:12,402] [INFO] [root] Initializing DeepSeek client
+[2025-01-27 20:03:12,434] [INFO] [root] Initialized DeepSeek client
+[2025-01-27 20:03:12,434] [INFO] [root] Initializing MongoDB client
+[2025-01-27 20:04:48,899] [INFO] [root] Initialized logging
+[2025-01-27 20:04:48,905] [INFO] [root] Configuration loaded
+[2025-01-27 20:04:48,905] [INFO] [root] Initializing DeepSeek client
+[2025-01-27 20:04:48,930] [INFO] [root] Initialized DeepSeek client
+[2025-01-27 20:04:48,930] [INFO] [root] Initializing MongoDB client
+[2025-01-27 20:04:49,708] [INFO] [root] Initialized MongoDB client
+[2025-01-27 20:04:51,404] [INFO] [download_days] Downloading content from day 2023-12-22 to 2023-12-22
+[2025-01-27 20:04:51,404] [INFO] [download_day] Downloading BOE content for day 2023-12-22
+[2025-01-27 20:04:51,712] [INFO] [_list_links_day] Scrapping day: https://www.boe.es/datosabiertos/api/boe/sumario/20231222
+[2025-01-27 20:04:51,733] [INFO] [_list_links_day] Scrapped day successfully https://www.boe.es/datosabiertos/api/boe/sumario/20231222 (1 BOE documents)
+[2025-01-27 20:04:51,733] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25993
+[2025-01-27 20:04:52,125] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-25993
+[2025-01-27 20:04:52,128] [INFO] [download_day] Downloaded BOE content for day 2023-12-22
+[2025-01-27 20:04:52,130] [INFO] [download_days] Downloaded content from day 2023-12-22 to 2023-12-22
+[2025-01-27 20:04:52,184] [INFO] [process_document] Total tokens in the document: 1139
+[2025-01-27 20:04:52,187] [INFO] [process_document] Max tokens per chunk: 40693
+[2025-01-27 20:04:52,189] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-01-27 20:04:52,826] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-27 20:05:00,293] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-27 20:05:02,448] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-27 20:05:04,794] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-27 20:05:06,310] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-01-27 20:05:06,310] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-01-27 20:05:06,646] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-27 20:05:08,226] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-01-27 20:05:08,226] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-01-27 20:05:08,226] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'El Real Decreto 1633/2011 modifica su anexo para incluir el título de Máster en Formación Teológica para la Enseñanza Religiosa Evangélica, expedido por el CSEE. ANECA emitió un informe favorable. La norma cumple con los principios de buena regulación y se dicta bajo la competencia exclusiva del Estado en materia de títulos académicos.', 'etiquetas': ['Servicios de educación y formación'], 'stakeholders': ['Federación de Entidades Religiosas Evangélicas de España (FEREDE)', 'Centro Superior de Enseñanza Evangélica (CSEE)', 'Agencia Nacional de Evaluación de la Calidad y Acreditación (ANECA)', 'Consejo General de Enseñanza Religiosa Evangélica (CGERE)'], 'impacto': 'Reconocimiento civil de títulos teológicos protestantes, facilitando la homologación y equivalencia de estudios. Impacto en la formación y empleabilidad en el ámbito de la enseñanza religiosa evangélica.', 'divisiones_cnae': ['Educación', 'Actividades de organizaciones asociativas'], 'ramas_juridicas': {'Derecho Administrativo': [], 'Derecho Constitucional': []}}
+[2025-01-27 20:05:08,227] [INFO] [_process_chunk] Number of input tokens: 2357
+[2025-01-27 20:05:08,227] [INFO] [_process_chunk] Number of output tokens: 262
+[2025-01-27 20:05:08,603] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-27 20:05:11,152] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': [], 'ramas_juridicas': []}
+[2025-01-27 20:05:11,152] [INFO] [_process_chunk] Number of input tokens: 1284
+[2025-01-27 20:05:11,152] [INFO] [_process_chunk] Number of output tokens: 48
+[2025-01-27 20:05:11,506] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-27 20:05:19,447] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-27 20:05:22,107] [INFO] [process_document] Final document: {'resumenes': 'El Real Decreto 1633/2011, en su modificación del anexo, incorpora el título de **Máster en Formación Teológica para la Enseñanza Religiosa Evangélica**, expedido por el Consejo Superior de Estudios Evangélicos (CSEE). Esta inclusión cuenta con un **informe favorable de la Agencia Nacional de Evaluación de la Calidad y Acreditación (ANECA)**, que avala la adecuación del título a los estándares académicos y formativos requeridos. \n\nLa norma se fundamenta en el principio de **buena regulación**, asegurando que su implementación responde a criterios de eficacia, necesidad, proporcionalidad y seguridad jurídica. Además, se dicta en el marco de la **competencia exclusiva del Estado en materia de títulos académicos**, garantizando la homogeneidad y validez de las titulaciones en todo el territorio nacional. \n\nEn resumen, esta modificación refuerza el reconocimiento oficial de la formación teológica evangélica, alineándose con los objetivos de calidad educativa y regulación estatal en el ámbito de los títulos académicos.', 'etiquetas': ['Servicios de educación y formación'], 'impactos': ['Reconocimiento civil de títulos teológicos protestantes, facilitando la homologación y equivalencia de estudios. Impacto en la formación y empleabilidad en el ámbito de la enseñanza religiosa evangélica.'], 'stakeholders': ['Agencia Nacional de Evaluación de la Calidad y Acreditación (ANECA)', 'Federación de Entidades Religiosas Evangélicas de España (FEREDE)', 'Centro Superior de Enseñanza Evangélica (CSEE)', 'Consejo General de Enseñanza Religiosa Evangélica (CGERE)'], 'divisiones_cnae': ['Educación', 'Actividades de organizaciones asociativas'], 'ramas_juridicas': {'Derecho Administrativo': [], 'Derecho Constitucional': []}, 'short_name': '**Orden CNU/1364/2023, de 14 de diciembre, por la que se modifica el anexo del Real Decreto 1633/2011, sobre equivalencias de títulos universitarios de entidades religiosas evangélicas.**'}
+[2025-01-27 20:05:22,108] [INFO] [process_document] Final CNAE classification: ['Educación', 'Actividades de organizaciones asociativas']
+[2025-01-27 20:05:24,041] [INFO] [send_email] El correo ha sido enviado exitosamente.
+[2025-01-27 20:06:31,682] [INFO] [root] Initialized logging
+[2025-01-27 20:06:31,688] [INFO] [root] Configuration loaded
+[2025-01-27 20:06:31,688] [INFO] [root] Initializing DeepSeek client
+[2025-01-27 20:06:31,711] [INFO] [root] Initialized DeepSeek client
+[2025-01-27 20:06:31,711] [INFO] [root] Initializing MongoDB client
+[2025-01-27 20:06:32,822] [INFO] [root] Initialized MongoDB client
+[2025-01-27 20:06:32,945] [INFO] [download_days] Downloading content from day 2023-12-23 to 2023-12-23
+[2025-01-27 20:06:32,945] [INFO] [download_day] Downloading BOE content for day 2023-12-23
+[2025-01-27 20:06:33,530] [INFO] [_list_links_day] Scrapping day: https://www.boe.es/datosabiertos/api/boe/sumario/20231223
+[2025-01-27 20:06:33,592] [INFO] [_list_links_day] Scrapped day successfully https://www.boe.es/datosabiertos/api/boe/sumario/20231223 (4 BOE documents)
+[2025-01-27 20:06:33,592] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-26100
+[2025-01-27 20:06:35,493] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-26100
+[2025-01-27 20:06:35,494] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-26101
+[2025-01-27 20:06:36,284] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-26101
+[2025-01-27 20:06:36,287] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-26102
+[2025-01-27 20:06:39,624] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-26102
+[2025-01-27 20:06:39,625] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-26103
+[2025-01-27 20:06:40,774] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-26103
+[2025-01-27 20:06:40,776] [INFO] [download_day] Downloaded BOE content for day 2023-12-23
+[2025-01-27 20:06:40,778] [INFO] [download_days] Downloaded content from day 2023-12-23 to 2023-12-23
+[2025-01-27 20:06:40,892] [INFO] [process_document] Total tokens in the document: 64922
+[2025-01-27 20:06:40,893] [INFO] [process_document] Max tokens per chunk: 40693
+[2025-01-27 20:06:40,947] [INFO] [process_document] Number of API calls/chunks: 3
+[2025-01-27 20:06:42,140] [INFO] [httpx] HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:35:16,597] [INFO] [root] Initialized logging
+[2025-02-03 23:35:16,602] [INFO] [root] Configuration loaded
+[2025-02-03 23:35:16,602] [INFO] [root] Initializing OpenAI client
+[2025-02-03 23:35:16,622] [INFO] [root] Initialized OpenAI client
+[2025-02-03 23:35:16,623] [INFO] [root] Initializing MongoDB client
+[2025-02-03 23:35:17,187] [INFO] [root] Initialized MongoDB client
+[2025-02-03 23:35:20,499] [INFO] [download_days] Downloading content from day 2023-12-24 to 2023-12-24
+[2025-02-03 23:35:20,499] [INFO] [download_day] Downloading BOE content for day 2023-12-24
+[2025-02-03 23:35:20,580] [ERROR] [download_day] Not scrapped document on day https://www.boe.es/datosabiertos/api/boe/sumario/20231224. HTTPError: 404 Client Error: Not Found for url: https://www.boe.es/datosabiertos/api/boe/sumario/20231224
+[2025-02-03 23:35:20,581] [ERROR] [download_day] Status Code: 404, Response Content: <?xml version="1.0" encoding="utf-8"?>
+<response>
+  <status>
+    <code>404</code>
+    <text>La información solicitada no existe</text>
+  </status>
+  <data/>
+</response>
+
+[2025-02-03 23:35:20,582] [INFO] [download_day] Downloaded BOE content for day 2023-12-24
+[2025-02-03 23:35:20,582] [INFO] [download_days] Downloaded content from day 2023-12-24 to 2023-12-24
+[2025-02-03 23:35:30,697] [INFO] [root] Initialized logging
+[2025-02-03 23:35:30,703] [INFO] [root] Configuration loaded
+[2025-02-03 23:35:30,703] [INFO] [root] Initializing OpenAI client
+[2025-02-03 23:35:30,724] [INFO] [root] Initialized OpenAI client
+[2025-02-03 23:35:30,724] [INFO] [root] Initializing MongoDB client
+[2025-02-03 23:35:31,124] [INFO] [root] Initialized MongoDB client
+[2025-02-03 23:35:31,229] [INFO] [download_days] Downloading content from day 2023-12-25 to 2023-12-25
+[2025-02-03 23:35:31,229] [INFO] [download_day] Downloading BOE content for day 2023-12-25
+[2025-02-03 23:35:31,344] [INFO] [_list_links_day] Scrapping day: https://www.boe.es/datosabiertos/api/boe/sumario/20231225
+[2025-02-03 23:35:31,353] [INFO] [_list_links_day] Scrapped day successfully https://www.boe.es/datosabiertos/api/boe/sumario/20231225 (0 BOE documents)
+[2025-02-03 23:35:31,353] [INFO] [download_day] Downloaded BOE content for day 2023-12-25
+[2025-02-03 23:35:31,354] [INFO] [download_days] Downloaded content from day 2023-12-25 to 2023-12-25
+[2025-02-03 23:35:41,575] [INFO] [root] Initialized logging
+[2025-02-03 23:35:41,581] [INFO] [root] Configuration loaded
+[2025-02-03 23:35:41,581] [INFO] [root] Initializing OpenAI client
+[2025-02-03 23:35:41,601] [INFO] [root] Initialized OpenAI client
+[2025-02-03 23:35:41,601] [INFO] [root] Initializing MongoDB client
+[2025-02-03 23:35:42,037] [INFO] [root] Initialized MongoDB client
+[2025-02-03 23:35:42,121] [INFO] [download_days] Downloading content from day 2023-12-26 to 2023-12-26
+[2025-02-03 23:35:42,121] [INFO] [download_day] Downloading BOE content for day 2023-12-26
+[2025-02-03 23:35:42,216] [INFO] [_list_links_day] Scrapping day: https://www.boe.es/datosabiertos/api/boe/sumario/20231226
+[2025-02-03 23:35:42,258] [INFO] [_list_links_day] Scrapped day successfully https://www.boe.es/datosabiertos/api/boe/sumario/20231226 (0 BOE documents)
+[2025-02-03 23:35:42,258] [INFO] [download_day] Downloaded BOE content for day 2023-12-26
+[2025-02-03 23:35:42,259] [INFO] [download_days] Downloaded content from day 2023-12-26 to 2023-12-26
+[2025-02-03 23:35:52,124] [INFO] [root] Initialized logging
+[2025-02-03 23:35:52,129] [INFO] [root] Configuration loaded
+[2025-02-03 23:35:52,129] [INFO] [root] Initializing OpenAI client
+[2025-02-03 23:35:52,150] [INFO] [root] Initialized OpenAI client
+[2025-02-03 23:35:52,150] [INFO] [root] Initializing MongoDB client
+[2025-02-03 23:35:52,631] [INFO] [root] Initialized MongoDB client
+[2025-02-03 23:35:52,739] [INFO] [download_days] Downloading content from day 2023-11-26 to 2023-11-26
+[2025-02-03 23:35:52,739] [INFO] [download_day] Downloading BOE content for day 2023-11-26
+[2025-02-03 23:35:52,813] [ERROR] [download_day] Not scrapped document on day https://www.boe.es/datosabiertos/api/boe/sumario/20231126. HTTPError: 404 Client Error: Not Found for url: https://www.boe.es/datosabiertos/api/boe/sumario/20231126
+[2025-02-03 23:35:52,815] [ERROR] [download_day] Status Code: 404, Response Content: <?xml version="1.0" encoding="utf-8"?>
+<response>
+  <status>
+    <code>404</code>
+    <text>La información solicitada no existe</text>
+  </status>
+  <data/>
+</response>
+
+[2025-02-03 23:35:52,815] [INFO] [download_day] Downloaded BOE content for day 2023-11-26
+[2025-02-03 23:35:52,816] [INFO] [download_days] Downloaded content from day 2023-11-26 to 2023-11-26
+[2025-02-03 23:36:07,768] [INFO] [root] Initialized logging
+[2025-02-03 23:36:07,774] [INFO] [root] Configuration loaded
+[2025-02-03 23:36:07,774] [INFO] [root] Initializing OpenAI client
+[2025-02-03 23:36:07,796] [INFO] [root] Initialized OpenAI client
+[2025-02-03 23:36:07,796] [INFO] [root] Initializing MongoDB client
+[2025-02-03 23:36:08,185] [INFO] [root] Initialized MongoDB client
+[2025-02-03 23:36:08,298] [INFO] [download_days] Downloading content from day 2022-11-26 to 2022-11-26
+[2025-02-03 23:36:08,298] [INFO] [download_day] Downloading BOE content for day 2022-11-26
+[2025-02-03 23:36:08,437] [INFO] [_list_links_day] Scrapping day: https://www.boe.es/datosabiertos/api/boe/sumario/20221126
+[2025-02-03 23:36:08,492] [INFO] [_list_links_day] Scrapped day successfully https://www.boe.es/datosabiertos/api/boe/sumario/20221126 (8 BOE documents)
+[2025-02-03 23:36:08,492] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2022-19621
+[2025-02-03 23:36:08,674] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2022-19621
+[2025-02-03 23:36:08,675] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2022-19622
+[2025-02-03 23:36:08,901] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2022-19622
+[2025-02-03 23:36:08,903] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2022-19623
+[2025-02-03 23:36:09,127] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2022-19623
+[2025-02-03 23:36:09,129] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2022-19624
+[2025-02-03 23:36:09,382] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2022-19624
+[2025-02-03 23:36:09,383] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2022-19625
+[2025-02-03 23:36:09,812] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2022-19625
+[2025-02-03 23:36:09,813] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2022-19626
+[2025-02-03 23:36:10,039] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2022-19626
+[2025-02-03 23:36:10,040] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2022-19627
+[2025-02-03 23:36:10,298] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2022-19627
+[2025-02-03 23:36:10,300] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2022-19628
+[2025-02-03 23:36:10,620] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2022-19628
+[2025-02-03 23:36:10,622] [INFO] [download_day] Downloaded BOE content for day 2022-11-26
+[2025-02-03 23:36:10,623] [INFO] [download_days] Downloaded content from day 2022-11-26 to 2022-11-26
+[2025-02-03 23:36:10,669] [INFO] [process_document] Total tokens in the document: 2506
+[2025-02-03 23:36:10,671] [INFO] [process_document] Max tokens per chunk: 83360
+[2025-02-03 23:36:10,676] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-02-03 23:36:14,360] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:15,347] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:16,345] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:17,224] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:18,554] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:19,885] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:19,886] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-02-03 23:36:19,886] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-02-03 23:36:19,886] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'La Ley 21/2021 modifica la LGSS para reconocer el servicio social femenino como periodo de cotización para la jubilación anticipada, equiparándolo al servicio militar. Sin embargo, no se incluye en la jubilación parcial, lo que perpetúa desigualdades. Se busca garantizar la igualdad de trato entre géneros en el acceso a pensiones.', 'etiquetas': ['Servicios de salud y trabajo social', 'Administración, defensa y servicios de seguridad social', 'No identificado'], 'stakeholders': ['Mujeres trabajadoras', 'Instituto Nacional de la Seguridad Social', 'Gobierno'], 'impacto': 'La ley busca reducir la desigualdad en el acceso a pensiones entre géneros, pero la exclusión del servicio social femenino en la jubilación parcial puede seguir generando discriminación. Se requiere una revisión para garantizar la igualdad plena.', 'divisiones_cnae': ['Actividades sanitarias', 'Actividades de servicios sociales sin alojamiento', 'Administración pública y defensa'], 'ramas_juridicas': {'Derecho Laboral': ['seguridad social'], 'Derecho Constitucional': ['derechos fundamentales', 'principio de igualdad de trato', 'principio de no discriminación por razón de sexo', 'sistemas electorales', 'reformas constitucionales'], 'Derecho Administrativo': []}}
+[2025-02-03 23:36:19,886] [INFO] [_process_chunk] Number of input tokens: 3140
+[2025-02-03 23:36:19,886] [INFO] [_process_chunk] Number of output tokens: 190
+[2025-02-03 23:36:20,909] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:20,912] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': [], 'ramas_juridicas': []}
+[2025-02-03 23:36:20,912] [INFO] [_process_chunk] Number of input tokens: 1088
+[2025-02-03 23:36:20,913] [INFO] [_process_chunk] Number of output tokens: 40
+[2025-02-03 23:36:23,367] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:24,976] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:24,979] [INFO] [process_document] Final document: {'resumenes': 'La Ley 21/2021 introduce modificaciones en la Ley General de la Seguridad Social (LGSS) para reconocer el servicio social femenino como un periodo de cotización válido para la jubilación anticipada, equiparándolo al servicio militar. No obstante, esta ley no contempla el reconocimiento del servicio social femenino en el contexto de la jubilación parcial, lo que puede perpetuar desigualdades de género en el acceso a pensiones. El objetivo principal de esta reforma es garantizar la igualdad de trato entre hombres y mujeres en el acceso a las pensiones, aunque persisten desafíos en la implementación de esta igualdad en todos los aspectos de la jubilación.', 'etiquetas': ['Administración, defensa y servicios de seguridad social', 'Servicios de salud y trabajo social'], 'impactos': ['La ley busca reducir la desigualdad en el acceso a pensiones entre géneros, pero la exclusión del servicio social femenino en la jubilación parcial puede seguir generando discriminación. Se requiere una revisión para garantizar la igualdad plena.'], 'stakeholders': ['Mujeres trabajadoras', 'Instituto Nacional de la Seguridad Social', 'Gobierno'], 'divisiones_cnae': ['Actividades de servicios sociales sin alojamiento', 'Administración pública y defensa', 'Actividades sanitarias'], 'ramas_juridicas': {'Derecho Laboral': ['seguridad social'], 'Derecho Constitucional': ['principio de no discriminación por razón de sexo', 'reformas constitucionales', 'principio de igualdad de trato', 'sistemas electorales', 'derechos fundamentales'], 'Derecho Administrativo': []}, 'short_name': 'Ley 24/2022 sobre el reconocimiento del servicio social de la mujer en pensiones.'}
+[2025-02-03 23:36:24,980] [INFO] [process_document] Final CNAE classification: ['Actividades de servicios sociales sin alojamiento', 'Administración pública y defensa', 'Actividades sanitarias']
+[2025-02-03 23:36:24,986] [INFO] [process_document] Total tokens in the document: 3965
+[2025-02-03 23:36:24,989] [INFO] [process_document] Max tokens per chunk: 83360
+[2025-02-03 23:36:24,998] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-02-03 23:36:28,126] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:28,930] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:29,921] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:31,048] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:31,050] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-02-03 23:36:31,051] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-02-03 23:36:31,865] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:32,688] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:32,691] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-02-03 23:36:32,691] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-02-03 23:36:32,691] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'El Acuerdo entre los Ministerios de Educación de España y Bulgaria establece un marco de cooperación para la enseñanza intensiva de la lengua española en secciones bilingües en Bulgaria. Se detallan compromisos sobre la contratación de profesorado español, el desarrollo de planes de estudio y el intercambio educativo entre ambos países.', 'etiquetas': ['Servicios de educación y formación'], 'stakeholders': ['Ministerio de Educación y Formación Profesional de España', 'Ministerio de Educación y Ciencia de Bulgaria', 'Profesores españoles', 'Estudiantes búlgaros'], 'impacto': 'El acuerdo facilitará la enseñanza del español en Bulgaria, mejorará la formación del profesorado y promoverá el intercambio cultural, aunque dependerá de la disponibilidad presupuestaria y la implementación efectiva de los compromisos.', 'divisiones_cnae': ['Educación'], 'ramas_juridicas': {'Derecho Administrativo': [], 'Derecho Internacional Público': ['tratados internacionales'], 'Derecho Constitucional': []}}
+[2025-02-03 23:36:32,691] [INFO] [_process_chunk] Number of input tokens: 4327
+[2025-02-03 23:36:32,692] [INFO] [_process_chunk] Number of output tokens: 173
+[2025-02-03 23:36:33,582] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:33,586] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': [], 'ramas_juridicas': []}
+[2025-02-03 23:36:33,586] [INFO] [_process_chunk] Number of input tokens: 1065
+[2025-02-03 23:36:33,586] [INFO] [_process_chunk] Number of output tokens: 33
+[2025-02-03 23:36:35,553] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:36,883] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:36,885] [INFO] [process_document] Final document: {'resumenes': 'El Acuerdo entre los Ministerios de Educación de España y Bulgaria establece un marco de cooperación orientado a la enseñanza intensiva de la lengua española en secciones bilingües en Bulgaria. Este acuerdo incluye compromisos específicos relacionados con la contratación de profesorado español, la elaboración y desarrollo de planes de estudio adaptados a las necesidades educativas de ambos países, así como la promoción de intercambios educativos que fortalezcan la colaboración y el entendimiento cultural entre España y Bulgaria.', 'etiquetas': ['Servicios de educación y formación'], 'impactos': ['El acuerdo facilitará la enseñanza del español en Bulgaria, mejorará la formación del profesorado y promoverá el intercambio cultural, aunque dependerá de la disponibilidad presupuestaria y la implementación efectiva de los compromisos.'], 'stakeholders': ['Ministerio de Educación y Ciencia de Bulgaria', 'Profesores españoles', 'Estudiantes búlgaros', 'Ministerio de Educación y Formación Profesional de España'], 'divisiones_cnae': ['Educación'], 'ramas_juridicas': {'Derecho Administrativo': [], 'Derecho Internacional Público': ['tratados internacionales'], 'Derecho Constitucional': []}, 'short_name': 'Acuerdo de Cooperación Educativa España-Bulgaria sobre Secciones Bilingües, Madrid y Sofía, 15 de noviembre de 2022.'}
+[2025-02-03 23:36:36,885] [INFO] [process_document] Final CNAE classification: ['Educación']
+[2025-02-03 23:36:36,890] [INFO] [process_document] Total tokens in the document: 2164
+[2025-02-03 23:36:36,893] [INFO] [process_document] Max tokens per chunk: 83360
+[2025-02-03 23:36:36,899] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-02-03 23:36:39,240] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:40,059] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:40,901] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:41,904] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:42,722] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:42,723] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-02-03 23:36:42,723] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-02-03 23:36:43,585] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:43,588] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-02-03 23:36:43,588] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-02-03 23:36:43,589] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'Se publican los precios de venta al público (PVP) de labores de tabaco en Expendedurías de Tabaco y Timbre, conforme a la Ley 13/1998. Se detallan precios para cigarrillos, cigarros, picaduras de liar y de pipa, tanto para la Península e Illes Balears como para Ceuta y Melilla.', 'etiquetas': ['Alimentos, bebidas, tabaco y productos relacionados'], 'stakeholders': ['Fabricantes de tabaco', 'Importadores de tabaco', 'Expendedurías de Tabaco y Timbre'], 'impacto': 'Los precios regulados pueden afectar la competitividad del mercado del tabaco, influir en el consumo y generar implicaciones fiscales para los fabricantes e importadores.', 'divisiones_cnae': ['Industria del tabaco'], 'ramas_juridicas': {'Derecho Fiscal': ['impuestos indirectos', 'impuestos locales', 'IVA', 'impuestos directos', 'procedimientos tributarios'], 'Derecho Administrativo': [], 'Derecho Mercantil': []}}
+[2025-02-03 23:36:43,589] [INFO] [_process_chunk] Number of input tokens: 3182
+[2025-02-03 23:36:43,589] [INFO] [_process_chunk] Number of output tokens: 175
+[2025-02-03 23:36:44,383] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:44,386] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': [], 'ramas_juridicas': []}
+[2025-02-03 23:36:44,386] [INFO] [_process_chunk] Number of input tokens: 1065
+[2025-02-03 23:36:44,386] [INFO] [_process_chunk] Number of output tokens: 33
+[2025-02-03 23:36:47,215] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:48,288] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:48,318] [INFO] [process_document] Final document: {'resumenes': 'De acuerdo con la Ley 13/1998, se establecen y publican los precios de venta al público (PVP) de los productos de tabaco en las Expendedurías de Tabaco y Timbre. Esta normativa incluye un desglose específico de precios para diferentes categorías de tabaco, tales como cigarrillos, cigarros, picaduras de liar y de pipa. Los precios se aplican tanto en la Península e Illes Balears como en las ciudades autónomas de Ceuta y Melilla, garantizando así la transparencia y la regulación del mercado del tabaco en todo el territorio nacional.', 'etiquetas': ['Alimentos, bebidas, tabaco y productos relacionados'], 'impactos': ['Los precios regulados pueden afectar la competitividad del mercado del tabaco, influir en el consumo y generar implicaciones fiscales para los fabricantes e importadores.'], 'stakeholders': ['Expendedurías de Tabaco y Timbre', 'Fabricantes de tabaco', 'Importadores de tabaco'], 'divisiones_cnae': ['Industria del tabaco'], 'ramas_juridicas': {'Derecho Fiscal': ['IVA', 'impuestos indirectos', 'impuestos directos', 'impuestos locales', 'procedimientos tributarios'], 'Derecho Administrativo': [], 'Derecho Mercantil': []}, 'short_name': 'Resolución sobre precios de tabaco en expendedurías.'}
+[2025-02-03 23:36:48,318] [INFO] [process_document] Final CNAE classification: ['Industria del tabaco']
+[2025-02-03 23:36:48,324] [INFO] [process_document] Total tokens in the document: 4500
+[2025-02-03 23:36:48,327] [INFO] [process_document] Max tokens per chunk: 83360
+[2025-02-03 23:36:48,335] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-02-03 23:36:51,391] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:53,079] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:54,193] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:55,208] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:56,187] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:56,189] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-02-03 23:36:56,189] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-02-03 23:36:57,122] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:57,124] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-02-03 23:36:57,125] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-02-03 23:36:57,125] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'El Consejo de Ministros modificó el Acuerdo de 10 de mayo de 2022, extendiendo el plazo de solicitud de avales a empresas y autónomos hasta el 1 de diciembre de 2023. Se establecen nuevos límites de financiación y condiciones para garantizar la accesibilidad a pymes y autónomos, y se prohíbe el reparto de dividendos en operaciones superiores a 50 millones de euros.', 'etiquetas': ['Servicios financieros y de seguros'], 'stakeholders': ['Empresas', 'Autónomos', 'Instituto de Crédito Oficial', 'Comisión Europea'], 'impacto': 'La modificación del acuerdo permite un mayor acceso a financiación para pymes y autónomos, pero impone restricciones como la prohibición de repartir dividendos en operaciones grandes, lo que podría afectar la liquidez de las empresas beneficiarias.', 'divisiones_cnae': ['Actividades financieras, excepto seguros y fondos de pensiones', 'Actividades auxiliares a los servicios financieros y seguros', 'Actividades de organizaciones y organismos extraterritoriales'], 'ramas_juridicas': {'Derecho Administrativo': ['responsabilidad patrimonial', 'transparencia y buen gobierno', 'sectores regulados', 'contratación pública', 'energía'], 'Derecho Fiscal': [], 'Derecho Mercantil': []}}
+[2025-02-03 23:36:57,125] [INFO] [_process_chunk] Number of input tokens: 4826
+[2025-02-03 23:36:57,125] [INFO] [_process_chunk] Number of output tokens: 198
+[2025-02-03 23:36:58,547] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:36:58,550] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': [], 'ramas_juridicas': []}
+[2025-02-03 23:36:58,550] [INFO] [_process_chunk] Number of input tokens: 1065
+[2025-02-03 23:36:58,550] [INFO] [_process_chunk] Number of output tokens: 33
+[2025-02-03 23:37:03,763] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:37:05,101] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:37:05,103] [INFO] [process_document] Final document: {'resumenes': 'El Consejo de Ministros ha decidido modificar el Acuerdo de 10 de mayo de 2022, ampliando el plazo para la solicitud de avales destinados a empresas y autónomos hasta el 1 de diciembre de 2023. Esta modificación incluye la implementación de nuevos límites de financiación y condiciones específicas que buscan facilitar el acceso a estos recursos para pequeñas y medianas empresas (pymes) y autónomos. Además, se establece una prohibición sobre el reparto de dividendos en operaciones que superen los 50 millones de euros, con el fin de asegurar una gestión responsable de los recursos financieros.', 'etiquetas': ['Servicios financieros y de seguros'], 'impactos': ['La modificación del acuerdo permite un mayor acceso a financiación para pymes y autónomos, pero impone restricciones como la prohibición de repartir dividendos en operaciones grandes, lo que podría afectar la liquidez de las empresas beneficiarias.'], 'stakeholders': ['Comisión Europea', 'Empresas', 'Instituto de Crédito Oficial', 'Autónomos'], 'divisiones_cnae': ['Actividades auxiliares a los servicios financieros y seguros', 'Actividades de organizaciones y organismos extraterritoriales', 'Actividades financieras, excepto seguros y fondos de pensiones'], 'ramas_juridicas': {'Derecho Administrativo': ['sectores regulados', 'energía', 'contratación pública', 'transparencia y buen gobierno', 'responsabilidad patrimonial'], 'Derecho Fiscal': [], 'Derecho Mercantil': []}, 'short_name': 'Resolución sobre modificación de avales a empresas y autónomos.'}
+[2025-02-03 23:37:05,104] [INFO] [process_document] Final CNAE classification: ['Actividades auxiliares a los servicios financieros y seguros', 'Actividades de organizaciones y organismos extraterritoriales', 'Actividades financieras, excepto seguros y fondos de pensiones']
+[2025-02-03 23:37:05,157] [INFO] [process_document] Total tokens in the document: 77915
+[2025-02-03 23:37:05,158] [INFO] [process_document] Max tokens per chunk: 83360
+[2025-02-03 23:37:05,221] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-02-03 23:37:12,846] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:37:16,706] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:37:23,527] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:37:24,520] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+[2025-02-03 23:37:24,521] [INFO] [openai._base_client] Retrying request to /chat/completions in 4.273000 seconds
+[2025-02-03 23:37:36,622] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:37:36,625] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-02-03 23:37:36,626] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-02-03 23:37:37,721] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+[2025-02-03 23:37:37,721] [INFO] [openai._base_client] Retrying request to /chat/completions in 10.733000 seconds
+[2025-02-03 23:37:55,029] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:37:55,635] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+[2025-02-03 23:37:55,636] [INFO] [openai._base_client] Retrying request to /chat/completions in 11.712000 seconds
+[2025-02-03 23:38:12,548] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:38:12,551] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-02-03 23:38:12,551] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-02-03 23:38:12,552] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'La Ley 4/2022 de Sociedades Cooperativas de Canarias regula la creación, funcionamiento y disolución de cooperativas en la región, promoviendo su desarrollo y adaptando la normativa a las particularidades locales. Se establece un marco para la participación democrática, derechos y obligaciones de los socios, y la gestión económica de las cooperativas.', 'etiquetas': ['Servicios empresariales: derecho, marketing, consultoría, reclutamiento, impresión y seguridad', 'Otros servicios comunitarios, sociales y personales', 'Servicios de educación y formación'], 'stakeholders': ['Gobierno de Canarias', 'Socios de cooperativas', 'Administraciones públicas'], 'impacto': 'La ley fomenta el cooperativismo, mejora la seguridad jurídica y facilita la creación de cooperativas, impactando positivamente en el empleo y desarrollo económico local. Sin embargo, puede generar desafíos en la adaptación de cooperativas existentes a la nueva normativa.', 'divisiones_cnae': ['Actividades relacionadas con el empleo', 'Actividades de organizaciones asociativas', 'Actividades de apoyo a las industrias extractivas'], 'ramas_juridicas': {'Derecho Mercantil': [], 'Derecho Administrativo': ['medio ambiente', 'urbanismo', 'responsabilidad patrimonial', 'licencias y permisos', 'No identificado'], 'Derecho Laboral': []}}
+[2025-02-03 23:38:12,552] [INFO] [_process_chunk] Number of input tokens: 65909
+[2025-02-03 23:38:12,552] [INFO] [_process_chunk] Number of output tokens: 202
+[2025-02-03 23:38:13,822] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:38:13,824] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': 'No identificado', 'stakeholders': 'No identificado', 'impacto': 'No identificado', 'divisiones_cnae': [], 'ramas_juridicas': []}
+[2025-02-03 23:38:13,824] [INFO] [_process_chunk] Number of input tokens: 1093
+[2025-02-03 23:38:13,825] [INFO] [_process_chunk] Number of output tokens: 40
+[2025-02-03 23:38:16,257] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:38:18,567] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:38:18,569] [INFO] [process_document] Final document: {'resumenes': 'La Ley 4/2022 de Sociedades Cooperativas de Canarias establece un marco normativo integral para la creación, funcionamiento y disolución de cooperativas en la región. Su objetivo principal es promover el desarrollo de estas entidades, adaptando la normativa a las particularidades locales. La ley regula aspectos fundamentales como la participación democrática de los socios, así como sus derechos y obligaciones, y establece directrices para la gestión económica de las cooperativas. De esta manera, se busca fomentar un modelo cooperativo que responda a las necesidades y características específicas de la comunidad canaria.', 'etiquetas': ['Otros servicios comunitarios, sociales y personales', 'Servicios empresariales: derecho, marketing, consultoría, reclutamiento, impresión y seguridad', 'Servicios de educación y formación'], 'impactos': ['La ley fomenta el cooperativismo, mejora la seguridad jurídica y facilita la creación de cooperativas, impactando positivamente en el empleo y desarrollo económico local. Sin embargo, puede generar desafíos en la adaptación de cooperativas existentes a la nueva normativa.'], 'stakeholders': ['Gobierno de Canarias', 'Administraciones públicas', 'Socios de cooperativas'], 'divisiones_cnae': ['Actividades de apoyo a las industrias extractivas', 'Actividades relacionadas con el empleo', 'Actividades de organizaciones asociativas'], 'ramas_juridicas': {'Derecho Mercantil': [], 'Derecho Administrativo': ['licencias y permisos', 'urbanismo', 'medio ambiente', 'responsabilidad patrimonial'], 'Derecho Laboral': []}, 'short_name': 'Ley 4/2022 de Sociedades Cooperativas de Canarias.'}
+[2025-02-03 23:38:18,569] [INFO] [process_document] Final CNAE classification: ['Actividades de apoyo a las industrias extractivas', 'Actividades relacionadas con el empleo', 'Actividades de organizaciones asociativas']
+[2025-02-03 23:38:18,581] [INFO] [process_document] Total tokens in the document: 4835
+[2025-02-03 23:38:18,583] [INFO] [process_document] Max tokens per chunk: 83360
+[2025-02-03 23:38:18,593] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-02-03 23:38:22,053] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:38:23,278] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:38:24,712] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:38:25,715] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:38:26,555] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:38:26,557] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-02-03 23:38:26,557] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-02-03 23:38:27,579] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:38:27,581] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-02-03 23:38:27,581] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-02-03 23:38:27,581] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'El Gobierno de Canarias promulga el Decreto-ley 6/2022, modificando el Decreto-ley 14/2021 para facilitar la concesión de ayudas de emergencia a los afectados por las erupciones volcánicas en La Palma, eximiendo a los titulares de explotaciones agrarias de la inscripción previa en el Registro de Personas Afectadas.', 'etiquetas': ['Servicios agrícolas, forestales, hortícolas, acuícolas y apícolas'], 'stakeholders': ['Gobierno de Canarias', 'Organizaciones de Productores de Frutas y Hortalizas', 'Titulares de explotaciones agrarias'], 'impacto': 'Agilización en la gestión de ayudas para el sector agrario, reducción de cargas administrativas y mejora en la identificación de beneficiarios, lo que puede acelerar la recuperación económica tras la emergencia volcánica.', 'divisiones_cnae': ['Agricultura, ganadería, caza y servicios relacionados', 'Actividades de apoyo a las industrias extractivas', 'Actividades administrativas de oficina'], 'ramas_juridicas': {'Derecho Administrativo': ['subvenciones', 'responsabilidad patrimonial', 'medio ambiente', 'urbanismo', 'expropiaciones'], 'Derecho Fiscal': [], 'Derecho Laboral': []}}
+[2025-02-03 23:38:27,581] [INFO] [_process_chunk] Number of input tokens: 4982
+[2025-02-03 23:38:27,581] [INFO] [_process_chunk] Number of output tokens: 190
+[2025-02-03 23:38:29,114] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:38:30,666] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:38:30,668] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 1/1. Please enter a valid list of tags.
+[2025-02-03 23:38:30,669] [INFO] [generate_divisiones_cnae] Maximum attempts reached. Validation failed.
+[2025-02-03 23:38:31,691] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:38:34,748] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:38:34,751] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-02-03 23:38:34,751] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-02-03 23:38:34,751] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'La Resolución del Parlamento de Canarias, publicada en el BOC número 131 el 4 de julio de 2022, ha sido convalidada, aunque no se especifica el contenido o el contexto de dicha resolución.', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': [], 'ramas_juridicas': {'Derecho Administrativo': []}}
+[2025-02-03 23:38:34,751] [INFO] [_process_chunk] Number of input tokens: 1106
+[2025-02-03 23:38:34,751] [INFO] [_process_chunk] Number of output tokens: 83
+[2025-02-03 23:38:39,696] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:38:40,706] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:38:40,709] [INFO] [process_document] Final document: {'resumenes': 'El Gobierno de Canarias ha promulgado el Decreto-ley 6/2022, que modifica el Decreto-ley 14/2021 con el objetivo de facilitar la concesión de ayudas de emergencia a las personas afectadas por las erupciones volcánicas en La Palma. Una de las principales modificaciones incluye la exención para los titulares de explotaciones agrarias de la obligación de inscripción previa en el Registro de Personas Afectadas, lo que simplifica el acceso a las ayudas. Además, la Resolución del Parlamento de Canarias, publicada en el Boletín Oficial de Canarias (BOC) número 131 el 4 de julio de 2022, ha sido convalidada, aunque no se detalla su contenido o contexto específico. Este conjunto de medidas busca agilizar el apoyo a los damnificados y mejorar la respuesta institucional ante la crisis provocada por las erupciones.', 'etiquetas': ['Servicios agrícolas, forestales, hortícolas, acuícolas y apícolas'], 'impactos': ['Agilización en la gestión de ayudas para el sector agrario, reducción de cargas administrativas y mejora en la identificación de beneficiarios, lo que puede acelerar la recuperación económica tras la emergencia volcánica.'], 'stakeholders': ['Gobierno de Canarias', 'Titulares de explotaciones agrarias', 'Organizaciones de Productores de Frutas y Hortalizas'], 'divisiones_cnae': ['Agricultura, ganadería, caza y servicios relacionados', 'Actividades de apoyo a las industrias extractivas', 'Actividades administrativas de oficina'], 'ramas_juridicas': {'Derecho Administrativo': ['subvenciones', 'expropiaciones', 'urbanismo', 'medio ambiente', 'responsabilidad patrimonial'], 'Derecho Fiscal': [], 'Derecho Laboral': []}, 'short_name': 'Decreto-ley 6/2022 sobre ayudas de emergencia por erupciones en La Palma.'}
+[2025-02-03 23:38:40,709] [INFO] [process_document] Final CNAE classification: ['Agricultura, ganadería, caza y servicios relacionados', 'Actividades de apoyo a las industrias extractivas', 'Actividades administrativas de oficina']
+[2025-02-03 23:38:40,722] [INFO] [process_document] Total tokens in the document: 9644
+[2025-02-03 23:38:40,724] [INFO] [process_document] Max tokens per chunk: 83360
+[2025-02-03 23:38:40,740] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-02-03 23:38:44,988] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:38:47,563] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:38:48,749] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:38:50,565] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:38:52,583] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:38:54,095] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:38:54,099] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'El Gobierno de Canarias ha promulgado el Decreto-ley 7/2022, que modifica la Ley 4/2017 sobre el Suelo y Espacios Naturales Protegidos, enfocándose en la legalización de explotaciones ganaderas y la regulación de planes de ordenación de recursos naturales. Se busca resolver discrepancias competenciales y mejorar la seguridad jurídica en la materia.', 'etiquetas': ['Servicios agrícolas, forestales, hortícolas, acuícolas y apícolas', 'Administración, defensa y servicios de seguridad social', 'Servicios de investigación y desarrollo y consultoría relacionada'], 'stakeholders': ['Gobierno de Canarias', 'Explotaciones ganaderas', 'Cabildos insulares', 'Ayuntamientos'], 'impacto': 'El Decreto-ley busca clarificar competencias en la legalización de explotaciones ganaderas, mejorando la seguridad jurídica y evitando conflictos normativos. Se prevén implicaciones en la gestión ambiental y territorial, así como en la regulación de actividades económicas relacionadas.', 'divisiones_cnae': ['Agricultura, ganadería, caza y servicios relacionados', 'Actividades de construcción especializada', 'Actividades administrativas de oficina'], 'ramas_juridicas': {'Derecho Administrativo': ['medio ambiente', 'urbanismo', 'licencias y permisos', 'responsabilidad patrimonial', 'expropiaciones'], 'Derecho Ambiental': ['legislación forestal', 'gestión de residuos', 'impacto ambiental', 'protección de la biodiversidad', 'cambio climático'], 'Derecho Constitucional': ['reparto de competencias', 'procedimientos constitucionales', 'derechos fundamentales', 'control de constitucionalidad', 'No identificado']}}
+[2025-02-03 23:38:54,099] [INFO] [_process_chunk] Number of input tokens: 8999
+[2025-02-03 23:38:54,100] [INFO] [_process_chunk] Number of output tokens: 221
+[2025-02-03 23:38:55,659] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:38:56,463] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:38:56,466] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 1/1. Please enter a valid list of tags.
+[2025-02-03 23:38:56,466] [INFO] [generate_divisiones_cnae] Maximum attempts reached. Validation failed.
+[2025-02-03 23:38:57,605] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:38:58,546] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:38:58,548] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-02-03 23:38:58,548] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-02-03 23:38:58,548] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'La Resolución del Parlamento de Canarias, publicada en el BOC número 131 el 4 de julio de 2022, ha sido convalidada. No se especifican detalles adicionales sobre el contenido o el contexto de la resolución.', 'etiquetas': 'No identificado', 'stakeholders': 'No identificado', 'impacto': 'No identificado', 'divisiones_cnae': [], 'ramas_juridicas': {'Derecho Administrativo': []}}
+[2025-02-03 23:38:58,548] [INFO] [_process_chunk] Number of input tokens: 1102
+[2025-02-03 23:38:58,548] [INFO] [_process_chunk] Number of output tokens: 85
+[2025-02-03 23:39:02,656] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:39:05,479] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:39:05,482] [INFO] [process_document] Final document: {'resumenes': 'El Gobierno de Canarias ha promulgado el Decreto-ley 7/2022, que introduce modificaciones a la Ley 4/2017, la cual regula el Suelo y los Espacios Naturales Protegidos. Este decreto se centra en la legalización de explotaciones ganaderas y en la regulación de los planes de ordenación de recursos naturales, con el objetivo de resolver discrepancias competenciales y mejorar la seguridad jurídica en estos ámbitos. Además, la Resolución del Parlamento de Canarias, que fue publicada en el Boletín Oficial de Canarias (BOC) número 131 el 4 de julio de 2022, ha sido convalidada, aunque no se proporcionan detalles adicionales sobre su contenido o contexto.', 'etiquetas': ['Administración, defensa y servicios de seguridad social', 'Servicios de investigación y desarrollo y consultoría relacionada', 'Servicios agrícolas, forestales, hortícolas, acuícolas y apícolas'], 'impactos': ['El Decreto-ley busca clarificar competencias en la legalización de explotaciones ganaderas, mejorando la seguridad jurídica y evitando conflictos normativos. Se prevén implicaciones en la gestión ambiental y territorial, así como en la regulación de actividades económicas relacionadas.'], 'stakeholders': ['Ayuntamientos', 'Gobierno de Canarias', 'Explotaciones ganaderas', 'Cabildos insulares'], 'divisiones_cnae': ['Agricultura, ganadería, caza y servicios relacionados', 'Actividades de construcción especializada', 'Actividades administrativas de oficina'], 'ramas_juridicas': {'Derecho Administrativo': ['licencias y permisos', 'expropiaciones', 'urbanismo', 'medio ambiente', 'responsabilidad patrimonial'], 'Derecho Ambiental': ['cambio climático', 'impacto ambiental', 'protección de la biodiversidad', 'gestión de residuos', 'legislación forestal'], 'Derecho Constitucional': ['reparto de competencias', 'control de constitucionalidad', 'procedimientos constitucionales', 'derechos fundamentales']}, 'short_name': 'Decreto-ley 7/2022 sobre Modificaciones en la Ley del Suelo y Espacios Naturales de Canarias.'}
+[2025-02-03 23:39:05,482] [INFO] [process_document] Final CNAE classification: ['Agricultura, ganadería, caza y servicios relacionados', 'Actividades de construcción especializada', 'Actividades administrativas de oficina']
+[2025-02-03 23:39:05,502] [INFO] [process_document] Total tokens in the document: 10604
+[2025-02-03 23:39:05,504] [INFO] [process_document] Max tokens per chunk: 83360
+[2025-02-03 23:39:05,518] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-02-03 23:39:09,461] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:39:10,283] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:39:10,288] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 1/1. Please enter a valid list of tags.
+[2025-02-03 23:39:10,288] [INFO] [generate_divisiones_cnae] Maximum attempts reached. Validation failed.
+[2025-02-03 23:39:11,508] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:39:13,863] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:39:15,708] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:39:17,006] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:39:17,008] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-02-03 23:39:17,009] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-02-03 23:39:17,009] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'El Decreto-ley 8/2022 prorroga el tipo cero en el Impuesto General Indirecto Canario hasta el 31 de diciembre de 2022, autoriza el uso de remanentes de universidades públicas para gastos derivados del aumento de precios y adapta medidas tributarias para la reconstrucción de viviendas en La Palma tras la erupción volcánica.', 'etiquetas': ['Servicios públicos', 'Servicios de educación y formación', 'Servicios de reparación y mantenimiento'], 'stakeholders': ['Gobierno de Canarias', 'Universidades públicas de Canarias', 'Ciudadanía de La Palma'], 'impacto': 'El decreto facilita la reconstrucción de viviendas y apoya a universidades ante el aumento de costos, mitigando el impacto económico y social de la crisis volcánica y la pandemia.', 'divisiones_cnae': [], 'ramas_juridicas': {'Derecho Fiscal': ['impuestos indirectos', 'impuestos directos', 'IVA', 'fiscalidad empresarial', 'fiscalidad de personas físicas'], 'Derecho Administrativo': ['urbanismo', 'medio ambiente', 'responsabilidad patrimonial', 'licencias y permisos', 'expropiaciones'], 'Derecho Civil': []}}
+[2025-02-03 23:39:17,009] [INFO] [_process_chunk] Number of input tokens: 9825
+[2025-02-03 23:39:17,009] [INFO] [_process_chunk] Number of output tokens: 187
+[2025-02-03 23:39:23,163] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:39:23,173] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': [], 'ramas_juridicas': []}
+[2025-02-03 23:39:23,173] [INFO] [_process_chunk] Number of input tokens: 1065
+[2025-02-03 23:39:23,173] [INFO] [_process_chunk] Number of output tokens: 33
+[2025-02-03 23:39:24,961] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:39:26,309] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-03 23:39:26,312] [INFO] [process_document] Final document: {'resumenes': 'El Decreto-ley 8/2022 establece la prórroga del tipo cero en el Impuesto General Indirecto Canario hasta el 31 de diciembre de 2022. Además, autoriza a las universidades públicas a utilizar sus remanentes para cubrir gastos relacionados con el incremento de precios. Por último, el decreto adapta diversas medidas tributarias con el objetivo de facilitar la reconstrucción de viviendas en La Palma, en respuesta a los daños ocasionados por la erupción volcánica.', 'etiquetas': ['Servicios públicos', 'Servicios de reparación y mantenimiento', 'Servicios de educación y formación'], 'impactos': ['El decreto facilita la reconstrucción de viviendas y apoya a universidades ante el aumento de costos, mitigando el impacto económico y social de la crisis volcánica y la pandemia.'], 'stakeholders': ['Gobierno de Canarias', 'Ciudadanía de La Palma', 'Universidades públicas de Canarias'], 'divisiones_cnae': [], 'ramas_juridicas': {'Derecho Fiscal': ['IVA', 'impuestos indirectos', 'impuestos directos', 'fiscalidad de personas físicas', 'fiscalidad empresarial'], 'Derecho Administrativo': ['licencias y permisos', 'expropiaciones', 'urbanismo', 'medio ambiente', 'responsabilidad patrimonial'], 'Derecho Civil': []}, 'short_name': 'Decreto-ley 8/2022 sobre prórroga del tipo cero en el IGIC y medidas para La Palma.'}
+[2025-02-03 23:39:26,312] [INFO] [process_document] Final CNAE classification: []
+[2025-02-03 23:39:30,020] [INFO] [send_email] El correo ha sido enviado exitosamente.

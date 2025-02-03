@@ -6,11 +6,10 @@ import logging as lg
 from src.initialize import Initializer
 
 
-def num_tokens_from_string(string: str, model) -> int:
+def num_tokens_from_string(string: str, tokenizer) -> int:
     """Returns the number of tokens in a text string."""
-    encoding = tiktoken.get_encoding("cl100k_base")
-    encoding = tiktoken.encoding_for_model(model)
-    num_tokens = len(encoding.encode(string))
+    tokenizer = tiktoken.get_encoding("cl100k_base")
+    num_tokens = len(tokenizer.encode(string))
     return num_tokens
 
 
@@ -96,9 +95,6 @@ def extract_chunk(document, config, client):
         messages=messages,
         temperature=0,
         max_tokens=config["max_words_response_summary"],
-        top_p=1,
-        frequency_penalty=0,
-        presence_penalty=0,
     )
 
     input_tokens += response.usage.prompt_tokens
@@ -139,7 +135,9 @@ def extract_chunk(document, config, client):
                 f'{config["prompt_subrama_jca"]} del {rama}: {possible_tags}'
             )
             if isinstance(output["ramas_juridicas"], list):
-                output["ramas_juridicas"] = {key: [] for key in output["ramas_juridicas"]}
+                output["ramas_juridicas"] = {
+                    key: [] for key in output["ramas_juridicas"]
+                }
             output["ramas_juridicas"][rama] = generate_subramas_juridicas(
                 config,
                 client,
@@ -271,9 +269,6 @@ def generate_divisiones_cnae(config, client, resumen):
             messages=messages,
             temperature=0,
             max_tokens=config["max_words_response_summary"],
-            top_p=1,
-            frequency_penalty=0,
-            presence_penalty=0,
         )
 
         tags = [
@@ -324,9 +319,6 @@ def generate_ramas_juridicas(config, client, resumen, possible_tags):
             messages=messages,
             temperature=0,
             max_tokens=config["max_words_response_summary"],
-            top_p=1,
-            frequency_penalty=0,
-            presence_penalty=0,
         )
 
         tags = [
@@ -378,9 +370,6 @@ def generate_subramas_juridicas(
             messages=messages,
             temperature=0,
             max_tokens=config["max_words_response_summary"],
-            top_p=1,
-            frequency_penalty=0,
-            presence_penalty=0,
         )
 
         tags = [

@@ -1,8 +1,10 @@
 admin_email: saliagaestella@gmail.com
-model: "gpt-4o-mini"
+model: "gpt-4o-mini" #"deepseek-chat"
+ai_provider: "openai" #deepseek
+tokenizer_encoder: "cl100k_base"
 temperature: 0
-seed: 42
-tokens_context_window: 128000
+#seed: 42
+tokens_context_window: 128000 #64000
 tokens_safeguard: 1000
 max_words_response_summary: 500
 

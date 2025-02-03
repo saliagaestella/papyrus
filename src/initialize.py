@@ -12,7 +12,11 @@ class Initializer:
     def __init__(self):
         self.logger = self.initialize_logging()
         self.config = self._init_config()
-        self.openai_client = self._init_openai_client()
+        self.openai_client = (
+            self._init_deepseek_client()
+            if self.config["ai_provider"] == "deepseek"
+            else self._init_openai_client()
+        )
         self.mongodb_client = self._init_mongodb_client()
 
     def initialize_logging(self):
@@ -64,6 +68,15 @@ class Initializer:
         self.logger.info("Initializing OpenAI client")
         client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
         self.logger.info("Initialized OpenAI client")
+        return client
+
+    def _init_deepseek_client(self):
+        """Initializes the DeepSeek client."""
+        self.logger.info("Initializing DeepSeek client")
+        client = OpenAI(
+            api_key=os.getenv("DEEPSEEK_API_KEY"), base_url="https://api.deepseek.com/v1"
+        )
+        self.logger.info("Initialized DeepSeek client")
         return client
 
     def _init_mongodb_client(self):

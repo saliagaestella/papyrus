@@ -7,3 +7,4 @@ node_modules/
 .vscode/
 temp.pdf
 application.log
+src/test.py
