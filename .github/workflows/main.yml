@@ -2,7 +2,7 @@ name: Daily Run of papyrus
 
 on:
   schedule:
-    - cron: '30 6 * * *'
+    - cron: '50 6 * * *'
   workflow_dispatch:
 
 jobs:
