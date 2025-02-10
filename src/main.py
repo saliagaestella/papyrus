@@ -4,6 +4,8 @@ import sys
 import warnings
 from dotenv import load_dotenv
 
+from src.etls.bocyl.load import today_bocyl
+
 load_dotenv()
 
 sys.path.append(os.getenv("PROJECT_PATH"))
@@ -73,9 +75,24 @@ def main():
     except Exception as e:
         print(f"Failed to scrap BOPV documents: {e}")
         results_bopv = {}
+    try:
+        results_bocyl = process_documents(
+            documents=today_bocyl(),
+            processor=processor,
+            initializer=initializer,
+            collection_name="BOCYL",
+        )
+    except Exception as e:
+        print(f"Failed to scrap BOCYL documents: {e}")
+        results_bocyl = {}
 
     results_joined = (
-        results_boe | results_bocm | results_boa | results_boja | results_bopv
+        results_boe
+        | results_bocm
+        | results_boa
+        | results_boja
+        | results_bopv
+        | results_bocyl
     )
 
     if not results_joined:
