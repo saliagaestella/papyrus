@@ -23,8 +23,8 @@ def download_dates():
     initializer = Initializer()
 
     processor = DocumentProcessor(initializer=initializer)
-    date_start = "2025/01/31"
-    date_end = "2025/01/31"
+    date_start = "2025/01/20"
+    date_end = "2025/01/30"
 
     """results_boe = process_documents(
         documents=dates_boe(date_start=date_start, date_end=date_end),

@@ -7,6 +7,7 @@ import typing as tp
 from datetime import date, datetime
 
 from bs4 import BeautifulSoup
+from pypdf import PdfReader
 import requests
 from requests.exceptions import HTTPError
 
@@ -49,11 +50,24 @@ def _extract_metadata(soup: BeautifulSoup, url_html: str) -> tp.Dict:
         )
         if a_tag:
             metadata_dict["url_pdf"] = (
-                f"{a_tag['href']}"  # added domain to be absolute.
+                f"{a_tag['href']}"
             )
             parts = a_tag["href"].split("/")
             filename = parts[-1]  # Get the last part of the URL
             metadata_dict["identificador"] = filename.replace(".pdf", "")
+            try:
+                pdf = requests.get(metadata_dict["url_pdf"], headers={"Accept": "application/pdf"})
+                with open("temp.pdf", "wb") as f:
+                    f.write(pdf.content)
+                with open("temp.pdf", "rb") as f:
+                    reader = PdfReader(f)
+                    num_paginas = len(reader.pages)
+                    tiempo_lectura = round(num_paginas * 2.5)
+                    metadata_dict["num_paginas"] = num_paginas
+                    metadata_dict["tiempo_lectura"] = tiempo_lectura
+            except:
+                num_paginas = None
+                tiempo_lectura = None
     else:
         metadata_dict["identificador"] = "Identificador no encontrado"
         metadata_dict["url_pdf"] = ""  # Or a placeholder value

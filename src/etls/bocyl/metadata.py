@@ -33,8 +33,8 @@ class BOCYLMetadataDocument(MetadataDocument):
     anio: str
     mes: str
     dia: str
-    num_paginas: int = 0 # We can calculate this if we download the PDF.
-    tiempo_lectura: int = 0 # We can calculate this if we download the PDF.
+    num_paginas: tp.Optional[int] = None
+    tiempo_lectura: tp.Optional[int] = None
 
     # Analisis - Keeping these, even if not readily available, for consistency
     observaciones: str = ""

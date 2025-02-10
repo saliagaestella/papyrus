@@ -3351,3 +3351,93 @@ dia
 [2025-02-10 23:28:34,345] [INFO] [process_document] Final document: {'resumenes': 'La Orden EDU/58/2025 introduce modificaciones a la Orden EDU/107/2018, que regula el Campus de Profundización Científica en Castilla y León. Entre los cambios más significativos se encuentran la actualización de los criterios de calificación y selección de los alumnos participantes. Se implementa un nuevo método para el cálculo de la nota media, y se establece un sistema de priorización de materias específicas para resolver situaciones de empate entre estudiantes. Estas modificaciones buscan optimizar el proceso de selección y asegurar una evaluación más justa y acorde con las necesidades del programa.', 'etiquetas': ['Servicios de educación y formación'], 'impactos': ['La modificación puede aumentar la competitividad entre alumnos y estandarizar criterios de evaluación, afectando la admisión al campus y la preparación académica en secundaria y bachillerato.'], 'stakeholders': ['Consejería de Educación de Castilla y León', 'Centros educativos', 'Alumnos'], 'divisiones_cnae': ['Educación'], 'ramas_juridicas': {'Derecho Administrativo': []}, 'short_name': 'Modificación de la Orden EDU/107/2018 sobre el Campus de Profundización Científica en Castilla y León.'}
 [2025-02-10 23:28:34,346] [INFO] [process_document] Final CNAE classification: ['Educación']
 [2025-02-10 23:28:35,949] [INFO] [send_email] El correo ha sido enviado exitosamente.
+[2025-02-10 23:59:56,587] [INFO] [root] Initialized logging
+[2025-02-10 23:59:56,594] [INFO] [root] Configuration loaded
+[2025-02-10 23:59:56,594] [INFO] [root] Initializing OpenAI client
+[2025-02-10 23:59:56,619] [INFO] [root] Initialized OpenAI client
+[2025-02-10 23:59:56,619] [INFO] [root] Initializing MongoDB client
+[2025-02-10 23:59:57,216] [INFO] [root] Initialized MongoDB client
+[2025-02-10 23:59:57,317] [INFO] [download_day] Downloading BOCYL content for day 2025-01-30
+[2025-02-10 23:59:57,456] [WARNING] [download_day] No 'Disposiciones Generales' section found on https://bocyl.jcyl.es/boletin.do?fechaBoletin=30/01/2025
+[2025-02-11 00:00:04,773] [INFO] [root] Initialized logging
+[2025-02-11 00:00:04,779] [INFO] [root] Configuration loaded
+[2025-02-11 00:00:04,779] [INFO] [root] Initializing OpenAI client
+[2025-02-11 00:00:04,800] [INFO] [root] Initialized OpenAI client
+[2025-02-11 00:00:04,800] [INFO] [root] Initializing MongoDB client
+[2025-02-11 00:00:05,365] [INFO] [root] Initialized MongoDB client
+[2025-02-11 00:00:05,475] [INFO] [download_day] Downloading BOCYL content for day 2025-01-20
+[2025-02-11 00:00:05,641] [WARNING] [download_day] No 'Disposiciones Generales' section found on https://bocyl.jcyl.es/boletin.do?fechaBoletin=20/01/2025
+[2025-02-11 00:00:05,641] [INFO] [download_day] Downloading BOCYL content for day 2025-01-21
+[2025-02-11 00:00:05,872] [WARNING] [download_day] No 'Disposiciones Generales' section found on https://bocyl.jcyl.es/boletin.do?fechaBoletin=21/01/2025
+[2025-02-11 00:00:05,872] [INFO] [download_day] Downloading BOCYL content for day 2025-01-22
+[2025-02-11 00:00:06,091] [WARNING] [download_day] No 'Disposiciones Generales' section found on https://bocyl.jcyl.es/boletin.do?fechaBoletin=22/01/2025
+[2025-02-11 00:00:06,091] [INFO] [download_day] Downloading BOCYL content for day 2025-01-23
+[2025-02-11 00:00:06,309] [INFO] [download_document] Downloading BOCYL document: https://bocyl.jcyl.es/html/2025/01/23/html/BOCYL-D-23012025-1.do
+[2025-02-11 00:00:07,075] [INFO] [download_document] Downloaded BOCYL document successfully: https://bocyl.jcyl.es/html/2025/01/23/html/BOCYL-D-23012025-1.do
+[2025-02-11 00:00:07,075] [INFO] [download_day] Downloaded BOCYL content for day 2025-01-23 (1 documents)
+[2025-02-11 00:00:07,076] [INFO] [download_day] Downloading BOCYL content for day 2025-01-24
+[2025-02-11 00:00:07,213] [WARNING] [download_day] No 'Disposiciones Generales' section found on https://bocyl.jcyl.es/boletin.do?fechaBoletin=24/01/2025
+[2025-02-11 00:00:07,213] [INFO] [download_day] Downloading BOCYL content for day 2025-01-25
+[2025-02-11 00:00:07,303] [WARNING] [download_day] No 'Disposiciones Generales' section found on https://bocyl.jcyl.es/boletin.do?fechaBoletin=25/01/2025
+[2025-02-11 00:00:07,303] [INFO] [download_day] Downloading BOCYL content for day 2025-01-26
+[2025-02-11 00:00:07,414] [WARNING] [download_day] No 'Disposiciones Generales' section found on https://bocyl.jcyl.es/boletin.do?fechaBoletin=26/01/2025
+[2025-02-11 00:00:07,414] [INFO] [download_day] Downloading BOCYL content for day 2025-01-27
+[2025-02-11 00:00:07,564] [WARNING] [download_day] No 'Disposiciones Generales' section found on https://bocyl.jcyl.es/boletin.do?fechaBoletin=27/01/2025
+[2025-02-11 00:00:07,565] [INFO] [download_day] Downloading BOCYL content for day 2025-01-28
+[2025-02-11 00:00:07,767] [INFO] [download_document] Downloading BOCYL document: https://bocyl.jcyl.es/html/2025/01/28/html/BOCYL-D-28012025-1.do
+[2025-02-11 00:00:08,397] [INFO] [download_document] Downloaded BOCYL document successfully: https://bocyl.jcyl.es/html/2025/01/28/html/BOCYL-D-28012025-1.do
+[2025-02-11 00:00:08,398] [INFO] [download_day] Downloaded BOCYL content for day 2025-01-28 (1 documents)
+[2025-02-11 00:00:08,398] [INFO] [download_day] Downloading BOCYL content for day 2025-01-29
+[2025-02-11 00:00:08,597] [WARNING] [download_day] No 'Disposiciones Generales' section found on https://bocyl.jcyl.es/boletin.do?fechaBoletin=29/01/2025
+[2025-02-11 00:00:08,597] [INFO] [download_day] Downloading BOCYL content for day 2025-01-30
+[2025-02-11 00:00:08,766] [WARNING] [download_day] No 'Disposiciones Generales' section found on https://bocyl.jcyl.es/boletin.do?fechaBoletin=30/01/2025
+[2025-02-11 00:00:08,841] [INFO] [process_document] Total tokens in the document: 13993
+[2025-02-11 00:00:08,843] [INFO] [process_document] Max tokens per chunk: 83360
+[2025-02-11 00:00:08,860] [INFO] [process_document] Number of API calls/chunks: 1
+[2025-02-11 00:00:15,619] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-11 00:00:23,745] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-11 00:00:30,502] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-11 00:00:36,009] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-11 00:00:42,382] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-11 00:00:47,233] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-11 00:00:47,243] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-02-11 00:00:47,243] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-02-11 00:00:47,243] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'La Orden AGR/30/2025 regula el procedimiento para el reconocimiento de préstamos garantizados por el IFGC en el marco del PEPAC 2023-2027, cofinanciado por el FEADER. Busca facilitar el acceso al crédito para inversiones en el medio rural, adaptándose a la normativa europea vigente.', 'etiquetas': ['Servicios agrícolas, forestales, hortícolas, acuícolas y apícolas', 'Servicios financieros y de seguros', 'Alimentos, bebidas, tabaco y productos relacionados'], 'stakeholders': ['Jóvenes agricultores', 'Empresas agroalimentarias', 'Entidades financieras', 'Administraciones públicas'], 'impacto': 'Facilita el acceso a financiación para inversiones en el sector agrícola, promoviendo el desarrollo rural y la sostenibilidad. Riesgos incluyen la gestión ineficiente de fondos y el incumplimiento de requisitos por parte de los beneficiarios.', 'divisiones_cnae': ['Agricultura, ganadería, caza y servicios relacionados', 'Industria de la alimentación', 'Actividades de apoyo a las industrias extractivas'], 'ramas_juridicas': {'Derecho Administrativo': ['medio ambiente', 'subvenciones', 'responsabilidad patrimonial', 'urbanismo', 'licencias y permisos'], 'Derecho de la UE': ['política agraria común'], 'Derecho Fiscal': []}}
+[2025-02-11 00:00:47,244] [INFO] [_process_chunk] Number of input tokens: 12475
+[2025-02-11 00:00:47,244] [INFO] [_process_chunk] Number of output tokens: 201
+[2025-02-11 00:00:49,174] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-11 00:00:50,368] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-11 00:00:50,371] [INFO] [process_document] Final document: {'resumenes': 'La Orden AGR/30/2025 establece el procedimiento para el reconocimiento de préstamos garantizados por el Instituto de Finanzas de Galicia (IFGC) en el contexto del Programa Estratégico de Promoción Agraria y de Desarrollo Rural (PEPAC) 2023-2027, el cual cuenta con cofinanciación del Fondo Europeo Agrícola de Desarrollo Rural (FEADER). Esta normativa tiene como objetivo principal facilitar el acceso al crédito para inversiones en el medio rural, asegurando su alineación con la normativa europea vigente.', 'etiquetas': ['Servicios financieros y de seguros', 'Alimentos, bebidas, tabaco y productos relacionados', 'Servicios agrícolas, forestales, hortícolas, acuícolas y apícolas'], 'impactos': ['Facilita el acceso a financiación para inversiones en el sector agrícola, promoviendo el desarrollo rural y la sostenibilidad. Riesgos incluyen la gestión ineficiente de fondos y el incumplimiento de requisitos por parte de los beneficiarios.'], 'stakeholders': ['Empresas agroalimentarias', 'Entidades financieras', 'Jóvenes agricultores', 'Administraciones públicas'], 'divisiones_cnae': ['Agricultura, ganadería, caza y servicios relacionados', 'Industria de la alimentación', 'Actividades de apoyo a las industrias extractivas'], 'ramas_juridicas': {'Derecho Administrativo': ['medio ambiente', 'responsabilidad patrimonial', 'urbanismo', 'licencias y permisos', 'subvenciones'], 'Derecho de la UE': ['política agraria común'], 'Derecho Fiscal': []}, 'short_name': 'ORDEN AGR/30/2025 sobre Préstamos Garantizados FEADER 2023-2027.'}
+[2025-02-11 00:00:50,371] [INFO] [process_document] Final CNAE classification: ['Agricultura, ganadería, caza y servicios relacionados', 'Industria de la alimentación', 'Actividades de apoyo a las industrias extractivas']
+[2025-02-11 00:00:50,385] [INFO] [process_document] Total tokens in the document: 6864
+[2025-02-11 00:00:50,388] [INFO] [process_document] Max tokens per chunk: 83360
+[2025-02-11 00:00:50,407] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-02-11 00:00:53,906] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-11 00:00:56,828] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-11 00:00:56,831] [INFO] [generate_divisiones_cnae] Invalid tags detected (['No identificado']). Attempt 1/1. Please enter a valid list of tags.
+[2025-02-11 00:00:56,831] [INFO] [generate_divisiones_cnae] Maximum attempts reached. Validation failed.
+[2025-02-11 00:00:57,945] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-11 00:00:59,278] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-11 00:00:59,281] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-02-11 00:00:59,283] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-02-11 00:01:05,070] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-11 00:01:05,073] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-02-11 00:01:05,073] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-02-11 00:01:10,302] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-11 00:01:10,305] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-02-11 00:01:10,305] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-02-11 00:01:10,305] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'El Decreto 1/2025 regula el procedimiento para el reconocimiento de la condición de familia numerosa en Castilla y León, actualizando la normativa anterior. Se simplifican trámites, se amplía la vigencia del título y se promueve el uso de medios electrónicos, garantizando derechos y agilidad en la gestión administrativa.', 'etiquetas': ['No identificado'], 'stakeholders': ['Familias numerosas', 'Administración pública', 'Consejería de Familia e Igualdad de Oportunidades'], 'impacto': 'El decreto mejora la gestión administrativa para familias numerosas, reduce cargas burocráticas y promueve la eficiencia en la tramitación, lo que puede aumentar el número de solicitudes y facilitar el acceso a beneficios sociales.', 'divisiones_cnae': [], 'ramas_juridicas': {'Derecho Administrativo': [], 'Derecho Constitucional': [], 'Derecho Laboral': []}}
+[2025-02-11 00:01:10,305] [INFO] [_process_chunk] Number of input tokens: 6818
+[2025-02-11 00:01:10,305] [INFO] [_process_chunk] Number of output tokens: 161
+[2025-02-11 00:01:16,476] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-11 00:01:16,479] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': [], 'ramas_juridicas': []}
+[2025-02-11 00:01:16,479] [INFO] [_process_chunk] Number of input tokens: 1072
+[2025-02-11 00:01:16,480] [INFO] [_process_chunk] Number of output tokens: 40
+[2025-02-11 00:01:18,835] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-11 00:01:19,654] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-11 00:01:19,657] [INFO] [process_document] Final document: {'resumenes': 'El Decreto 1/2025 establece el procedimiento para el reconocimiento de la condición de familia numerosa en la comunidad de Castilla y León, introduciendo actualizaciones significativas respecto a la normativa previa. Entre las principales modificaciones, se destacan la simplificación de los trámites administrativos, la ampliación de la vigencia del título de familia numerosa y la promoción del uso de medios electrónicos para facilitar la gestión. Estas medidas buscan garantizar los derechos de las familias numerosas y mejorar la agilidad en los procesos administrativos relacionados.', 'etiquetas': ['No identificado'], 'impactos': ['El decreto mejora la gestión administrativa para familias numerosas, reduce cargas burocráticas y promueve la eficiencia en la tramitación, lo que puede aumentar el número de solicitudes y facilitar el acceso a beneficios sociales.'], 'stakeholders': ['Consejería de Familia e Igualdad de Oportunidades', 'Administración pública', 'Familias numerosas'], 'divisiones_cnae': [], 'ramas_juridicas': {'Derecho Administrativo': [], 'Derecho Constitucional': [], 'Derecho Laboral': []}, 'short_name': 'Decreto 1/2025 sobre Familias Numerosas.'}
+[2025-02-11 00:01:19,657] [INFO] [process_document] Final CNAE classification: []
+[2025-02-11 00:01:21,496] [INFO] [send_email] El correo ha sido enviado exitosamente.
