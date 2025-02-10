@@ -9,6 +9,7 @@ sys.path.append(os.getenv("PROJECT_PATH"))
 
 from src.docs_processor.processor import DocumentProcessor
 from src.etls.boe.load import dates_boe
+from src.etls.bocyl.load import dates_bocyl
 from src.etls.bocm.load import dates_bocm
 from src.etls.boa.load import dates_boa
 from src.etls.boja.load import dates_boja
@@ -22,14 +23,20 @@ def download_dates():
     initializer = Initializer()
 
     processor = DocumentProcessor(initializer=initializer)
-    date_start = "2022/11/26"
-    date_end = "2022/11/26"
+    date_start = "2025/01/31"
+    date_end = "2025/01/31"
 
-    results_boe = process_documents(
+    """results_boe = process_documents(
         documents=dates_boe(date_start=date_start, date_end=date_end),
         processor=processor,
         initializer=initializer,
         collection_name="BOE",
+    )"""
+    results_bocyl = process_documents(
+        documents=dates_bocyl(date_start=date_start, date_end=date_end),
+        processor=processor,
+        initializer=initializer,
+        collection_name="BOCYL",
     )
     """results_bocm = process_documents(
         documents=dates_bocm(date_start=date_start, date_end=date_end),
@@ -60,7 +67,7 @@ def download_dates():
         results_boe | results_bocm | results_boa | results_boja | results_bopv
     )"""
 
-    results_joined = results_boe
+    results_joined = results_bocyl
 
     if not results_joined:
         return

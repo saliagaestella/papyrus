@@ -3135,3 +3135,219 @@
 [2025-02-03 23:39:26,312] [INFO] [process_document] Final document: {'resumenes': 'El Decreto-ley 8/2022 establece la prórroga del tipo cero en el Impuesto General Indirecto Canario hasta el 31 de diciembre de 2022. Además, autoriza a las universidades públicas a utilizar sus remanentes para cubrir gastos relacionados con el incremento de precios. Por último, el decreto adapta diversas medidas tributarias con el objetivo de facilitar la reconstrucción de viviendas en La Palma, en respuesta a los daños ocasionados por la erupción volcánica.', 'etiquetas': ['Servicios públicos', 'Servicios de reparación y mantenimiento', 'Servicios de educación y formación'], 'impactos': ['El decreto facilita la reconstrucción de viviendas y apoya a universidades ante el aumento de costos, mitigando el impacto económico y social de la crisis volcánica y la pandemia.'], 'stakeholders': ['Gobierno de Canarias', 'Ciudadanía de La Palma', 'Universidades públicas de Canarias'], 'divisiones_cnae': [], 'ramas_juridicas': {'Derecho Fiscal': ['IVA', 'impuestos indirectos', 'impuestos directos', 'fiscalidad de personas físicas', 'fiscalidad empresarial'], 'Derecho Administrativo': ['licencias y permisos', 'expropiaciones', 'urbanismo', 'medio ambiente', 'responsabilidad patrimonial'], 'Derecho Civil': []}, 'short_name': 'Decreto-ley 8/2022 sobre prórroga del tipo cero en el IGIC y medidas para La Palma.'}
 [2025-02-03 23:39:26,312] [INFO] [process_document] Final CNAE classification: []
 [2025-02-03 23:39:30,020] [INFO] [send_email] El correo ha sido enviado exitosamente.
+[2025-02-10 23:17:46,631] [INFO] [root] Initialized logging
+[2025-02-10 23:17:46,638] [INFO] [root] Configuration loaded
+[2025-02-10 23:17:46,638] [INFO] [root] Initializing OpenAI client
+[2025-02-10 23:17:46,670] [INFO] [root] Initialized OpenAI client
+[2025-02-10 23:17:46,670] [INFO] [root] Initializing MongoDB client
+[2025-02-10 23:17:47,267] [INFO] [root] Initialized MongoDB client
+[2025-02-10 23:17:49,274] [INFO] [download_days] Downloading content from day 2025-02-10 to 2025-02-10
+[2025-02-10 23:17:49,274] [INFO] [download_day] Downloading BOE content for day 2025-02-10
+[2025-02-10 23:17:49,496] [INFO] [_list_links_day] Scrapping day: https://www.boe.es/datosabiertos/api/boe/sumario/20250210
+[2025-02-10 23:17:49,561] [INFO] [_list_links_day] Scrapped day successfully https://www.boe.es/datosabiertos/api/boe/sumario/20250210 (1 BOE documents)
+[2025-02-10 23:17:49,561] [INFO] [download_document] Scrapping document: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2025-2419
+[2025-02-10 23:17:50,076] [INFO] [download_document] Scrapped document successfully https://www.boe.es/diario_boe/xml.php?id=BOE-A-2025-2419
+[2025-02-10 23:17:50,078] [INFO] [download_day] Downloaded BOE content for day 2025-02-10
+[2025-02-10 23:17:50,080] [INFO] [download_days] Downloaded content from day 2025-02-10 to 2025-02-10
+[2025-02-10 23:17:50,192] [INFO] [download_day] Downloading BOCYL content for day 2025-02-10
+[2025-02-10 23:17:50,433] [INFO] [download_document] Downloading BOCYL document: https://bocyl.jcyl.es/html/2025/02/10/html/BOCYL-D-10022025-1.do
+[2025-02-10 23:17:50,603] [ERROR] [download_document] ValueError while processing https://bocyl.jcyl.es/html/2025/02/10/html/BOCYL-D-10022025-1.do: 3 validation errors for BOCYLMetadataDocument
+anio
+  Field required [type=missing, input_value={'filepath': '/var/folder...'fecha_publicacion': ''}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+mes
+  Field required [type=missing, input_value={'filepath': '/var/folder...'fecha_publicacion': ''}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+dia
+  Field required [type=missing, input_value={'filepath': '/var/folder...'fecha_publicacion': ''}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+[2025-02-10 23:17:50,603] [ERROR] [download_day] Exception while downloading document from https://bocyl.jcyl.es/html/2025/02/10/html/BOCYL-D-10022025-1.do: 3 validation errors for BOCYLMetadataDocument
+anio
+  Field required [type=missing, input_value={'filepath': '/var/folder...'fecha_publicacion': ''}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+mes
+  Field required [type=missing, input_value={'filepath': '/var/folder...'fecha_publicacion': ''}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+dia
+  Field required [type=missing, input_value={'filepath': '/var/folder...'fecha_publicacion': ''}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/santiago/Documents/papyrus/src/etls/bocyl/scrapper.py", line 117, in download_day
+    metadata_doc = self.download_document(url_html, day)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/santiago/Documents/papyrus/src/etls/bocyl/scrapper.py", line 156, in download_document
+    metadata_doc = BOCYLMetadataDocument(filepath=fn.name, **metadata)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/santiago/Documents/papyrus/venv/lib/python3.11/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 3 validation errors for BOCYLMetadataDocument
+anio
+  Field required [type=missing, input_value={'filepath': '/var/folder...'fecha_publicacion': ''}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+mes
+  Field required [type=missing, input_value={'filepath': '/var/folder...'fecha_publicacion': ''}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+dia
+  Field required [type=missing, input_value={'filepath': '/var/folder...'fecha_publicacion': ''}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+[2025-02-10 23:17:50,604] [INFO] [download_document] Downloading BOCYL document: https://bocyl.jcyl.es/html/2025/02/10/html/BOCYL-D-10022025-2.do
+[2025-02-10 23:17:50,772] [ERROR] [download_document] ValueError while processing https://bocyl.jcyl.es/html/2025/02/10/html/BOCYL-D-10022025-2.do: 3 validation errors for BOCYLMetadataDocument
+anio
+  Field required [type=missing, input_value={'filepath': '/var/folder...'fecha_publicacion': ''}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+mes
+  Field required [type=missing, input_value={'filepath': '/var/folder...'fecha_publicacion': ''}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+dia
+  Field required [type=missing, input_value={'filepath': '/var/folder...'fecha_publicacion': ''}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+[2025-02-10 23:17:50,773] [ERROR] [download_day] Exception while downloading document from https://bocyl.jcyl.es/html/2025/02/10/html/BOCYL-D-10022025-2.do: 3 validation errors for BOCYLMetadataDocument
+anio
+  Field required [type=missing, input_value={'filepath': '/var/folder...'fecha_publicacion': ''}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+mes
+  Field required [type=missing, input_value={'filepath': '/var/folder...'fecha_publicacion': ''}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+dia
+  Field required [type=missing, input_value={'filepath': '/var/folder...'fecha_publicacion': ''}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/santiago/Documents/papyrus/src/etls/bocyl/scrapper.py", line 117, in download_day
+    metadata_doc = self.download_document(url_html, day)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/santiago/Documents/papyrus/src/etls/bocyl/scrapper.py", line 156, in download_document
+    metadata_doc = BOCYLMetadataDocument(filepath=fn.name, **metadata)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/santiago/Documents/papyrus/venv/lib/python3.11/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 3 validation errors for BOCYLMetadataDocument
+anio
+  Field required [type=missing, input_value={'filepath': '/var/folder...'fecha_publicacion': ''}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+mes
+  Field required [type=missing, input_value={'filepath': '/var/folder...'fecha_publicacion': ''}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+dia
+  Field required [type=missing, input_value={'filepath': '/var/folder...'fecha_publicacion': ''}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+[2025-02-10 23:17:50,773] [INFO] [download_day] Downloaded BOCYL content for day 2025-02-10 (0 documents)
+[2025-02-10 23:20:14,987] [INFO] [root] Initialized logging
+[2025-02-10 23:20:14,993] [INFO] [root] Configuration loaded
+[2025-02-10 23:20:14,994] [INFO] [root] Initializing OpenAI client
+[2025-02-10 23:20:15,018] [INFO] [root] Initialized OpenAI client
+[2025-02-10 23:20:15,018] [INFO] [root] Initializing MongoDB client
+[2025-02-10 23:20:16,030] [INFO] [root] Initialized MongoDB client
+[2025-02-10 23:20:16,148] [INFO] [download_day] Downloading BOCYL content for day 2025-02-10
+[2025-02-10 23:20:16,511] [INFO] [download_document] Downloading BOCYL document: https://bocyl.jcyl.es/html/2025/02/10/html/BOCYL-D-10022025-1.do
+[2025-02-10 23:20:16,625] [INFO] [download_document] Downloaded BOCYL document successfully: https://bocyl.jcyl.es/html/2025/02/10/html/BOCYL-D-10022025-1.do
+[2025-02-10 23:20:16,625] [INFO] [download_document] Downloading BOCYL document: https://bocyl.jcyl.es/html/2025/02/10/html/BOCYL-D-10022025-2.do
+[2025-02-10 23:20:16,905] [INFO] [download_document] Downloaded BOCYL document successfully: https://bocyl.jcyl.es/html/2025/02/10/html/BOCYL-D-10022025-2.do
+[2025-02-10 23:20:16,905] [INFO] [download_day] Downloaded BOCYL content for day 2025-02-10 (2 documents)
+[2025-02-10 23:20:16,962] [INFO] [process_document] Total tokens in the document: 3429
+[2025-02-10 23:20:16,964] [INFO] [process_document] Max tokens per chunk: 83360
+[2025-02-10 23:20:16,968] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-02-10 23:20:26,302] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-10 23:20:27,345] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-10 23:20:28,333] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-10 23:20:29,761] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-10 23:20:30,624] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-10 23:20:30,627] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-02-10 23:20:30,627] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-02-10 23:20:32,075] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-10 23:20:32,089] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-02-10 23:20:32,089] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-02-10 23:20:32,089] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'El Decreto 2/2025 regula la administración de edificios administrativos en Castilla y León, actualizando y simplificando normativas anteriores. Establece competencias, funciones y régimen de afectación de estos edificios, promoviendo eficiencia y coordinación entre consejerías. La norma busca asegurar una gestión clara y eficiente del patrimonio administrativo.', 'etiquetas': ['Servicios públicos', 'Administración, defensa y servicios de seguridad social', 'Servicios inmobiliarios'], 'stakeholders': ['Consejería de Economía y Hacienda', 'Consejerías de la Junta de Castilla y León', 'Entidades institucionales'], 'impacto': 'El decreto optimiza la gestión de edificios administrativos, mejora la coordinación interdepartamental y asegura un uso eficiente de recursos, reduciendo cargas administrativas y promoviendo la transparencia en la administración pública.', 'divisiones_cnae': ['Administración pública y defensa', 'Actividades administrativas de oficina', 'Actividades inmobiliarias'], 'ramas_juridicas': {'Derecho Administrativo': ['urbanismo', 'medio ambiente', 'responsabilidad patrimonial', 'licencias y permisos', 'transparencia y buen gobierno'], 'Derecho Fiscal': [], 'Derecho Constitucional': []}}
+[2025-02-10 23:20:32,089] [INFO] [_process_chunk] Number of input tokens: 3812
+[2025-02-10 23:20:32,089] [INFO] [_process_chunk] Number of output tokens: 175
+[2025-02-10 23:20:33,203] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-10 23:20:33,242] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': [], 'ramas_juridicas': []}
+[2025-02-10 23:20:33,242] [INFO] [_process_chunk] Number of input tokens: 1070
+[2025-02-10 23:20:33,242] [INFO] [_process_chunk] Number of output tokens: 40
+[2025-02-10 23:20:35,395] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-10 23:20:36,236] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-10 23:20:36,238] [INFO] [process_document] Final document: {'resumenes': 'El Decreto 2/2025 establece un marco normativo para la administración de edificios administrativos en Castilla y León, con el objetivo de actualizar y simplificar las regulaciones previas. Este decreto define las competencias y funciones de las distintas entidades involucradas, así como el régimen de afectación de los edificios administrativos. Además, promueve la eficiencia y la coordinación entre las diferentes consejerías, garantizando así una gestión clara y efectiva del patrimonio administrativo de la región. En conjunto, la norma busca optimizar la administración de estos recursos, asegurando su adecuado uso y mantenimiento.', 'etiquetas': ['Servicios públicos', 'Administración, defensa y servicios de seguridad social', 'Servicios inmobiliarios'], 'impactos': ['El decreto optimiza la gestión de edificios administrativos, mejora la coordinación interdepartamental y asegura un uso eficiente de recursos, reduciendo cargas administrativas y promoviendo la transparencia en la administración pública.'], 'stakeholders': ['Entidades institucionales', 'Consejería de Economía y Hacienda', 'Consejerías de la Junta de Castilla y León'], 'divisiones_cnae': ['Administración pública y defensa', 'Actividades administrativas de oficina', 'Actividades inmobiliarias'], 'ramas_juridicas': {'Derecho Administrativo': ['transparencia y buen gobierno', 'urbanismo', 'medio ambiente', 'responsabilidad patrimonial', 'licencias y permisos'], 'Derecho Fiscal': [], 'Derecho Constitucional': []}, 'short_name': 'Decreto 2/2025 sobre Administración de Edificios en Castilla y León.'}
+[2025-02-10 23:20:36,238] [INFO] [process_document] Final CNAE classification: ['Administración pública y defensa', 'Actividades administrativas de oficina', 'Actividades inmobiliarias']
+[2025-02-10 23:20:36,256] [INFO] [process_document] Total tokens in the document: 14806
+[2025-02-10 23:20:36,259] [INFO] [process_document] Max tokens per chunk: 83360
+[2025-02-10 23:20:36,280] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-02-10 23:20:40,845] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-10 23:20:42,488] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-10 23:20:43,972] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-10 23:20:45,646] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-10 23:20:47,178] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-10 23:20:48,401] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-10 23:20:48,404] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-02-10 23:20:48,404] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-02-10 23:20:48,404] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'La Orden AGR/85/2025 regula la formación en bienestar, bioseguridad, higiene y sanidad animal en Castilla y León, estableciendo requisitos para entidades de formación y personal involucrado en la producción animal. Se busca garantizar el cumplimiento de normativas europeas y mejorar la capacitación del personal en el cuidado de animales.', 'etiquetas': ['Servicios de salud y trabajo social', 'Alimentos, bebidas, tabaco y productos relacionados', 'Servicios agrícolas, forestales, hortícolas, acuícolas y apícolas'], 'stakeholders': ['Entidades de formación', 'Personal de explotaciones ganaderas', 'Administración pública', 'Organizaciones profesionales agrarias'], 'impacto': 'La regulación mejora la formación del personal en bienestar animal, reduciendo riesgos de enfermedades y garantizando prácticas adecuadas en la producción. Aumenta la competitividad del sector y responde a la demanda social por productos de origen responsable.', 'divisiones_cnae': ['Actividades veterinarias', 'Actividades de servicios sociales sin alojamiento', 'Agricultura, ganadería, caza y servicios relacionados'], 'ramas_juridicas': {'Derecho Administrativo': ['medio ambiente', 'responsabilidad patrimonial', 'licencias y permisos', 'urbanismo', 'expropiaciones'], 'Derecho Ambiental': ['bienestar animal', 'gestión de residuos', 'legislación sobre agua', 'cambio climático', 'protección de la biodiversidad'], 'Derecho Laboral': []}}
+[2025-02-10 23:20:48,404] [INFO] [_process_chunk] Number of input tokens: 13461
+[2025-02-10 23:20:48,404] [INFO] [_process_chunk] Number of output tokens: 216
+[2025-02-10 23:20:49,748] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-10 23:20:49,765] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': [], 'ramas_juridicas': []}
+[2025-02-10 23:20:49,765] [INFO] [_process_chunk] Number of input tokens: 1071
+[2025-02-10 23:20:49,765] [INFO] [_process_chunk] Number of output tokens: 40
+[2025-02-10 23:20:52,208] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-10 23:20:53,060] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-10 23:20:53,094] [INFO] [process_document] Final document: {'resumenes': 'La Orden AGR/85/2025 establece un marco regulatorio para la formación en bienestar, bioseguridad, higiene y sanidad animal en la comunidad de Castilla y León. Su objetivo principal es asegurar que las entidades de formación y el personal que participa en la producción animal cumplan con los requisitos establecidos, alineándose con las normativas europeas vigentes. A través de esta regulación, se busca no solo mejorar la capacitación del personal encargado del cuidado de los animales, sino también promover prácticas que garanticen el bienestar animal y la sanidad en el sector.', 'etiquetas': ['Servicios de salud y trabajo social', 'Servicios agrícolas, forestales, hortícolas, acuícolas y apícolas', 'Alimentos, bebidas, tabaco y productos relacionados'], 'impactos': ['La regulación mejora la formación del personal en bienestar animal, reduciendo riesgos de enfermedades y garantizando prácticas adecuadas en la producción. Aumenta la competitividad del sector y responde a la demanda social por productos de origen responsable.'], 'stakeholders': ['Administración pública', 'Personal de explotaciones ganaderas', 'Entidades de formación', 'Organizaciones profesionales agrarias'], 'divisiones_cnae': ['Actividades de servicios sociales sin alojamiento', 'Agricultura, ganadería, caza y servicios relacionados', 'Actividades veterinarias'], 'ramas_juridicas': {'Derecho Administrativo': ['urbanismo', 'medio ambiente', 'expropiaciones', 'responsabilidad patrimonial', 'licencias y permisos'], 'Derecho Ambiental': ['protección de la biodiversidad', 'cambio climático', 'gestión de residuos', 'bienestar animal', 'legislación sobre agua'], 'Derecho Laboral': []}, 'short_name': 'ORDEN AGR/85/2025 sobre Formación en Bienestar y Sanidad Animal en Castilla y León.'}
+[2025-02-10 23:20:53,095] [INFO] [process_document] Final CNAE classification: ['Actividades de servicios sociales sin alojamiento', 'Agricultura, ganadería, caza y servicios relacionados', 'Actividades veterinarias']
+[2025-02-10 23:20:54,766] [INFO] [send_email] El correo ha sido enviado exitosamente.
+[2025-02-10 23:26:45,859] [INFO] [root] Initialized logging
+[2025-02-10 23:26:45,865] [INFO] [root] Configuration loaded
+[2025-02-10 23:26:45,865] [INFO] [root] Initializing OpenAI client
+[2025-02-10 23:26:45,891] [INFO] [root] Initialized OpenAI client
+[2025-02-10 23:26:45,891] [INFO] [root] Initializing MongoDB client
+[2025-02-10 23:26:46,483] [INFO] [root] Initialized MongoDB client
+[2025-02-10 23:26:46,609] [INFO] [download_day] Downloading BOCYL content for day 2025-02-08
+[2025-02-10 23:26:46,726] [WARNING] [download_day] No 'Disposiciones Generales' section found on https://bocyl.jcyl.es/boletin.do?fechaBoletin=08/02/2025
+[2025-02-10 23:26:58,059] [INFO] [root] Initialized logging
+[2025-02-10 23:26:58,065] [INFO] [root] Configuration loaded
+[2025-02-10 23:26:58,066] [INFO] [root] Initializing OpenAI client
+[2025-02-10 23:26:58,087] [INFO] [root] Initialized OpenAI client
+[2025-02-10 23:26:58,087] [INFO] [root] Initializing MongoDB client
+[2025-02-10 23:26:58,703] [INFO] [root] Initialized MongoDB client
+[2025-02-10 23:26:58,814] [INFO] [download_day] Downloading BOCYL content for day 2025-02-07
+[2025-02-10 23:26:58,972] [WARNING] [download_day] No 'Disposiciones Generales' section found on https://bocyl.jcyl.es/boletin.do?fechaBoletin=07/02/2025
+[2025-02-10 23:27:12,379] [INFO] [root] Initialized logging
+[2025-02-10 23:27:12,386] [INFO] [root] Configuration loaded
+[2025-02-10 23:27:12,386] [INFO] [root] Initializing OpenAI client
+[2025-02-10 23:27:12,409] [INFO] [root] Initialized OpenAI client
+[2025-02-10 23:27:12,409] [INFO] [root] Initializing MongoDB client
+[2025-02-10 23:27:12,956] [INFO] [root] Initialized MongoDB client
+[2025-02-10 23:27:13,072] [INFO] [download_day] Downloading BOCYL content for day 2025-02-05
+[2025-02-10 23:27:13,280] [WARNING] [download_day] No 'Disposiciones Generales' section found on https://bocyl.jcyl.es/boletin.do?fechaBoletin=05/02/2025
+[2025-02-10 23:28:22,873] [INFO] [root] Initialized logging
+[2025-02-10 23:28:22,881] [INFO] [root] Configuration loaded
+[2025-02-10 23:28:22,881] [INFO] [root] Initializing OpenAI client
+[2025-02-10 23:28:22,904] [INFO] [root] Initialized OpenAI client
+[2025-02-10 23:28:22,904] [INFO] [root] Initializing MongoDB client
+[2025-02-10 23:28:23,482] [INFO] [root] Initialized MongoDB client
+[2025-02-10 23:28:23,593] [INFO] [download_day] Downloading BOCYL content for day 2025-01-31
+[2025-02-10 23:28:23,806] [INFO] [download_document] Downloading BOCYL document: https://bocyl.jcyl.es/html/2025/01/31/html/BOCYL-D-31012025-1.do
+[2025-02-10 23:28:23,936] [INFO] [download_document] Downloaded BOCYL document successfully: https://bocyl.jcyl.es/html/2025/01/31/html/BOCYL-D-31012025-1.do
+[2025-02-10 23:28:23,936] [INFO] [download_day] Downloaded BOCYL content for day 2025-01-31 (1 documents)
+[2025-02-10 23:28:23,969] [INFO] [process_document] Total tokens in the document: 1836
+[2025-02-10 23:28:23,971] [INFO] [process_document] Max tokens per chunk: 83360
+[2025-02-10 23:28:23,975] [INFO] [process_document] Number of API calls/chunks: 2
+[2025-02-10 23:28:27,210] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-10 23:28:27,934] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-10 23:28:28,593] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-10 23:28:29,253] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-10 23:28:29,255] [INFO] [generate_subramas_juridicas] Invalid legal sub-branch detected (['No identificado']). Attempt 1/1. Please enter a valid list of branches.
+[2025-02-10 23:28:29,255] [INFO] [generate_subramas_juridicas] Maximum attempts reached. Validation failed.
+[2025-02-10 23:28:29,255] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'La Orden EDU/58/2025 modifica la Orden EDU/107/2018 sobre el Campus de Profundización Científica en Castilla y León, ajustando los criterios de calificación y selección de alumnos. Se establece un nuevo método para calcular la nota media y se priorizan materias específicas en caso de empate entre estudiantes.', 'etiquetas': ['Servicios de educación y formación'], 'stakeholders': ['Alumnos', 'Centros educativos', 'Consejería de Educación de Castilla y León'], 'impacto': 'La modificación puede aumentar la competitividad entre alumnos y estandarizar criterios de evaluación, afectando la admisión al campus y la preparación académica en secundaria y bachillerato.', 'divisiones_cnae': ['Educación'], 'ramas_juridicas': {'Derecho Administrativo': []}}
+[2025-02-10 23:28:29,255] [INFO] [_process_chunk] Number of input tokens: 2610
+[2025-02-10 23:28:29,255] [INFO] [_process_chunk] Number of output tokens: 154
+[2025-02-10 23:28:30,454] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-10 23:28:30,457] [INFO] [extract_chunk] AI Result: 
+ {'resumen': 'No identificado', 'etiquetas': ['No identificado'], 'stakeholders': ['No identificado'], 'impacto': 'No identificado', 'divisiones_cnae': [], 'ramas_juridicas': []}
+[2025-02-10 23:28:30,457] [INFO] [_process_chunk] Number of input tokens: 1071
+[2025-02-10 23:28:30,457] [INFO] [_process_chunk] Number of output tokens: 40
+[2025-02-10 23:28:32,708] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-10 23:28:34,298] [INFO] [httpx] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-02-10 23:28:34,345] [INFO] [process_document] Final document: {'resumenes': 'La Orden EDU/58/2025 introduce modificaciones a la Orden EDU/107/2018, que regula el Campus de Profundización Científica en Castilla y León. Entre los cambios más significativos se encuentran la actualización de los criterios de calificación y selección de los alumnos participantes. Se implementa un nuevo método para el cálculo de la nota media, y se establece un sistema de priorización de materias específicas para resolver situaciones de empate entre estudiantes. Estas modificaciones buscan optimizar el proceso de selección y asegurar una evaluación más justa y acorde con las necesidades del programa.', 'etiquetas': ['Servicios de educación y formación'], 'impactos': ['La modificación puede aumentar la competitividad entre alumnos y estandarizar criterios de evaluación, afectando la admisión al campus y la preparación académica en secundaria y bachillerato.'], 'stakeholders': ['Consejería de Educación de Castilla y León', 'Centros educativos', 'Alumnos'], 'divisiones_cnae': ['Educación'], 'ramas_juridicas': {'Derecho Administrativo': []}, 'short_name': 'Modificación de la Orden EDU/107/2018 sobre el Campus de Profundización Científica en Castilla y León.'}
+[2025-02-10 23:28:34,346] [INFO] [process_document] Final CNAE classification: ['Educación']
+[2025-02-10 23:28:35,949] [INFO] [send_email] El correo ha sido enviado exitosamente.
