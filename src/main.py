@@ -4,8 +4,6 @@ import sys
 import warnings
 from dotenv import load_dotenv
 
-from src.etls.bocyl.load import today_bocyl
-
 load_dotenv()
 
 sys.path.append(os.getenv("PROJECT_PATH"))
@@ -15,6 +13,7 @@ from src.etls.boe.load import today_boe
 from src.etls.bocm.load import today_bocm
 from src.etls.boa.load import today_boa
 from src.etls.boja.load import today_boja
+from src.etls.bocyl.load import today_bocyl
 from src.etls.bopv.load import today_bopv
 from src.initialize import Initializer
 from src.email.email_sender import send_email
