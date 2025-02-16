@@ -91,14 +91,7 @@ def process_documents(documents, processor, initializer, collection_name):
 
     ids_to_insert = list(documents.keys())
     existing_docs = collection.find({"_id": {"$in": ids_to_insert}}, {"_id": 1})
-    existing_ids_set = {
-        "L_202500318",
-        "L_202500286",
-        "L_202500321",
-        "L_202590144",
-        "L_202590145",
-        "L_202590146",
-    }  # {doc["_id"] for doc in existing_docs}
+    existing_ids_set = {doc["_id"] for doc in existing_docs}
 
     new_documents = {
         doc_id: document
