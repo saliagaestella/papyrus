@@ -15,6 +15,7 @@ from src.etls.boa.load import today_boa
 from src.etls.boja.load import today_boja
 from src.etls.bocyl.load import today_bocyl
 from src.etls.bopv.load import today_bopv
+from src.etls.eurlex.load import today_eurlex
 from src.initialize import Initializer
 from src.email.email_sender import send_email
 from src.database.upload_documents import upload_documents
@@ -84,6 +85,16 @@ def main():
     except Exception as e:
         print(f"Failed to scrap BOCYL documents: {e}")
         results_bocyl = {}
+    try:
+        results_eurlex = process_documents(
+            documents=today_eurlex(),
+            processor=processor,
+            initializer=initializer,
+            collection_name="DOUE",
+        )
+    except Exception as e:
+        print(f"Failed to scrap DOUE documents: {e}")
+        results_eurlex = {}
 
     results_joined = (
         results_boe
@@ -92,6 +103,7 @@ def main():
         | results_boja
         | results_bopv
         | results_bocyl
+        | results_eurlex
     )
 
     if not results_joined:

@@ -14,6 +14,7 @@ from src.etls.bocm.load import dates_bocm
 from src.etls.boa.load import dates_boa
 from src.etls.boja.load import dates_boja
 from src.etls.bopv.load import dates_bopv
+from src.etls.eurlex.load import dates_eurlex, today_eurlex
 from src.initialize import Initializer
 from src.email.email_sender import send_email
 from src.database.upload_documents import upload_documents
@@ -23,8 +24,8 @@ def download_dates():
     initializer = Initializer()
 
     processor = DocumentProcessor(initializer=initializer)
-    date_start = "2025/01/20"
-    date_end = "2025/01/30"
+    date_start = "2025/02/12"
+    date_end = "2025/02/12"
 
     """results_boe = process_documents(
         documents=dates_boe(date_start=date_start, date_end=date_end),
@@ -32,12 +33,18 @@ def download_dates():
         initializer=initializer,
         collection_name="BOE",
     )"""
-    results_bocyl = process_documents(
+    results_eurlex = process_documents(
+        documents=dates_eurlex(date_start=date_start, date_end=date_end),
+        processor=processor,
+        initializer=initializer,
+        collection_name="DOUE",
+    )
+    """results_bocyl = process_documents(
         documents=dates_bocyl(date_start=date_start, date_end=date_end),
         processor=processor,
         initializer=initializer,
         collection_name="BOCYL",
-    )
+    )"""
     """results_bocm = process_documents(
         documents=dates_bocm(date_start=date_start, date_end=date_end),
         processor=processor,
@@ -67,7 +74,7 @@ def download_dates():
         results_boe | results_bocm | results_boa | results_boja | results_bopv
     )"""
 
-    results_joined = results_bocyl
+    results_joined = results_eurlex
 
     if not results_joined:
         return
@@ -84,7 +91,14 @@ def process_documents(documents, processor, initializer, collection_name):
 
     ids_to_insert = list(documents.keys())
     existing_docs = collection.find({"_id": {"$in": ids_to_insert}}, {"_id": 1})
-    existing_ids_set = {doc["_id"] for doc in existing_docs}
+    existing_ids_set = {
+        "L_202500318",
+        "L_202500286",
+        "L_202500321",
+        "L_202590144",
+        "L_202590145",
+        "L_202590146",
+    }  # {doc["_id"] for doc in existing_docs}
 
     new_documents = {
         doc_id: document
